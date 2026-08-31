@@ -1,289 +1,583 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Arya Global Work — recruitment, staffing, outsourcing, finance and compliance solutions for growing businesses.">
-  <meta name="theme-color" content="#0b1730">
-  <title>Arya Global Work | Talent. Operations. Growth.</title>
-  <style>
-    :root{
-      --navy:#0b1730; --navy-2:#122449; --orange:#f47a3c; --orange-2:#ff9b62;
-      --ink:#14213d; --muted:#68748a; --cream:#f7f8fb; --white:#fff;
-      --line:#e7ebf2; --shadow:0 20px 60px rgba(13,31,63,.10); --radius:24px;
-      --max:1180px;
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Arya Global Work — Simplifying Recruitment & Outsourcing for Business Success</title>
+<meta name="description" content="Arya Global Work (Inspiration Manpower Consultancy Pvt. Ltd) — Since 2008, Bangalore. Recruitment, contract staffing, outsourcing & statutory compliance for businesses that scale with precision.">
+<meta name="theme-color" content="#0F172A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/@phosphor-icons/web"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      fontFamily: { sans: ['Plus Jakarta Sans','sans-serif'] },
+      colors: {
+        primary: '#0F172A',
+        secondary: '#334155',
+        accent: '#0369A1',
+        brand: { orange: '#F68A1E', navy: '#142E52' },
+        muted: '#E8ECF1',
+        card: '#FFFFFF',
+      },
+      boxShadow: {
+        'soft': '0 8px 32px rgba(15,23,42,0.08)',
+        'card': '0 4px 24px rgba(15,23,42,0.06)',
+        'float': '0 20px 60px rgba(15,23,42,0.12)',
+      }
     }
-    *{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--white);line-height:1.6;overflow-x:hidden}
-    a{text-decoration:none;color:inherit}
-    button,input,textarea,select{font:inherit}
-    img{max-width:100%;display:block}
-    .container{width:min(calc(100% - 40px),var(--max));margin:auto}
-    .eyebrow{display:inline-flex;align-items:center;gap:9px;text-transform:uppercase;letter-spacing:.14em;font-size:12px;font-weight:800;color:var(--orange)}
-    .eyebrow:before{content:"";width:28px;height:2px;background:var(--orange);border-radius:5px}
-    h1,h2,h3{line-height:1.08;letter-spacing:-.035em}
-    h1{font-size:clamp(48px,7vw,86px);max-width:850px}
-    h2{font-size:clamp(34px,4.5vw,58px)}
-    h3{font-size:22px}
-    .muted{color:var(--muted)}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 20px;border-radius:999px;font-weight:800;border:1px solid transparent;transition:.25s ease;cursor:pointer}
-    .btn-primary{background:var(--orange);color:#fff;box-shadow:0 12px 30px rgba(244,122,60,.25)}
-    .btn-primary:hover{transform:translateY(-2px);background:#e9672b}
-    .btn-dark{background:var(--navy);color:#fff}
-    .btn-dark:hover{transform:translateY(-2px);background:#172b55}
-    .btn-light{background:#fff;border-color:var(--line)}
-    .btn-light:hover{border-color:#cbd4e3;transform:translateY(-2px)}
-
-    /* Header */
-    header{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(255,255,255,.82);backdrop-filter:blur(18px);border-bottom:1px solid rgba(231,235,242,.7)}
-    nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:24px}
-    .brand img{width:154px;height:auto}
-    .nav-links{display:flex;align-items:center;gap:28px;font-size:14px;font-weight:750;color:#354158}
-    .nav-links a{transition:.2s}.nav-links a:hover{color:var(--orange)}
-    .nav-cta{display:flex;gap:10px;align-items:center}
-    .menu{display:none;border:0;background:none;font-size:28px;cursor:pointer}
-
-    /* Hero */
-    .hero{padding:170px 0 90px;background:radial-gradient(circle at 80% 20%,rgba(244,122,60,.16),transparent 30%),linear-gradient(180deg,#fff 0%,#f8f9fc 100%);position:relative}
-    .hero-grid{display:grid;grid-template-columns:1.18fr .82fr;gap:60px;align-items:center}
-    .hero-copy p{font-size:19px;color:var(--muted);max-width:650px;margin:25px 0 34px}
-    .hero-actions{display:flex;flex-wrap:wrap;gap:12px}
-    .trust{display:flex;gap:22px;align-items:center;margin-top:30px;color:#657086;font-size:13px;font-weight:700}
-    .trust span{display:flex;align-items:center;gap:7px}.dot{width:7px;height:7px;background:var(--orange);border-radius:50%}
-    .hero-card{position:relative;background:var(--navy);color:#fff;border-radius:34px;padding:34px;box-shadow:var(--shadow);min-height:490px;overflow:hidden}
-    .hero-card:before,.hero-card:after{content:"";position:absolute;border-radius:50%;filter:blur(2px)}
-    .hero-card:before{width:260px;height:260px;background:rgba(244,122,60,.28);right:-90px;top:-90px}.hero-card:after{width:190px;height:190px;background:rgba(255,255,255,.06);left:-90px;bottom:-70px}
-    .hero-card-inner{position:relative;z-index:1;height:100%;display:flex;flex-direction:column;justify-content:space-between;min-height:420px}
-    .mini-label{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#b9c3d8;font-weight:800}
-    .hero-card h3{font-size:32px;max-width:360px;margin-top:10px}
-    .pipeline{display:grid;gap:12px;margin-top:30px}
-    .pipeline-item{display:flex;gap:14px;align-items:center;padding:14px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.05);border-radius:17px}
-    .icon{width:42px;height:42px;border-radius:13px;display:grid;place-items:center;background:rgba(244,122,60,.18);color:#ffad7c;font-weight:900}
-    .pipeline-item b{font-size:14px}.pipeline-item small{display:block;color:#aeb8ca;margin-top:2px}
-
-    /* Stats */
-    .stats{padding:25px 0;border-bottom:1px solid var(--line);border-top:1px solid var(--line);background:#fff}
-    .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
-    .stat{text-align:center;padding:18px;border-right:1px solid var(--line)}.stat:last-child{border-right:0}
-    .stat strong{font-size:35px;letter-spacing:-.04em}.stat span{display:block;color:var(--muted);font-size:13px;font-weight:700;margin-top:2px}
-
-    section{padding:110px 0}
-    .section-head{display:flex;justify-content:space-between;gap:40px;align-items:end;margin-bottom:45px}
-    .section-head p{max-width:520px;color:var(--muted)}
-
-    /* Services */
-    .services{background:var(--cream)}
-    .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .service{background:#fff;border:1px solid var(--line);padding:30px;border-radius:var(--radius);min-height:275px;transition:.25s ease;position:relative;overflow:hidden}
-    .service:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:transparent}
-    .service-number{position:absolute;right:24px;top:22px;font-size:13px;color:#aab3c2;font-weight:800}
-    .service .big-icon{width:52px;height:52px;display:grid;place-items:center;border-radius:16px;background:#fff3ed;color:var(--orange);font-weight:900;font-size:20px;margin-bottom:27px}
-    .service p{color:var(--muted);font-size:14px;margin-top:12px}
-    .service ul{list-style:none;margin-top:17px;display:grid;gap:6px}.service li{font-size:13px;font-weight:700;color:#526077}.service li:before{content:"✓";color:var(--orange);margin-right:8px}
-
-    /* About */
-    .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:80px;align-items:center}
-    .about-panel{background:var(--navy);color:#fff;border-radius:34px;padding:38px;min-height:470px;position:relative;overflow:hidden}
-    .about-panel:after{content:"";position:absolute;width:300px;height:300px;border:1px solid rgba(255,255,255,.12);border-radius:50%;right:-100px;bottom:-90px}
-    .about-panel h3{font-size:30px;max-width:380px;margin:18px 0 35px}
-    .about-panel .quote{font-size:16px;color:#c4ccda;max-width:430px}
-    .about-badge{display:inline-flex;padding:10px 13px;border:1px solid rgba(255,255,255,.14);border-radius:999px;font-size:12px;font-weight:800;color:#d6dce7}
-    .about-copy p{color:var(--muted);margin:20px 0}
-    .check-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-top:28px}
-    .check{padding:17px;border:1px solid var(--line);border-radius:18px;font-weight:800;font-size:14px}.check span{color:var(--orange);margin-right:8px}
-
-    /* Process */
-    .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line);border-radius:28px;overflow:hidden}
-    .process{padding:30px;background:#fff;border-right:1px solid var(--line)}.process:last-child{border-right:0}
-    .process .num{font-size:13px;color:var(--orange);font-weight:900}.process h3{font-size:20px;margin:34px 0 10px}.process p{color:var(--muted);font-size:13px}
-
-    /* Jobs */
-    .jobs{background:var(--navy);color:#fff}.jobs .muted{color:#aeb8ca}
-    .job-list{display:grid;gap:12px}.job{display:grid;grid-template-columns:1.4fr .8fr .6fr auto;gap:20px;align-items:center;padding:20px 22px;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.1);border-radius:18px}.job b{font-size:16px}.job small{color:#aeb8ca;display:block;margin-top:3px}.job .tag{font-size:12px;font-weight:800;color:#ffd1bb}.job .btn{padding:10px 15px;font-size:13px}
-
-    /* Industries */
-    .chips{display:flex;flex-wrap:wrap;gap:10px}.chip{padding:12px 16px;border:1px solid var(--line);border-radius:999px;font-size:13px;font-weight:800;background:#fff;transition:.2s}.chip:hover{border-color:var(--orange);color:var(--orange);transform:translateY(-2px)}
-
-    /* Contact */
-    .contact{background:linear-gradient(135deg,#f8f9fc,#fff)}
-    .contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:30px;align-items:stretch}
-    .contact-card{background:var(--navy);color:#fff;border-radius:30px;padding:38px}.contact-card h3{font-size:34px;margin:16px 0}.contact-card p{color:#b9c3d4}
-    .contact-items{display:grid;gap:20px;margin-top:35px}.contact-item{display:flex;gap:13px}.contact-item .ci{width:42px;height:42px;flex:0 0 42px;border-radius:13px;background:rgba(244,122,60,.15);display:grid;place-items:center;color:#ffad7c;font-weight:900}.contact-item small{display:block;color:#9faabd;margin-bottom:2px}.contact-item a,.contact-item span{font-weight:750;font-size:14px}
-    form{background:#fff;border:1px solid var(--line);border-radius:30px;padding:35px;box-shadow:0 16px 50px rgba(13,31,63,.06)}
-    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.field{display:grid;gap:7px}.field.full{grid-column:1/-1}.field label{font-size:12px;font-weight:800;color:#536076}.field input,.field textarea,.field select{width:100%;border:1px solid #dfe5ee;background:#fbfcfe;border-radius:13px;padding:13px 14px;outline:none;transition:.2s}.field textarea{min-height:130px;resize:vertical}.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--orange);box-shadow:0 0 0 4px rgba(244,122,60,.1)}
-    .form-note{font-size:12px;color:#8993a5;margin-top:12px}
-
-    /* Footer */
-    footer{background:#071126;color:#fff;padding:55px 0 25px}.footer-grid{display:grid;grid-template-columns:1.3fr .7fr .7fr 1fr;gap:45px}.footer-brand img{width:155px;filter:brightness(0) invert(1);opacity:.95}.footer-brand p{color:#8f9bb0;max-width:330px;margin-top:20px;font-size:13px}.footer h4{font-size:13px;text-transform:uppercase;letter-spacing:.12em;margin-bottom:18px}.footer-links{display:grid;gap:9px;color:#9ca7ba;font-size:13px}.footer-links a:hover{color:#fff}.footer-bottom{border-top:1px solid rgba(255,255,255,.08);margin-top:45px;padding-top:20px;color:#78849a;font-size:12px;display:flex;justify-content:space-between;gap:20px}
-
-    /* Floating CTA */
-    .float-call{position:fixed;right:22px;bottom:22px;z-index:40;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:var(--orange);color:#fff;box-shadow:0 15px 35px rgba(244,122,60,.35);font-size:20px;font-weight:900}
-
-    @media(max-width:980px){
-      .nav-links{display:none;position:absolute;left:20px;right:20px;top:72px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:var(--shadow);flex-direction:column;align-items:flex-start}.nav-links.open{display:flex}.menu{display:block}.nav-cta{display:none}
-      .hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}.hero-card{min-height:390px}.hero-card-inner{min-height:320px}.service-grid{grid-template-columns:1fr 1fr}.process-grid{grid-template-columns:1fr 1fr}.process:nth-child(2){border-right:0}.process:nth-child(-n+2){border-bottom:1px solid var(--line)}.footer-grid{grid-template-columns:1fr 1fr}.job{grid-template-columns:1fr 1fr}.job .btn{justify-self:start}
-    }
-    @media(max-width:650px){
-      .container{width:min(calc(100% - 28px),var(--max))}.hero{padding-top:130px}.hero-copy p{font-size:17px}.stats-grid{grid-template-columns:1fr 1fr}.stat{border-bottom:1px solid var(--line)}.stat:nth-child(2){border-right:0}.stat strong{font-size:29px}section{padding:75px 0}.section-head{display:block}.section-head p{margin-top:15px}.service-grid,.process-grid,.form-grid,.footer-grid{grid-template-columns:1fr}.process{border-right:0!important;border-bottom:1px solid var(--line)}.process:last-child{border-bottom:0}.job{grid-template-columns:1fr}.job .btn{width:max-content}.check-grid{grid-template-columns:1fr}.about-panel{min-height:400px}.footer-bottom{display:block}.footer-bottom span{display:block;margin-top:7px}
-    }
-  </style>
+  }
+}
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html{scroll-behavior:auto} *{animation:none!important;transition:none!important} }
+  .focus-ring:focus-visible{outline:none;box-shadow:0 0 0 3px #fff, 0 0 0 6px #0369A1}
+  .grid-dots{background-image: radial-gradient(#0F172A 1px, transparent 1px); background-size: 24px 24px; opacity:.04}
+  .text-balance{ text-wrap: balance }
+</style>
 </head>
-<body>
-  <header>
-    <div class="container">
-      <nav>
-        <a class="brand" href="#home" aria-label="Arya Global Work home">
-          <img src="https://aryaglobalwork.com/wp-content/uploads/2026/01/cropped-arya_global_work_logo-removebg-preview-e1769615767235.png" alt="Arya Global Work logo">
-        </a>
-        <div class="nav-links" id="navLinks">
-          <a href="#home">Home</a><a href="#services">Services</a><a href="#about">About</a><a href="#jobs">Jobs</a><a href="#industries">Industries</a><a href="#contact">Contact</a>
-        </div>
-        <div class="nav-cta"><a class="btn btn-dark" href="#contact">Talk to us →</a></div>
-        <button class="menu" id="menu" aria-label="Open menu">☰</button>
-      </nav>
+<body class="font-sans antialiased bg-[#F8FAFC] text-[#020617] selection:bg-[#0369A1] selection:text-white">
+<!-- Top Bar -->
+<div class="hidden lg:block bg-primary text-white/70 text-[13px]">
+  <div class="max-w-[1280px] mx-auto px-6 h-9 flex items-center justify-between">
+    <div class="flex items-center gap-6">
+      <span class="flex items-center gap-2"><i class="ph ph-envelope-simple text-white/90"></i> info@inspirationmanpower.co.in</span>
+      <span class="w-px h-3 bg-white/20"></span>
+      <span class="flex items-center gap-2"><i class="ph ph-phone text-white/90"></i> +91-80-40966772 &middot; +91-9686454870</span>
     </div>
-  </header>
+    <div class="flex items-center gap-4">
+      <span class="flex items-center gap-2"><i class="ph ph-map-pin"></i> Bangalore · Since Dec 15, 2008</span>
+      <span class="w-px h-3 bg-white/20"></span>
+      <span class="text-white font-medium">Inspiration Manpower Consultancy Pvt. Ltd</span>
+    </div>
+  </div>
+</div>
 
-  <main>
-    <section class="hero" id="home">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <span class="eyebrow">Workforce solutions, reimagined</span>
-          <h1>Better talent.<br><span style="color:var(--orange)">Better business.</span></h1>
-          <p>Arya Global Work helps businesses hire smarter, scale faster and run critical operations with dependable recruitment, staffing and outsourcing support.</p>
-          <div class="hero-actions"><a class="btn btn-primary" href="#contact">Find the right talent ↗</a><a class="btn btn-light" href="#services">Explore services</a></div>
-          <div class="trust"><span><i class="dot"></i> Since 2008</span><span><i class="dot"></i> End-to-end support</span><span><i class="dot"></i> Bengaluru</span></div>
+<!-- Nav -->
+<header class="sticky top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200/70">
+  <div class="max-w-[1280px] mx-auto px-6 h-[72px] flex items-center justify-between gap-8">
+    <a href="#home" class="flex items-center gap-3 shrink-0 cursor-pointer focus-ring rounded-lg">
+      <img src="logo.png" alt="Arya Global Work" class="h-10 w-auto object-contain">
+    </a>
+    <nav class="hidden lg:flex items-center gap-1 text-[14px] font-semibold text-slate-600" aria-label="Primary">
+      <a href="#home" class="px-4 py-2 rounded-full bg-slate-900 text-white">Home</a>
+      <a href="#about" class="px-4 py-2 rounded-full hover:bg-slate-100 transition">About Us</a>
+      <a href="#services" class="px-4 py-2 rounded-full hover:bg-slate-100 transition">Services</a>
+      <a href="#jobs" class="px-4 py-2 rounded-full hover:bg-slate-100 transition">Find Jobs</a>
+      <a href="#contact" class="px-4 py-2 rounded-full hover:bg-slate-100 transition">Contact Us</a>
+    </nav>
+    <div class="hidden lg:flex items-center gap-3">
+      <a href="#jobs" class="hidden xl:inline-flex items-center gap-2 text-[14px] font-semibold text-slate-700 hover:text-primary transition"><i class="ph ph-magnifying-glass"></i> Find Jobs</a>
+      <a href="#contact" class="inline-flex items-center gap-2 bg-accent hover:bg-[#025d90] text-white text-[14px] font-bold px-6 py-3 rounded-full transition cursor-pointer focus-ring">Submit Resume <i class="ph ph-arrow-right"></i></a>
+    </div>
+    <button id="menuBtn" class="lg:hidden p-3 rounded-xl bg-slate-900 text-white cursor-pointer focus-ring" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+      <i class="ph ph-list text-xl"></i>
+    </button>
+  </div>
+  <div id="mobileNav" class="hidden lg:hidden border-t border-slate-200 bg-white">
+    <nav class="px-6 py-6 flex flex-col gap-1 text-[15px] font-semibold">
+      <a href="#home" class="py-3 border-b border-slate-100">Home</a>
+      <a href="#about" class="py-3 border-b border-slate-100">About Us</a>
+      <a href="#services" class="py-3 border-b border-slate-100">Services</a>
+      <a href="#jobs" class="py-3 border-b border-slate-100">Find Jobs</a>
+      <a href="#contact" class="py-3">Contact Us</a>
+      <a href="#contact" class="mt-4 inline-flex justify-center bg-accent text-white py-4 rounded-full font-bold">Submit Resume</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Hero -->
+<section id="home" class="relative overflow-hidden bg-white">
+  <div class="absolute inset-0 grid-dots pointer-events-none"></div>
+  <div class="absolute -top-32 -right-32 w-[600px] h-[600px] bg-[#E0F2FE] rounded-full blur-[100px] opacity-60 pointer-events-none"></div>
+  <div class="absolute top-20 -left-20 w-[400px] h-[400px] bg-[#FFF7ED] rounded-full blur-[80px] opacity-60 pointer-events-none"></div>
+
+  <div class="relative max-w-[1280px] mx-auto px-6 pt-12 lg:pt-20 pb-12 lg:pb-16">
+    <div class="grid lg:grid-cols-12 gap-10 items-center">
+      <!-- Left -->
+      <div class="lg:col-span-7">
+        <div class="inline-flex items-center gap-2 bg-[#F1F5F9] border border-slate-200 rounded-full px-3 py-1 text-[12px] font-bold tracking-widest uppercase">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          Est. 2008 · Bangalore · Trusted by 500+ Clients
+          <span class="hidden sm:inline-flex items-center gap-1 ml-2 bg-white px-2 py-1 rounded-full border border-slate-200 text-[11px]"><i class="ph-fill ph-seal-check text-accent"></i> Verified Consultancy</span>
         </div>
-        <div class="hero-card">
-          <div class="hero-card-inner">
-            <div><span class="mini-label">Your growth pipeline</span><h3>From workforce challenge to business outcome.</h3></div>
-            <div class="pipeline">
-              <div class="pipeline-item"><div class="icon">01</div><div><b>Understand</b><small>Map the requirement</small></div></div>
-              <div class="pipeline-item"><div class="icon">02</div><div><b>Match</b><small>Source & qualify talent</small></div></div>
-              <div class="pipeline-item"><div class="icon">03</div><div><b>Deploy</b><small>Move quickly into action</small></div></div>
-              <div class="pipeline-item"><div class="icon">04</div><div><b>Scale</b><small>Support long-term growth</small></div></div>
+        <h1 class="mt-6 text-[38px] lg:text-[56px] font-extrabold leading-[0.95] tracking-[-0.04em] text-balance">
+          Simplifying <span class="relative inline-block">Recruitment
+            <span class="absolute left-0 -bottom-2 w-full h-[10px] bg-[#F68A1E]/20 -rotate-1"></span>
+          </span> &amp; Outsourcing<br>
+          <span class="text-slate-500 font-semibold">for Business Success</span>
+        </h1>
+        <p class="mt-6 max-w-[560px] text-[17px] leading-7 text-slate-600">
+          Whether you're hiring or outsourcing, our end-to-end workforce solutions help organizations scale with <span class="font-semibold text-primary">efficiency and precision</span>.
+        </p>
+        <div class="mt-8 flex flex-wrap items-center gap-3">
+          <a href="#services" class="inline-flex items-center gap-2 bg-primary text-white px-7 py-4 rounded-full font-bold text-[15px] hover:bg-black transition cursor-pointer focus-ring">Our Services <i class="ph ph-arrow-right"></i></a>
+          <a href="#jobs" class="inline-flex items-center gap-2 bg-white border border-slate-300 text-primary px-7 py-4 rounded-full font-bold text-[15px] hover:border-primary hover:bg-slate-50 transition cursor-pointer focus-ring"><i class="ph ph-briefcase"></i> Find Jobs</a>
+          <span class="hidden sm:flex items-center gap-2 text-[13px] text-slate-500 ml-2"><span class="flex -space-x-2"><span class="w-7 h-7 rounded-full bg-slate-300 border-2 border-white grid place-items-center text-[10px]">✓</span><span class="w-7 h-7 rounded-full bg-slate-800 border-2 border-white grid place-items-center text-white text-[10px]">★</span></span> 17+ Years · 98% retention</span>
+        </div>
+        <div class="mt-8 flex flex-wrap gap-6 text-[13px] font-semibold text-slate-600">
+          <span class="flex items-center gap-2"><i class="ph ph-shield-check text-emerald-600 text-lg"></i> Statutory Compliance</span>
+          <span class="flex items-center gap-2"><i class="ph ph-users-three text-accent text-lg"></i> Contract Staffing</span>
+          <span class="flex items-center gap-2"><i class="ph ph-buildings text-slate-700 text-lg"></i> Enterprise Outsourcing</span>
+        </div>
+      </div>
+
+      <!-- Right : Floating Card Stack -->
+      <div class="lg:col-span-5 relative">
+        <div class="relative bg-white rounded-[28px] shadow-float border border-slate-200 p-6 lg:p-8 overflow-hidden">
+          <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#F68A1E]/15 to-transparent rounded-bl-[100px]"></div>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <div class="w-11 h-11 rounded-2xl bg-primary grid place-items-center text-white"><i class="ph ph-briefcase text-xl"></i></div>
+              <div>
+                <p class="text-[13px] font-bold tracking-widest uppercase text-slate-500">Live Openings</p>
+                <p class="text-[11px] text-slate-500">Updated Jan 26, 2026</p>
+              </div>
             </div>
+            <span class="inline-flex items-center gap-1 bg-emerald-50 text-emerald-700 text-[11px] font-bold px-3 py-1 rounded-full border border-emerald-200"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Hiring now</span>
+          </div>
+
+          <!-- Job mini list -->
+          <div class="mt-6 space-y-3">
+            <a href="#jobs" class="group flex items-center justify-between p-4 rounded-2xl bg-[#F8FAFC] border border-slate-200 hover:border-accent/30 hover:bg-[#F0F9FF] transition cursor-pointer">
+              <div class="flex items-center gap-3">
+                <span class="w-10 h-10 rounded-xl bg-white border border-slate-200 grid place-items-center"><i class="ph ph-wrench text-slate-700"></i></span>
+                <div>
+                  <p class="text-[14px] font-bold leading-none">Soldering Technician</p>
+                  <p class="text-[12px] text-slate-500 mt-1">Immediate · 2 Vacancies</p>
+                </div>
+              </div>
+              <i class="ph ph-arrow-up-right text-slate-400 group-hover:text-accent transition"></i>
+            </a>
+            <a href="#jobs" class="group flex items-center justify-between p-4 rounded-2xl bg-[#F8FAFC] border border-slate-200 hover:border-accent/30 hover:bg-[#F0F9FF] transition cursor-pointer">
+              <div class="flex items-center gap-3">
+                <span class="w-10 h-10 rounded-xl bg-white border border-slate-200 grid place-items-center"><i class="ph ph-headset text-slate-700"></i></span>
+                <div>
+                  <p class="text-[14px] font-bold leading-none">Customer Care Associate</p>
+                  <p class="text-[12px] text-slate-500 mt-1">Immediate · 2 Vacancies</p>
+                </div>
+              </div>
+              <i class="ph ph-arrow-up-right text-slate-400 group-hover:text-accent transition"></i>
+            </a>
+            <a href="#jobs" class="group flex items-center justify-between p-4 rounded-2xl bg-white border border-slate-200 hover:border-accent/30 hover:bg-[#F0F9FF] transition cursor-pointer">
+              <div class="flex items-center gap-3">
+                <span class="w-10 h-10 rounded-xl bg-primary text-white grid place-items-center"><i class="ph ph-blueprint"></i></span>
+                <div>
+                  <p class="text-[14px] font-bold leading-none">Mechanical Designer</p>
+                  <p class="text-[12px] text-slate-500 mt-1">Immediate · 2 Vacancies</p>
+                </div>
+              </div>
+              <span class="text-[11px] font-bold bg-[#F68A1E] text-white px-2 py-1 rounded-full">New</span>
+            </a>
+          </div>
+
+          <div class="mt-6 flex items-center justify-between text-[12px] font-semibold">
+            <span class="text-slate-500">+ Project Manager · view all 4</span>
+            <a href="#jobs" class="text-accent hover:underline inline-flex items-center gap-1 cursor-pointer">View all jobs <i class="ph ph-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- bottom floating bar -->
+        <div class="absolute -bottom-6 -left-4 lg:-left-8 bg-primary text-white rounded-2xl px-5 py-4 shadow-float flex items-center gap-4">
+          <div class="w-10 h-10 rounded-xl bg-white/10 grid place-items-center"><i class="ph ph-buildings"></i></div>
+          <div>
+            <p class="text-[11px] tracking-widest uppercase opacity-60 font-bold">Corporate Office</p>
+            <p class="text-[13px] font-semibold leading-tight">RMV Extension, Opp. CPRI, Bangalore</p>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <div class="stats"><div class="container stats-grid">
-      <div class="stat"><strong>24–48h</strong><span>Profile turnaround target</span></div>
-      <div class="stat"><strong>75–80%</strong><span>Profile matching accuracy</span></div>
-      <div class="stat"><strong>2008</strong><span>Established</span></div>
-      <div class="stat"><strong>360°</strong><span>Business support approach</span></div>
-    </div></div>
+<!-- Proof / Stats -->
+<section class="bg-primary text-white">
+  <div class="max-w-[1280px] mx-auto px-6 py-8 lg:py-10 grid grid-cols-2 lg:grid-cols-4 gap-8 divide-y-0">
+    <div class="flex items-center gap-4 border-r-0 lg:border-r lg:border-white/10 pr-0 lg:pr-8">
+      <div class="w-12 h-12 rounded-2xl bg-white/10 grid place-items-center shrink-0"><i class="ph ph-briefcase text-xl"></i></div>
+      <div>
+        <p class="text-[28px] font-extrabold leading-none tracking-tight"><span data-count="12000">12k</span><span class="text-white/60 text-[18px]">+</span></p>
+        <p class="text-[12px] tracking-widest uppercase opacity-60 font-bold mt-1">Jobs Offered</p>
+      </div>
+    </div>
+    <div class="flex items-center gap-4 border-r-0 lg:border-r lg:border-white/10 pr-0 lg:pr-8 pl-0 lg:pl-8">
+      <div class="w-12 h-12 rounded-2xl bg-white/10 grid place-items-center shrink-0"><i class="ph ph-calendar text-xl"></i></div>
+      <div>
+        <p class="text-[28px] font-extrabold leading-none tracking-tight">17<span class="text-white/60 text-[18px]">+</span></p>
+        <p class="text-[12px] tracking-widest uppercase opacity-60 font-bold mt-1">Years in Service</p>
+      </div>
+    </div>
+    <div class="flex items-center gap-4 border-r-0 lg:border-r lg:border-white/10 pr-0 lg:pr-8 pl-0 lg:pl-8">
+      <div class="w-12 h-12 rounded-2xl bg-white/10 grid place-items-center shrink-0"><i class="ph ph-handshake text-xl"></i></div>
+      <div>
+        <p class="text-[28px] font-extrabold leading-none tracking-tight">500<span class="text-white/60 text-[18px]">+</span></p>
+        <p class="text-[12px] tracking-widest uppercase opacity-60 font-bold mt-1">Clients</p>
+      </div>
+    </div>
+    <div class="flex items-center gap-4 pl-0 lg:pl-8">
+      <div class="w-12 h-12 rounded-2xl bg-[#F68A1E] grid place-items-center shrink-0"><i class="ph ph-trend-up text-xl"></i></div>
+      <div>
+        <p class="text-[28px] font-extrabold leading-none tracking-tight">32<span class="text-white/60 text-[18px]">%</span></p>
+        <p class="text-[12px] tracking-widest uppercase opacity-60 font-bold mt-1">Growth YoY</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <section class="services" id="services">
-      <div class="container">
-        <div class="section-head"><div><span class="eyebrow">What we do</span><h2 style="margin-top:15px">One partner.<br>Multiple ways to grow.</h2></div><p>Practical workforce and business-process solutions designed around speed, precision and the realities of modern operations.</p></div>
-        <div class="service-grid">
-          <article class="service"><span class="service-number">01</span><div class="big-icon">↗</div><h3>Recruitment Solutions</h3><p>Strategic sourcing and end-to-end hiring support to put the right people in the right roles.</p><ul><li>RPO & executive search</li><li>Screening & interview support</li><li>Implant recruitment teams</li></ul></article>
-          <article class="service"><span class="service-number">02</span><div class="big-icon">◎</div><h3>Contract Staffing</h3><p>Flexible workforce models for seasonal demand, projects and specialist requirements.</p><ul><li>Rapid workforce deployment</li><li>Scalable staffing</li><li>Reduced admin overhead</li></ul></article>
-          <article class="service"><span class="service-number">03</span><div class="big-icon">₹</div><h3>Finance & Accounts</h3><p>Reliable support for payroll, invoices, reporting and financial operations.</p><ul><li>Payroll support</li><li>Financial reporting</li><li>Profitability insights</li></ul></article>
-          <article class="service"><span class="service-number">04</span><div class="big-icon">✓</div><h3>Statutory Compliance</h3><p>Structured compliance support that helps businesses stay organized and operationally ready.</p><ul><li>Process management</li><li>Documentation support</li><li>Operational discipline</li></ul></article>
-          <article class="service"><span class="service-number">05</span><div class="big-icon">◌</div><h3>Outsourcing Services</h3><p>Take non-core work off your plate and focus your team on the work that moves the business.</p><ul><li>BPO & back office</li><li>Customer support</li><li>Process optimization</li></ul></article>
-          <article class="service"><span class="service-number">06</span><div class="big-icon">+</div><h3>Custom Workforce Support</h3><p>A flexible operating model built around your industry, location, volume and growth goals.</p><ul><li>Industry-specific models</li><li>Cross-functional teams</li><li>Scalable operations</li></ul></article>
+<!-- Services -->
+<section id="services" class="max-w-[1280px] mx-auto px-6 py-16 lg:py-24">
+  <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10">
+    <div>
+      <p class="text-[11px] font-bold tracking-[0.2em] uppercase text-accent">· What we do</p>
+      <h2 class="mt-3 text-[32px] lg:text-[42px] font-extrabold tracking-tight leading-none">End-to-end workforce<br><span class="text-slate-400">built for scale.</span></h2>
+    </div>
+    <p class="max-w-[420px] text-[15px] leading-6 text-slate-600">From precision hiring to compliant payroll — five core practices that keep your operations lean and audit-ready.</p>
+  </div>
+
+  <div class="grid md:grid-cols-12 gap-4 lg:gap-6">
+    <!-- Feature large -->
+    <div class="md:col-span-7 bg-primary rounded-[28px] p-8 lg:p-10 text-white relative overflow-hidden flex flex-col justify-between min-h-[380px]">
+      <div class="absolute -right-20 -top-20 w-[320px] h-[320px] rounded-full border border-white/10"></div>
+      <div class="absolute -right-10 -top-10 w-[240px] h-[240px] rounded-full border border-white/10"></div>
+      <div class="absolute right-6 top-6 w-12 h-12 rounded-2xl bg-[#F68A1E] grid place-items-center"><i class="ph ph-users-three text-xl"></i></div>
+      <div>
+        <span class="inline-flex items-center gap-2 text-[11px] font-bold tracking-widest uppercase bg-white/10 px-3 py-1 rounded-full border border-white/15">Most Requested</span>
+        <h3 class="mt-6 text-[26px] lg:text-[30px] font-extrabold leading-none tracking-tight">Contract Staffing</h3>
+        <p class="mt-3 text-white/70 text-[15px] leading-6 max-w-[420px]">Adapt quickly to changing workforce needs. Compliant contracts, rapid deployment, and zero admin overhead.</p>
+      </div>
+      <div class="mt-8 flex flex-wrap gap-2 text-[13px]">
+        <span class="bg-white text-primary px-4 py-2 rounded-full font-bold inline-flex items-center gap-2">Scale in 48 hrs <i class="ph ph-lightning"></i></span>
+        <span class="bg-white/10 border border-white/20 px-4 py-2 rounded-full font-semibold">Pan-India coverage</span>
+        <span class="bg-white/10 border border-white/20 px-4 py-2 rounded-full font-semibold">Labour law compliant</span>
+      </div>
+    </div>
+
+    <div class="md:col-span-5 grid gap-4 lg:gap-6">
+      <div class="bg-white rounded-[28px] p-7 lg:p-8 border border-slate-200 shadow-card hover:shadow-soft transition">
+        <div class="w-11 h-11 rounded-2xl bg-[#EFF6FF] border border-[#DBEAFE] grid place-items-center text-accent"><i class="ph ph-calculator text-xl"></i></div>
+        <h3 class="mt-5 text-[18px] font-extrabold">Finance and Accounts</h3>
+        <p class="mt-2 text-[14px] leading-6 text-slate-600">Streamline your financial processes — payroll, invoicing and reconciliations handled by domain experts.</p>
+        <a href="#contact" class="mt-4 inline-flex items-center gap-1 text-[13px] font-bold text-accent hover:gap-2 transition cursor-pointer">Learn more <i class="ph ph-arrow-right"></i></a>
+      </div>
+      <div class="bg-[#F68A1E] rounded-[28px] p-7 lg:p-8 text-white relative overflow-hidden">
+        <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-white/15 rounded-full blur-xl"></div>
+        <div class="w-11 h-11 rounded-2xl bg-white grid place-items-center text-[#F68A1E]"><i class="ph ph-seal-check text-xl"></i></div>
+        <h3 class="mt-5 text-[18px] font-extrabold">Statutory Compliance</h3>
+        <p class="mt-2 text-[14px] leading-6 text-white/80">PF, ESI, Shops & Establishments — end-to-end filings, audits and liaison so you never miss a deadline.</p>
+      </div>
+    </div>
+
+    <div class="md:col-span-5 bg-white rounded-[28px] p-7 lg:p-8 border border-slate-200 shadow-card hover:shadow-soft transition">
+      <div class="w-11 h-11 rounded-2xl bg-emerald-50 border border-emerald-200 grid place-items-center text-emerald-700"><i class="ph ph-magnifying-glass text-xl"></i></div>
+      <h3 class="mt-5 text-[18px] font-extrabold">Recruitment Solutions</h3>
+      <p class="mt-2 text-[14px] leading-6 text-slate-600">Precision talent matching from shop-floor to leadership. Sourcing, screening and onboarding in one flow.</p>
+      <ul class="mt-4 flex flex-wrap gap-2 text-[12px] font-bold">
+        <li class="bg-slate-900 text-white px-3 py-1 rounded-full">Tech · Non-Tech</li>
+        <li class="bg-slate-100 border border-slate-200 px-3 py-1 rounded-full">Bulk hiring</li>
+        <li class="bg-slate-100 border border-slate-200 px-3 py-1 rounded-full">Leadership</li>
+      </ul>
+    </div>
+    <div class="md:col-span-7 bg-white rounded-[28px] p-7 lg:p-8 border border-slate-200 shadow-card hover:shadow-soft transition flex flex-col lg:flex-row gap-8 items-start">
+      <div class="flex-1">
+        <div class="w-11 h-11 rounded-2xl bg-slate-900 text-white grid place-items-center"><i class="ph ph-gear text-xl"></i></div>
+        <h3 class="mt-5 text-[18px] font-extrabold">Outsourcing Services</h3>
+        <p class="mt-2 text-[14px] leading-6 text-slate-600">Precision operations. Unmatched growth. We run the process, you own the outcome.</p>
+        <div class="mt-5 grid grid-cols-3 gap-3 text-center">
+          <div class="bg-[#F8FAFC] rounded-2xl py-3 border border-slate-200"><p class="text-[16px] font-extrabold">SLA</p><p class="text-[11px] font-bold tracking-widest uppercase text-slate-500">Bound</p></div>
+          <div class="bg-[#F8FAFC] rounded-2xl py-3 border border-slate-200"><p class="text-[16px] font-extrabold">24×7</p><p class="text-[11px] font-bold tracking-widest uppercase text-slate-500">Support</p></div>
+          <div class="bg-[#F8FAFC] rounded-2xl py-3 border border-slate-200"><p class="text-[16px] font-extrabold">ISO</p><p class="text-[11px] font-bold tracking-widest uppercase text-slate-500">Process</p></div>
         </div>
       </div>
-    </section>
-
-    <section id="about">
-      <div class="container about-grid">
-        <div class="about-panel"><span class="about-badge">ARYA GLOBAL WORK · EST. 2008</span><h3>People are not a cost centre. They are your growth engine.</h3><p class="quote">“We focus on consistent performance, continuous improvement and putting the right talent in the right role at the right time.”</p><div style="margin-top:42px;color:#ffad7c;font-weight:900">Precision · Trust · Responsiveness</div></div>
-        <div class="about-copy"><span class="eyebrow">Why Arya Global Work</span><h2 style="margin-top:15px">Built around the way businesses actually operate.</h2><p>Arya Global Work is presented on the existing site as the operating brand for Inspiration Manpower Consultancy Pvt. Ltd., established on December 15, 2008. The business positions itself as an end-to-end consulting and workforce partner with an emphasis on confidentiality, assessment, networking and response time.</p><p>The goal is simple: reduce hiring friction, improve workforce quality and help clients focus on their core business.</p><div class="check-grid"><div class="check"><span>✓</span>Quick response</div><div class="check"><span>✓</span>Accurate matching</div><div class="check"><span>✓</span>Customer focused</div><div class="check"><span>✓</span>Continuous improvement</div></div></div>
-      </div>
-    </section>
-
-    <section class="services">
-      <div class="container"><div class="section-head"><div><span class="eyebrow">How it works</span><h2 style="margin-top:15px">Simple process.<br>Serious execution.</h2></div><p>From first conversation to deployment, the workflow is designed to keep decisions fast and responsibilities clear.</p></div>
-      <div class="process-grid">
-        <div class="process"><span class="num">01 / DISCOVER</span><h3>Define the need</h3><p>Understand role requirements, workforce volume, timelines and business context.</p></div>
-        <div class="process"><span class="num">02 / SOURCE</span><h3>Build the shortlist</h3><p>Use targeted sourcing, screening and matching to surface relevant profiles.</p></div>
-        <div class="process"><span class="num">03 / DEPLOY</span><h3>Move quickly</h3><p>Coordinate interviews, selection and workforce deployment with fewer bottlenecks.</p></div>
-        <div class="process"><span class="num">04 / SUPPORT</span><h3>Keep improving</h3><p>Stay involved beyond the initial hire with scalable operational support.</p></div>
-      </div></div>
-    </section>
-
-    <section class="jobs" id="jobs">
-      <div class="container"><div class="section-head"><div><span class="eyebrow">Career opportunities</span><h2 style="margin-top:15px">Find your next move.</h2></div><p class="muted">Current roles shown on the existing Arya Global Work website include automotive-sector opportunities in Bengaluru.</p></div>
-        <div class="job-list">
-          <div class="job"><div><b>Project Manager</b><small>Automotive · Bengaluru</small></div><span class="tag">2 vacancies</span><span class="tag">3–5 yrs</span><a class="btn btn-primary" href="#contact" data-job="Project Manager">Apply</a></div>
-          <div class="job"><div><b>Mechanical Designer</b><small>Automotive · Bengaluru</small></div><span class="tag">2 vacancies</span><span class="tag">3–5 yrs</span><a class="btn btn-primary" href="#contact" data-job="Mechanical Designer">Apply</a></div>
-          <div class="job"><div><b>Customer Care Associate</b><small>Automotive · Bengaluru</small></div><span class="tag">2 vacancies</span><span class="tag">3–5 yrs</span><a class="btn btn-primary" href="#contact" data-job="Customer Care Associate">Apply</a></div>
-          <div class="job"><div><b>Soldering Technician</b><small>Automotive · Bengaluru</small></div><span class="tag">2 vacancies</span><span class="tag">3–5 yrs</span><a class="btn btn-primary" href="#contact" data-job="Soldering Technician">Apply</a></div>
+      <div class="w-full lg:w-[220px] shrink-0 bg-[#F8FAFC] rounded-2xl p-5 border border-slate-200">
+        <p class="text-[11px] font-bold tracking-widest uppercase text-slate-500">Trusted Stack</p>
+        <div class="mt-3 space-y-2 text-[13px] font-semibold">
+          <span class="flex items-center gap-2"><i class="ph ph-check-circle text-emerald-600"></i> Facility & Admin</span>
+          <span class="flex items-center gap-2"><i class="ph ph-check-circle text-emerald-600"></i> Customer Support</span>
+          <span class="flex items-center gap-2"><i class="ph ph-check-circle text-emerald-600"></i> Manufacturing</span>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <section id="industries">
-      <div class="container"><div class="section-head"><div><span class="eyebrow">Industries & talent</span><h2 style="margin-top:15px">Experience that travels.</h2></div><p>Support across the sectors and talent categories listed by the current business site.</p></div>
-        <div class="chips">
-          <span class="chip">BPO</span><span class="chip">Human Resources</span><span class="chip">IT / ITES</span><span class="chip">Engineering</span><span class="chip">Manufacturing</span><span class="chip">Banking</span><span class="chip">Pharma</span><span class="chip">Oil & Gas</span><span class="chip">Architecture</span><span class="chip">Media</span><span class="chip">Freshers</span><span class="chip">Non-IT</span>
+<!-- Jobs -->
+<section id="jobs" class="bg-white border-y border-slate-200">
+  <div class="max-w-[1280px] mx-auto px-6 py-16 lg:py-20">
+    <div class="flex flex-wrap items-end justify-between gap-4">
+      <div>
+        <p class="text-[11px] font-bold tracking-[0.2em] uppercase text-accent">· Featured Jobs</p>
+        <h2 class="mt-3 text-[28px] lg:text-[36px] font-extrabold tracking-tight">Opportunities that move you forward</h2>
+        <p class="mt-2 text-slate-500 text-[14px]">Sample listings — all posted <span class="font-semibold text-slate-700">Jan 26, 2026</span> · Immediate joiners preferred</p>
+      </div>
+      <a href="#contact" class="hidden lg:inline-flex items-center gap-2 border border-slate-300 px-6 py-3 rounded-full text-[14px] font-bold hover:border-primary transition cursor-pointer focus-ring">View all openings <i class="ph ph-arrow-right"></i></a>
+    </div>
+
+    <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <!-- Card 1 -->
+      <article class="group bg-[#F8FAFC] border border-slate-200 rounded-[24px] p-6 hover:bg-white hover:shadow-soft hover:border-slate-300 transition">
+        <div class="flex items-start justify-between">
+          <div class="w-11 h-11 rounded-2xl bg-white border border-slate-200 grid place-items-center"><i class="ph ph-wrench"></i></div>
+          <span class="text-[11px] font-bold tracking-widest uppercase bg-emerald-50 text-emerald-700 border border-emerald-200 px-3 py-1 rounded-full">Immediate</span>
+        </div>
+        <h3 class="mt-5 text-[16px] font-extrabold leading-tight">Soldering Technician</h3>
+        <p class="mt-1 text-[13px] text-slate-500">Electronics · Bangalore</p>
+        <div class="mt-4 flex gap-2 text-[12px] font-bold">
+          <span class="bg-white border border-slate-200 px-3 py-1 rounded-full">2 Vacancies</span>
+          <span class="bg-primary text-white px-3 py-1 rounded-full">Full-time</span>
+        </div>
+        <a href="#contact" class="mt-6 inline-flex w-full justify-center items-center gap-2 bg-white border border-slate-300 group-hover:bg-primary group-hover:text-white group-hover:border-primary py-3 rounded-full text-[13px] font-bold transition cursor-pointer focus-ring">Apply now <i class="ph ph-arrow-right"></i></a>
+      </article>
+      <article class="group bg-[#F8FAFC] border border-slate-200 rounded-[24px] p-6 hover:bg-white hover:shadow-soft hover:border-slate-300 transition">
+        <div class="flex items-start justify-between">
+          <div class="w-11 h-11 rounded-2xl bg-white border border-slate-200 grid place-items-center"><i class="ph ph-headset"></i></div>
+          <span class="text-[11px] font-bold tracking-widest uppercase bg-emerald-50 text-emerald-700 border border-emerald-200 px-3 py-1 rounded-full">Immediate</span>
+        </div>
+        <h3 class="mt-5 text-[16px] font-extrabold leading-tight">Customer Care Associate</h3>
+        <p class="mt-1 text-[13px] text-slate-500">Support · Bangalore</p>
+        <div class="mt-4 flex gap-2 text-[12px] font-bold">
+          <span class="bg-white border border-slate-200 px-3 py-1 rounded-full">2 Vacancies</span>
+          <span class="bg-primary text-white px-3 py-1 rounded-full">Full-time</span>
+        </div>
+        <a href="#contact" class="mt-6 inline-flex w-full justify-center items-center gap-2 bg-white border border-slate-300 group-hover:bg-primary group-hover:text-white group-hover:border-primary py-3 rounded-full text-[13px] font-bold transition cursor-pointer focus-ring">Apply now <i class="ph ph-arrow-right"></i></a>
+      </article>
+      <article class="group bg-primary text-white rounded-[24px] p-6 shadow-soft relative overflow-hidden">
+        <div class="absolute -right-10 -top-10 w-32 h-32 bg-white/10 rounded-full"></div>
+        <div class="flex items-start justify-between relative">
+          <div class="w-11 h-11 rounded-2xl bg-white text-primary grid place-items-center"><i class="ph ph-blueprint"></i></div>
+          <span class="text-[11px] font-bold tracking-widest uppercase bg-[#F68A1E] text-white px-3 py-1 rounded-full">Trending</span>
+        </div>
+        <h3 class="mt-5 text-[16px] font-extrabold leading-tight relative">Mechanical Designer</h3>
+        <p class="mt-1 text-[13px] text-white/60 relative">Design · Bangalore</p>
+        <div class="mt-4 flex gap-2 text-[12px] font-bold relative">
+          <span class="bg-white/15 border border-white/20 px-3 py-1 rounded-full">2 Vacancies</span>
+          <span class="bg-white text-primary px-3 py-1 rounded-full">Immediate</span>
+        </div>
+        <a href="#contact" class="mt-6 inline-flex w-full justify-center items-center gap-2 bg-white text-primary py-3 rounded-full text-[13px] font-bold hover:bg-slate-100 transition cursor-pointer focus-ring relative">Apply now <i class="ph ph-arrow-right"></i></a>
+      </article>
+      <article class="group bg-[#F8FAFC] border border-slate-200 rounded-[24px] p-6 hover:bg-white hover:shadow-soft hover:border-slate-300 transition">
+        <div class="flex items-start justify-between">
+          <div class="w-11 h-11 rounded-2xl bg-white border border-slate-200 grid place-items-center"><i class="ph ph-kanban"></i></div>
+          <span class="text-[11px] font-bold tracking-widest uppercase bg-emerald-50 text-emerald-700 border border-emerald-200 px-3 py-1 rounded-full">Immediate</span>
+        </div>
+        <h3 class="mt-5 text-[16px] font-extrabold leading-tight">Project Manager</h3>
+        <p class="mt-1 text-[13px] text-slate-500">Operations · Bangalore</p>
+        <div class="mt-4 flex gap-2 text-[12px] font-bold">
+          <span class="bg-white border border-slate-200 px-3 py-1 rounded-full">2 Vacancies</span>
+          <span class="bg-primary text-white px-3 py-1 rounded-full">Full-time</span>
+        </div>
+        <a href="#contact" class="mt-6 inline-flex w-full justify-center items-center gap-2 bg-white border border-slate-300 group-hover:bg-primary group-hover:text-white group-hover:border-primary py-3 rounded-full text-[13px] font-bold transition cursor-pointer focus-ring">Apply now <i class="ph ph-arrow-right"></i></a>
+      </article>
+    </div>
+
+    <div class="mt-6 flex flex-wrap items-center gap-3 text-[13px] bg-[#F8FAFC] border border-dashed border-slate-300 rounded-2xl px-5 py-4">
+      <span class="inline-flex items-center gap-2 font-bold"><i class="ph ph-info text-accent text-lg"></i> Want more roles?</span>
+      <span class="text-slate-600">Submit your resume and we’ll match you within 24 hours.</span>
+      <a href="#contact" class="ml-auto inline-flex items-center gap-2 bg-primary text-white px-5 py-2.5 rounded-full font-bold hover:bg-black transition cursor-pointer focus-ring">Submit Resume</a>
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section id="about" class="max-w-[1280px] mx-auto px-6 py-16 lg:py-24">
+  <div class="grid lg:grid-cols-12 gap-10 lg:gap-12">
+    <div class="lg:col-span-5">
+      <p class="text-[11px] font-bold tracking-[0.2em] uppercase text-accent">· About Us</p>
+      <h2 class="mt-3 text-[32px] lg:text-[40px] font-extrabold tracking-tight leading-[0.95]">Built on precision,<br><span class="text-slate-400">confidentiality & care.</span></h2>
+      <div class="mt-6 bg-white border border-slate-200 rounded-[24px] p-6 shadow-card">
+        <p class="text-[11px] font-bold tracking-widest uppercase text-slate-500">Our Story</p>
+        <p class="mt-3 text-[15px] leading-7 text-slate-600">Founded on <span class="font-bold text-primary">December 15, 2008</span>, Inspiration Manpower Consultancy Pvt. Ltd specializes in management consulting, delivering precision, confidentiality and exceptional service to enterprises across Bangalore and pan-India.</p>
+        <div class="mt-6 grid grid-cols-3 gap-3 text-center">
+          <div class="bg-[#F8FAFC] rounded-2xl p-4 border border-slate-200"><p class="text-[18px] font-extrabold">17+</p><p class="text-[10px] font-bold tracking-widest uppercase text-slate-500">Years</p></div>
+          <div class="bg-[#F8FAFC] rounded-2xl p-4 border border-slate-200"><p class="text-[18px] font-extrabold">2008</p><p class="text-[10px] font-bold tracking-widest uppercase text-slate-500">Founded</p></div>
+          <div class="bg-primary text-white rounded-2xl p-4"><p class="text-[18px] font-extrabold">500+</p><p class="text-[10px] font-bold tracking-widest uppercase opacity-60">Clients</p></div>
         </div>
       </div>
-    </section>
+      <div class="mt-4 bg-[#0F172A] rounded-[24px] p-6 text-white flex items-center gap-4">
+        <img src="logo.png" alt="" class="h-10 w-auto bg-white rounded-xl p-1">
+        <div class="text-[12px] leading-5 opacity-80">Legal entity · <span class="font-bold text-white">Inspiration Manpower Consultancy Pvt. Ltd</span><br>Brand · <span class="font-bold text-white">Arya Global Work</span></div>
+      </div>
+    </div>
 
-    <section class="contact" id="contact">
-      <div class="container contact-grid">
-        <div class="contact-card"><span class="eyebrow">Start a conversation</span><h3>Tell us what you need. We'll take it from there.</h3><p>Whether you're hiring, outsourcing or looking for your next opportunity, reach out directly.</p>
-          <div class="contact-items">
-            <div class="contact-item"><div class="ci">@</div><div><small>Email</small><a href="mailto:info@inspirationmanpower.co.in">info@inspirationmanpower.co.in</a></div></div>
-            <div class="contact-item"><div class="ci">☎</div><div><small>Phone</small><a href="tel:+918040966772">+91-80-40966772</a><br><a href="tel:+919686454870">+91-9686454870</a></div></div>
-            <div class="contact-item"><div class="ci">⌖</div><div><small>Corporate Office</small><span>No 5, Lakshmi Complex, 10th Main, 15th Cross, RMV Extension, Opp. to CPRI, Bengaluru, Karnataka 560080, India.</span></div></div>
+    <div class="lg:col-span-7">
+      <div class="bg-white border border-slate-200 rounded-[28px] p-7 lg:p-8 shadow-card">
+        <h3 class="text-[18px] font-extrabold">Why Choose Us</h3>
+        <div class="mt-6 grid sm:grid-cols-3 gap-4">
+          <div class="bg-[#F8FAFC] rounded-2xl p-5 border border-slate-200">
+            <div class="w-10 h-10 rounded-xl bg-white border border-slate-200 grid place-items-center"><i class="ph ph-graduation-cap"></i></div>
+            <p class="mt-4 text-[14px] font-extrabold leading-tight">Moral & Intellectual Growth</p>
+            <p class="mt-2 text-[13px] leading-5 text-slate-600">We invest in people — training, ethics and long-term career paths.</p>
+          </div>
+          <div class="bg-[#F8FAFC] rounded-2xl p-5 border border-slate-200">
+            <div class="w-10 h-10 rounded-xl bg-white border border-slate-200 grid place-items-center"><i class="ph ph-star"></i></div>
+            <p class="mt-4 text-[14px] font-extrabold leading-tight">Unrivaled Satisfaction</p>
+            <p class="mt-2 text-[13px] leading-5 text-slate-600">98% client retention because we measure success in outcomes.</p>
+          </div>
+          <div class="bg-[#F8FAFC] rounded-2xl p-5 border border-slate-200">
+            <div class="w-10 h-10 rounded-xl bg-white border border-slate-200 grid place-items-center"><i class="ph ph-target"></i></div>
+            <p class="mt-4 text-[14px] font-extrabold leading-tight">Precision Talent Matching</p>
+            <p class="mt-2 text-[13px] leading-5 text-slate-600">Domain-mapped sourcing with rigorous screening — no spray-and-pray.</p>
           </div>
         </div>
-        <form id="contactForm">
-          <div class="form-grid">
-            <div class="field"><label for="name">Full name *</label><input id="name" required placeholder="Your name"></div>
-            <div class="field"><label for="email">Email *</label><input id="email" type="email" required placeholder="you@company.com"></div>
-            <div class="field"><label for="phone">Mobile number *</label><input id="phone" required placeholder="+91"></div>
-            <div class="field"><label for="type">I am looking for</label><select id="type"><option>Recruitment / Hiring</option><option>Contract Staffing</option><option>Outsourcing</option><option>Finance & Accounts</option><option>Compliance</option><option>Job Opportunity</option></select></div>
-            <div class="field full"><label for="message">How can we help? *</label><textarea id="message" required placeholder="Tell us about your requirement..."></textarea></div>
+
+        <div class="mt-8 grid sm:grid-cols-3 gap-4">
+          <div class="rounded-2xl p-5 bg-[#EFF6FF] border border-[#DBEAFE]">
+            <p class="text-[11px] font-bold tracking-widest uppercase text-accent">Vision</p>
+            <p class="mt-2 text-[13px] leading-5 font-semibold text-primary">To ignite success and set new standards of excellence.</p>
+            <p class="mt-2 text-[11px] text-slate-500">*Placeholder — to be replaced with final vision copy.</p>
           </div>
-          <button class="btn btn-primary" type="submit" style="margin-top:18px">Send enquiry ↗</button>
-          <div class="form-note">This static version opens your email client with the enquiry details. Connect the form to your preferred backend/form service before production.</div>
+          <div class="rounded-2xl p-5 bg-[#FFF7ED] border border-orange-200">
+            <p class="text-[11px] font-bold tracking-widest uppercase text-[#C2410C]">Mission</p>
+            <p class="mt-2 text-[13px] leading-5 font-semibold text-primary">To ignite success and set new standards of excellence.</p>
+            <p class="mt-2 text-[11px] text-slate-500">*Placeholder — to be replaced with final mission copy.</p>
+          </div>
+          <div class="rounded-2xl p-5 bg-emerald-50 border border-emerald-200">
+            <p class="text-[11px] font-bold tracking-widest uppercase text-emerald-700">Values</p>
+            <p class="mt-2 text-[13px] leading-5 font-semibold text-primary">To ignite success and set new standards of excellence.</p>
+            <p class="mt-2 text-[11px] text-slate-500">*Placeholder — to be replaced with final values copy.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Elevate / Contact -->
+<section id="contact" class="max-w-[1280px] mx-auto px-6 pb-16 lg:pb-24">
+  <div class="grid lg:grid-cols-12 gap-6 lg:gap-8">
+    <div class="lg:col-span-5 bg-primary rounded-[28px] p-8 lg:p-10 text-white relative overflow-hidden flex flex-col">
+      <div class="absolute -right-20 -top-20 w-[300px] h-[300px] bg-[#F68A1E]/20 rounded-full blur-2xl"></div>
+      <p class="text-[11px] font-bold tracking-[0.2em] uppercase opacity-60">· Connect with us</p>
+      <h2 class="mt-3 text-[30px] lg:text-[36px] font-extrabold leading-none tracking-tight">Elevate Your<br>Business<span class="text-[#F68A1E]">.</span></h2>
+      <p class="mt-4 text-[15px] leading-6 text-white/70">Connect with us to unlock the right talent, processes and solutions for your success. Avg. response — under 4 hours.</p>
+
+      <div class="mt-8 space-y-4 text-[14px]">
+        <a href="mailto:info@inspirationmanpower.co.in" class="flex items-center gap-3 p-4 rounded-2xl bg-white/10 border border-white/15 hover:bg-white/15 transition cursor-pointer focus-ring">
+          <span class="w-10 h-10 rounded-xl bg-white text-primary grid place-items-center"><i class="ph ph-envelope-simple"></i></span>
+          <span><span class="opacity-60 text-[11px] tracking-widest uppercase font-bold block">Email</span> <span class="font-semibold">info@inspirationmanpower.co.in</span></span>
+        </a>
+        <div class="flex items-center gap-3 p-4 rounded-2xl bg-white/10 border border-white/15">
+          <span class="w-10 h-10 rounded-xl bg-white text-primary grid place-items-center"><i class="ph ph-phone"></i></span>
+          <span><span class="opacity-60 text-[11px] tracking-widest uppercase font-bold block">Phone</span> <span class="font-semibold">+91-80-40966772 · +91-9686454870</span></span>
+        </div>
+        <div class="flex items-start gap-3 p-4 rounded-2xl bg-white text-primary">
+          <span class="w-10 h-10 rounded-xl bg-primary text-white grid place-items-center shrink-0"><i class="ph ph-map-pin"></i></span>
+          <span class="text-[13px] leading-5"><span class="text-[11px] tracking-widest uppercase font-bold opacity-60 block">Corporate Office</span> <span class="font-semibold">No 5, Lakshmi Complex, 10th Main, 15th Cross, RMV Extension, Opp to CPRI, Bangalore, Karnataka 560080, INDIA</span></span>
+        </div>
+      </div>
+
+      <div class="mt-auto pt-8 flex items-center gap-3 text-[13px] font-semibold">
+        <span class="w-8 h-8 rounded-full bg-emerald-500 grid place-items-center"><i class="ph ph-whatsapp-logo text-white"></i></span>
+        Join WhatsApp Channel
+        <span class="ml-auto inline-flex items-center gap-1 bg-white text-primary px-4 py-2 rounded-full font-bold text-[12px]">Get updates <i class="ph ph-arrow-right"></i></span>
+      </div>
+    </div>
+
+    <div class="lg:col-span-7 bg-white rounded-[28px] border border-slate-200 shadow-card p-6 lg:p-10">
+      <h3 class="text-[20px] font-extrabold">Send an enquiry</h3>
+      <p class="mt-2 text-[14px] text-slate-600">Full Name, Email ID, Mobile Number, Enquiry Details — we’ll get back within one business day.</p>
+
+      <form class="mt-8 space-y-4" onsubmit="event.preventDefault(); document.getElementById('toast').classList.remove('hidden'); setTimeout(()=>document.getElementById('toast').classList.add('hidden'),4000)">
+        <div class="grid sm:grid-cols-2 gap-4">
+          <label class="block">
+            <span class="text-[12px] font-bold tracking-widest uppercase text-slate-600">Full Name *</span>
+            <input required type="text" placeholder="e.g. Priya Sharma" class="mt-2 w-full rounded-2xl border border-slate-300 px-4 py-3.5 text-[14px] placeholder:text-slate-400 focus:outline-none focus:ring-4 focus:ring-[#0369A1]/15 focus:border-[#0369A1] transition">
+          </label>
+          <label class="block">
+            <span class="text-[12px] font-bold tracking-widest uppercase text-slate-600">Mobile Number *</span>
+            <input required type="tel" placeholder="+91 9XXXXXXXXX" class="mt-2 w-full rounded-2xl border border-slate-300 px-4 py-3.5 text-[14px] placeholder:text-slate-400 focus:outline-none focus:ring-4 focus:ring-[#0369A1]/15 focus:border-[#0369A1] transition">
+          </label>
+        </div>
+        <label class="block">
+          <span class="text-[12px] font-bold tracking-widest uppercase text-slate-600">Email ID *</span>
+          <input required type="email" placeholder="you@company.com" class="mt-2 w-full rounded-2xl border border-slate-300 px-4 py-3.5 text-[14px] placeholder:text-slate-400 focus:outline-none focus:ring-4 focus:ring-[#0369A1]/15 focus:border-[#0369A1] transition">
+        </label>
+        <label class="block">
+          <span class="text-[12px] font-bold tracking-widest uppercase text-slate-600">Enquiry Details</span>
+          <textarea rows="4" placeholder="Tell us about your hiring / outsourcing needs..." class="mt-2 w-full rounded-2xl border border-slate-300 px-4 py-3.5 text-[14px] placeholder:text-slate-400 focus:outline-none focus:ring-4 focus:ring-[#0369A1]/15 focus:border-[#0369A1] transition resize-none"></textarea>
+        </label>
+        <div class="flex flex-wrap items-center gap-3 pt-2">
+          <button type="submit" class="inline-flex items-center gap-2 bg-accent hover:bg-[#025d90] text-white px-8 py-4 rounded-full font-bold text-[14px] transition cursor-pointer focus-ring">Send Enquiry <i class="ph ph-paper-plane-tilt"></i></button>
+          <span class="text-[12px] text-slate-500">By submitting, you agree to our Terms & Privacy Policy.</span>
+        </div>
+      </form>
+
+      <div class="mt-8 flex items-center gap-3 text-[12px] font-semibold text-slate-600 bg-[#F8FAFC] border border-slate-200 rounded-2xl px-4 py-3">
+        <i class="ph ph-shield-check text-emerald-600 text-lg"></i> Your information is kept confidential. No spam — only relevant job & service updates.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-[#F8FAFC] border-t border-slate-200">
+  <div class="max-w-[1280px] mx-auto px-6 py-10">
+    <div class="grid lg:grid-cols-12 gap-10">
+      <div class="lg:col-span-4">
+        <img src="logo.png" alt="Arya Global Work" class="h-9 w-auto">
+        <p class="mt-4 text-[13px] leading-6 text-slate-600 max-w-[360px]">Simplifying Recruitment & Outsourcing for Business Success. End-to-end workforce solutions from Bangalore since 2008.</p>
+        <div class="mt-6 flex items-center gap-3">
+          <a href="#" aria-label="LinkedIn" class="w-9 h-9 rounded-xl bg-slate-900 text-white grid place-items-center hover:bg-black transition cursor-pointer focus-ring"><i class="ph ph-linkedin-logo"></i></a>
+          <a href="#" aria-label="WhatsApp" class="w-9 h-9 rounded-xl bg-white border border-slate-300 grid place-items-center hover:border-primary transition cursor-pointer focus-ring"><i class="ph ph-whatsapp-logo"></i></a>
+          <a href="mailto:info@inspirationmanpower.co.in" aria-label="Email" class="w-9 h-9 rounded-xl bg-white border border-slate-300 grid place-items-center hover:border-primary transition cursor-pointer focus-ring"><i class="ph ph-envelope-simple"></i></a>
+        </div>
+      </div>
+      <div class="lg:col-span-2">
+        <p class="text-[11px] font-bold tracking-widest uppercase text-slate-500">Quick Links</p>
+        <nav class="mt-4 flex flex-col gap-2 text-[14px] font-semibold text-slate-700">
+          <a href="#home" class="hover:text-primary">Home</a>
+          <a href="#about" class="hover:text-primary">About Us</a>
+          <a href="#services" class="hover:text-primary">Services</a>
+          <a href="#jobs" class="hover:text-primary">Find Jobs</a>
+          <a href="#contact" class="hover:text-primary">Contact Us</a>
+        </nav>
+      </div>
+      <div class="lg:col-span-3">
+        <p class="text-[11px] font-bold tracking-widest uppercase text-slate-500">Legal</p>
+        <nav class="mt-4 flex flex-col gap-2 text-[14px] font-semibold text-slate-700">
+          <a href="#" class="hover:text-primary">Privacy Policy</a>
+          <a href="#" class="hover:text-primary">Terms of Service</a>
+          <a href="#" class="hover:text-primary">Statutory Compliance</a>
+          <a href="#" class="hover:text-primary">Submit Resume</a>
+        </nav>
+      </div>
+      <div class="lg:col-span-3 bg-white rounded-[20px] border border-slate-200 p-5">
+        <p class="text-[13px] font-extrabold">Get Exclusive Job Updates</p>
+        <p class="mt-1 text-[12px] text-slate-500">Join our WhatsApp channel — no spam, only openings that match you.</p>
+        <form class="mt-4 flex gap-2" onsubmit="event.preventDefault(); document.getElementById('toast').classList.remove('hidden'); setTimeout(()=>document.getElementById('toast').classList.add('hidden'),3000)">
+          <input type="email" required placeholder="Your email" class="flex-1 rounded-full border border-slate-300 px-4 py-3 text-[13px] focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10">
+          <button class="bg-primary text-white px-5 py-3 rounded-full font-bold text-[13px] hover:bg-black transition cursor-pointer focus-ring">Join</button>
         </form>
       </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand"><img src="https://aryaglobalwork.com/wp-content/uploads/2026/01/cropped-arya_global_work_logo-removebg-preview-e1769615767235.png" alt="Arya Global Work"><p>Recruitment, staffing and outsourcing solutions designed to help businesses hire better and operate smarter.</p></div>
-        <div><h4>Explore</h4><div class="footer-links"><a href="#services">Services</a><a href="#about">About</a><a href="#jobs">Jobs</a><a href="#industries">Industries</a></div></div>
-        <div><h4>Connect</h4><div class="footer-links"><a href="#contact">Contact</a><a href="mailto:info@inspirationmanpower.co.in">Email</a><a href="tel:+919686454870">Call us</a></div></div>
-        <div><h4>Office</h4><div class="footer-links"><span>No 5, Lakshmi Complex</span><span>RMV Extension, Bengaluru</span><span>Karnataka 560080, India</span></div></div>
-      </div>
-      <div class="footer-bottom"><span>© <span id="year"></span> Arya Global Work. All rights reserved.</span><span>Static HTML · CSS · JavaScript — no frameworks</span></div>
     </div>
-  </footer>
-  <a class="float-call" href="tel:+919686454870" aria-label="Call Arya Global Work">☎</a>
+    <div class="mt-10 pt-6 border-t border-slate-200 flex flex-col lg:flex-row items-center justify-between gap-3 text-[12px] text-slate-500">
+      <p>© <span id="year"></span> Inspiration Manpower Consultancy Pvt. Ltd · Arya Global Work. All rights reserved.</p>
+      <p class="font-semibold">No 5, Lakshmi Complex, RMV Extension, Bangalore — 560080</p>
+    </div>
+  </div>
+</footer>
 
-  <script>
-    const menu = document.getElementById('menu');
-    const nav = document.getElementById('navLinks');
-    menu.addEventListener('click', () => nav.classList.toggle('open'));
-    nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
-    document.querySelectorAll('[data-job]').forEach(btn => btn.addEventListener('click', () => {
-      document.getElementById('type').value = 'Job Opportunity';
-      document.getElementById('message').value = 'I am interested in the ' + btn.dataset.job + ' position.';
-    }));
-    document.getElementById('contactForm').addEventListener('submit', function(e){
-      e.preventDefault();
-      const name = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const phone = document.getElementById('phone').value.trim();
-      const type = document.getElementById('type').value;
-      const message = document.getElementById('message').value.trim();
-      const subject = encodeURIComponent('Website Enquiry — ' + type + ' — ' + name);
-      const body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\nPhone: ' + phone + '\nRequirement: ' + type + '\n\nMessage:\n' + message);
-      window.location.href = 'mailto:info@inspirationmanpower.co.in?subject=' + subject + '&body=' + body;
-    });
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+<div id="toast" class="hidden fixed bottom-6 left-1/2 -translate-x-1/2 bg-primary text-white px-6 py-4 rounded-full shadow-float text-[14px] font-bold flex items-center gap-3 z-50">
+  <span class="w-8 h-8 rounded-full bg-white text-primary grid place-items-center"><i class="ph ph-check"></i></span>
+  Enquiry sent — we’ll contact you within 24 hours.
+</div>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+const btn = document.getElementById('menuBtn');
+const nav = document.getElementById('mobileNav');
+btn?.addEventListener('click', ()=>{
+  const open = nav.classList.toggle('hidden');
+  btn.setAttribute('aria-expanded', String(!open ? 'true' : 'false'));
+  btn.innerHTML = nav.classList.contains('hidden') ? '<i class="ph ph-list text-xl"></i>' : '<i class="ph ph-x text-xl"></i>';
+});
+document.querySelectorAll('#mobileNav a').forEach(a=> a.addEventListener('click', ()=>{
+  nav.classList.add('hidden'); btn.setAttribute('aria-expanded','false'); btn.innerHTML='<i class="ph ph-list text-xl"></i>';
+}));
+</script>
 </body>
 </html>

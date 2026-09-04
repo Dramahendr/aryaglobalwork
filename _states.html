@@ -1,25 +1,19 @@
 <!doctype html><html><head><meta charset="utf-8"><style>html,body{margin:0;padding:12px;background:#666;display:flex;gap:12px}figure{margin:0}figcaption{color:#fff;font:12px monospace;padding:6px 0}iframe{border:0;display:block;background:#fff}</style></head>
 <body>
-<figure><figcaption>menu open</figcaption><iframe id="f1" src="index.html" width="390" height="844"></iframe></figure>
-<figure><figcaption>scrolled (sticky bar)</figcaption><iframe id="f2" src="index.html" width="390" height="844"></iframe></figure>
-<figure><figcaption>faq open + toast</figcaption><iframe id="f3" src="index.html" width="390" height="844"></iframe></figure>
-<figure><figcaption>tablet 820 hero</figcaption><iframe id="f4" src="index.html" width="820" height="1100"></iframe></figure>
+<figure><figcaption>scrolled 2600</figcaption><iframe id="f2" src="index.html" width="390" height="844"></iframe></figure>
+<figure><figcaption>faq open, scrolled to faq</figcaption><iframe id="f3" src="index.html" width="390" height="844"></iframe></figure>
 <script>
 window.addEventListener('load', () => setTimeout(() => {
   try {
-    const d1 = document.getElementById('f1').contentDocument;
-    d1.getElementById('menuBtn').click();
-  } catch (e) {}
-  try {
     const w2 = document.getElementById('f2').contentWindow;
-    w2.scrollTo(0, 2600);
+    w2.scrollTo({ top: 2600, behavior: 'instant' });
   } catch (e) {}
   try {
     const d3 = document.getElementById('f3').contentDocument;
     d3.querySelector('#faq details').setAttribute('open', '');
-    const t = d3.getElementById('toast');
-    t.classList.remove('hidden'); t.classList.add('flex');
-    document.getElementById('f3').contentWindow.scrollTo(0, 0);
+    const w3 = document.getElementById('f3').contentWindow;
+    const y = d3.getElementById('faq').getBoundingClientRect().top + w3.scrollY - 100;
+    w3.scrollTo({ top: y, behavior: 'instant' });
   } catch (e) {}
-}, 900));
+}, 300));
 </script></body></html>

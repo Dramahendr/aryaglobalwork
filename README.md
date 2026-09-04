@@ -1,6 +1,6 @@
 # Arya Global Work
 
-Marketing website for **Arya Global Work** — the public brand of **Inspiration Manpower Consultancy Pvt. Ltd**, a recruitment, contract-staffing, outsourcing and statutory-compliance consultancy based in Bangalore, India (est. December 15, 2008).
+Marketing website for **Arya Global Work** — the public brand of **Inspiration Manpower Consultancy Pvt. Ltd**, a Bangalore-based international recruitment consultancy founded December 15, 2008.
 
 The site is a single static page: no build step, no framework, no backend.
 
@@ -23,13 +23,15 @@ python3 -m http.server 8000
 | `logo.png`, `favicon*.png`, `favicon.ico`, `apple-touch-icon.png` | Brand & icon assets |
 | `site.webmanifest` | PWA manifest |
 
+The temporary `_*.html` files used during the rebuild were removed. They were iframe-based viewport and overflow test harnesses, not pages required by the site.
+
 ## Tech stack
 
-- **HTML5** single page with anchor-nav sections: Home, About, Services, Find Jobs, Contact
+- **HTML5** single page with anchor-nav sections: Destinations, Opportunities, How it works, Why us, FAQ, Apply
 - **Tailwind CSS** via CDN, configured inline (`primary` navy, `accent` blue, brand orange)
 - **Phosphor Icons** (web font)
 - **Plus Jakarta Sans** via Google Fonts
-- Vanilla JS for the mobile menu and footer year
+- Vanilla JS for the mobile menu, footer year, scroll reveals, counters, sticky mobile actions, and the enquiry toast
 
 ## Deployment
 
@@ -42,10 +44,9 @@ Any static host works (GitHub Pages, Netlify, Vercel, S3…). Publish the reposi
 
 ## Known work in progress
 
-- Vision / Mission / Values copy is placeholder text.
-- Contact & newsletter forms show a success toast but don't send data anywhere yet.
-- Footer legal links (Privacy Policy, Terms) and LinkedIn are placeholders.
-- Job cards are static samples.
+- The enquiry form shows a success toast but does not send data anywhere yet.
+- Destination and sector content is static; connect a verified ATS/job board before treating it as live vacancies.
+- Legal policy pages and social profiles still need real URLs before launch.
 
 ## Contact
 

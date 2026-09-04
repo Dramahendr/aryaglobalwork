@@ -85,6 +85,12 @@ tailwind.config = {
   .no-scrollbar { scrollbar-width: none; }
   .no-scrollbar::-webkit-scrollbar { display: none; }
 
+  /* Keep mobile controls comfortable and prevent iOS input zoom. */
+  @media (max-width: 639px) {
+    input, textarea, select { font-size: 16px !important; }
+    #toast { bottom: calc(5.5rem + env(safe-area-inset-bottom)); }
+  }
+
   /* Sticky mobile CTA */
   #stickyBar { transform: translateY(120%); transition: transform .35s cubic-bezier(.22,.61,.36,1); }
   #stickyBar.bar-visible { transform: translateY(0); }
@@ -264,17 +270,17 @@ tailwind.config = {
   <div class="max-w-[1200px] mx-auto px-5 sm:px-6 py-12 lg:py-16">
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-10 sm:gap-6">
       <div data-reveal>
-        <p class="font-display text-[52px] lg:text-[64px] font-semibold leading-none tracking-tight"><span data-count="17" data-suffix="+">0</span></p>
+        <p class="font-display text-[52px] lg:text-[64px] font-semibold leading-none tracking-tight"><span data-count="17" data-suffix="+">17+</span></p>
         <p class="mt-3 text-[12px] font-bold tracking-[0.18em] uppercase text-white/50">Years of recruitment</p>
         <p class="mt-2 text-[13.5px] text-white/60 leading-6 max-w-[280px]">Placing people in work continuously since December 2008.</p>
       </div>
       <div data-reveal style="--d:.1s">
-        <p class="font-display text-[52px] lg:text-[64px] font-semibold leading-none tracking-tight"><span data-count="12000" data-suffix="+">0</span></p>
+        <p class="font-display text-[52px] lg:text-[64px] font-semibold leading-none tracking-tight"><span data-count="12000" data-suffix="+">12,000+</span></p>
         <p class="mt-3 text-[12px] font-bold tracking-[0.18em] uppercase text-white/50">Jobs offered</p>
         <p class="mt-2 text-[13.5px] text-white/60 leading-6 max-w-[280px]">Offers facilitated across technical, service and professional roles.</p>
       </div>
       <div data-reveal style="--d:.2s">
-        <p class="font-display text-[52px] lg:text-[64px] font-semibold leading-none tracking-tight"><span data-count="500" data-suffix="+">0</span></p>
+        <p class="font-display text-[52px] lg:text-[64px] font-semibold leading-none tracking-tight"><span data-count="500" data-suffix="+">500+</span></p>
         <p class="mt-3 text-[12px] font-bold tracking-[0.18em] uppercase text-white/50">Client employers</p>
         <p class="mt-2 text-[13.5px] text-white/60 leading-6 max-w-[280px]">Long-standing relationships with employers in India and abroad.</p>
       </div>
@@ -686,26 +692,26 @@ tailwind.config = {
         <div class="mt-7 grid sm:grid-cols-2 gap-4">
           <label class="block">
             <span class="text-[11px] font-extrabold tracking-[0.14em] uppercase text-ink/60">Full name *</span>
-            <input required type="text" name="full_name" autocomplete="name" placeholder="e.g. Priya Sharma" class="mt-2 w-full rounded-2xl border border-ink/15 bg-paper px-4 py-3.5 text-[14.5px] placeholder:text-ink/35 focus:outline-none focus:ring-4 focus:ring-accent/15 focus:border-accent transition">
+            <input required type="text" name="full_name" autocomplete="name" placeholder="e.g. Priya Sharma" class="mt-2 w-full rounded-2xl border border-ink/15 bg-paper px-4 py-3.5 text-[16px] sm:text-[14.5px] placeholder:text-ink/35 focus:outline-none focus:ring-4 focus:ring-accent/15 focus:border-accent transition">
           </label>
           <label class="block">
             <span class="text-[11px] font-extrabold tracking-[0.14em] uppercase text-ink/60">Mobile number *</span>
-            <input required type="tel" name="mobile" autocomplete="tel" inputmode="tel" placeholder="+91 9XXXXXXXXX" class="mt-2 w-full rounded-2xl border border-ink/15 bg-paper px-4 py-3.5 text-[14.5px] placeholder:text-ink/35 focus:outline-none focus:ring-4 focus:ring-accent/15 focus:border-accent transition">
+            <input required type="tel" name="mobile" autocomplete="tel" inputmode="tel" placeholder="+91 9XXXXXXXXX" class="mt-2 w-full rounded-2xl border border-ink/15 bg-paper px-4 py-3.5 text-[16px] sm:text-[14.5px] placeholder:text-ink/35 focus:outline-none focus:ring-4 focus:ring-accent/15 focus:border-accent transition">
           </label>
         </div>
         <div class="mt-4 grid sm:grid-cols-2 gap-4">
           <label class="block">
             <span class="text-[11px] font-extrabold tracking-[0.14em] uppercase text-ink/60">Email *</span>
-            <input required type="email" name="email" autocomplete="email" placeholder="you@example.com" class="mt-2 w-full rounded-2xl border border-ink/15 bg-paper px-4 py-3.5 text-[14.5px] placeholder:text-ink/35 focus:outline-none focus:ring-4 focus:ring-accent/15 focus:border-accent transition">
+            <input required type="email" name="email" autocomplete="email" placeholder="you@example.com" class="mt-2 w-full rounded-2xl border border-ink/15 bg-paper px-4 py-3.5 text-[16px] sm:text-[14.5px] placeholder:text-ink/35 focus:outline-none focus:ring-4 focus:ring-accent/15 focus:border-accent transition">
           </label>
           <label class="block">
             <span class="text-[11px] font-extrabold tracking-[0.14em] uppercase text-ink/60">Your trade / profession</span>
-            <input type="text" name="trade" placeholder="e.g. Welder, Nurse, Designer" class="mt-2 w-full rounded-2xl border border-ink/15 bg-paper px-4 py-3.5 text-[14.5px] placeholder:text-ink/35 focus:outline-none focus:ring-4 focus:ring-accent/15 focus:border-accent transition">
+            <input type="text" name="trade" placeholder="e.g. Welder, Nurse, Designer" class="mt-2 w-full rounded-2xl border border-ink/15 bg-paper px-4 py-3.5 text-[16px] sm:text-[14.5px] placeholder:text-ink/35 focus:outline-none focus:ring-4 focus:ring-accent/15 focus:border-accent transition">
           </label>
         </div>
         <label class="block mt-4">
           <span class="text-[11px] font-extrabold tracking-[0.14em] uppercase text-ink/60">Anything we should know?</span>
-          <textarea rows="4" name="message" placeholder="Experience, preferred destination, questions..." class="mt-2 w-full rounded-2xl border border-ink/15 bg-paper px-4 py-3.5 text-[14.5px] placeholder:text-ink/35 focus:outline-none focus:ring-4 focus:ring-accent/15 focus:border-accent transition resize-none"></textarea>
+          <textarea rows="4" name="message" placeholder="Experience, preferred destination, questions..." class="mt-2 w-full rounded-2xl border border-ink/15 bg-paper px-4 py-3.5 text-[16px] sm:text-[14.5px] placeholder:text-ink/35 focus:outline-none focus:ring-4 focus:ring-accent/15 focus:border-accent transition resize-none"></textarea>
         </label>
         <div class="mt-6 flex flex-wrap items-center gap-4">
           <button type="submit" class="inline-flex items-center gap-2 bg-brand-orange text-ink px-8 py-4 rounded-full font-extrabold text-[14.5px] hover:bg-brand-orange-soft transition cursor-pointer focus-ring">Submit my details <i class="ph ph-paper-plane-tilt"></i></button>
@@ -772,7 +778,7 @@ tailwind.config = {
 </div>
 
 <!-- Toast -->
-<div id="toast" role="status" aria-live="polite" class="hidden fixed bottom-6 left-1/2 -translate-x-1/2 bg-ink text-white px-6 py-4 rounded-full shadow-float text-[13.5px] font-bold items-center gap-3 z-[80] whitespace-nowrap">
+<div id="toast" role="status" aria-live="polite" class="hidden fixed bottom-6 left-1/2 -translate-x-1/2 max-w-[calc(100vw-2rem)] bg-ink text-white px-5 sm:px-6 py-4 rounded-2xl shadow-float text-[13.5px] font-bold text-center items-center gap-3 z-[80]">
   <span class="w-7 h-7 rounded-full bg-brand-orange text-ink grid place-items-center shrink-0"><i class="ph ph-check"></i></span>
   Thank you — we'll reach out within one business day.
 </div>

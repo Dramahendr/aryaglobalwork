@@ -228,17 +228,14 @@ tailwind.config = {
         <span class="chip-float absolute left-[22%] top-[51%] inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/10 backdrop-blur px-3 py-1.5 text-[11px] font-bold text-white" style="--d:.2s"><span class="w-1.5 h-1.5 rounded-full bg-white/70"></span>Oman</span>
         <span class="chip-float absolute left-[37%] top-[46%] inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/10 backdrop-blur px-3 py-1.5 text-[11px] font-bold text-white" style="--d:1.3s"><span class="w-1.5 h-1.5 rounded-full bg-white/70"></span>Bahrain</span>
         <span class="absolute right-[9%] bottom-[10%] inline-flex items-center gap-1.5 rounded-full bg-brand-orange text-ink px-3.5 py-2 text-[11px] font-extrabold"><i class="ph ph-map-pin"></i> Bengaluru, India</span>
-        <div class="absolute top-5 right-5 rotate-2">
-          <div class="chip-float bg-white text-ink rounded-2xl px-4 py-3 shadow-float" style="--d:.9s">
-            <p class="text-[10px] font-bold tracking-[0.14em] uppercase text-ink/50">Incorporated</p>
-            <p class="font-display text-[17px] font-semibold leading-tight">Dec 2008</p>
-          </div>
+        <div class="chip-float absolute top-5 right-5 bg-white text-ink rounded-2xl px-4 py-3 shadow-float rotate-2" style="--d:.9s">
+          <p class="text-[10px] font-bold tracking-[0.14em] uppercase text-ink/50">Incorporated</p>
+          <p class="font-display text-[17px] font-semibold leading-tight">Dec 2008</p>
         </div>
       </div>
 
       <!-- Boarding pass card -->
-      <div class="absolute bottom-0 left-1/2 -translate-x-1/2 sm:left-8 sm:translate-x-0 lg:-left-2 w-[min(320px,88%)] -rotate-2" aria-hidden="true">
-      <div class="chip-float bg-white rounded-2xl shadow-float border border-ink/5 p-5" style="--d:.5s">
+      <div class="chip-float absolute bottom-0 left-1/2 -translate-x-1/2 sm:left-8 sm:translate-x-0 lg:-left-2 w-[min(320px,88%)] -rotate-2 bg-white rounded-2xl shadow-float border border-ink/5 p-5" style="--d:.5s" aria-hidden="true">
         <div class="flex items-center justify-between text-[10px] font-extrabold tracking-[0.18em] uppercase text-ink/50">
           <span>Candidate route</span>
           <i class="ph ph-airplane-tilt text-base text-accent"></i>
@@ -883,5 +880,5 @@ tailwind.config = {
   });
 })();
 </script>
-</body>
+<script>function measure(){const d=document.scrollingElement;let worst=[];document.querySelectorAll("body *").forEach(el=>{const r=el.getBoundingClientRect();if(r.right>d.clientWidth+1||r.left<-1){worst.push(el.tagName+"."+(typeof el.className==="string"?el.className.split(" ")[0]:"")+" L"+Math.round(r.left)+" R"+Math.round(r.right))}});const div=document.createElement("div");div.id="dbg";div.textContent="DBG SW="+d.scrollWidth+" CW="+d.clientWidth+" :: "+worst.slice(0,10).join(" ## ");document.body.appendChild(div);}window.addEventListener("load",()=>setTimeout(measure,500));</script></body>
 </html>

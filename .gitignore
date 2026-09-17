@@ -1,1 +1,3 @@
 /.opencode
+# Client certificates contain PAN, bank and personal details; keep them local only.
+/docs/

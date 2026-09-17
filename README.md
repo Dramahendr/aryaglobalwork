@@ -1,6 +1,6 @@
-# Arya Global Work
+# Arya Global Workforce
 
-Marketing website for **Arya Global Work** — the public brand of **Inspiration Manpower Consultancy Pvt. Ltd**, a Bangalore-based international recruitment consultancy founded December 15, 2008.
+Marketing website for **Arya Global Workforce** (*Dream · Work · Grow*). It is a Ministry of External Affairs–registered recruiting agent in Hazratganj, Lucknow (proprietor: Ashish Mahendra), placing skilled Indians with employers across the Gulf and Asia-Pacific.
 
 The site is a single static page: no build step, no framework, no backend.
 
@@ -17,39 +17,42 @@ python3 -m http.server 8000
 
 | File / Folder | Purpose |
 |---|---|
-| `index.html` | The entire site — markup, Tailwind config, custom CSS and JS, all inline |
-| `BUSINESS_INFO.md` | Source of truth for business facts: contacts, services, stats, job listings |
-| `design-system/arya-global-work/MASTER.md` | Design system: colors, typography, components, accessibility rules |
-| `logo.png`, `favicon*.png`, `favicon.ico`, `apple-touch-icon.png` | Brand & icon assets |
-| `site.webmanifest` | PWA manifest |
-
-The temporary `_*.html` files used during the rebuild were removed. They were iframe-based viewport and overflow test harnesses, not pages required by the site.
+| `index.html` | The entire site: markup, Tailwind config, custom CSS and JS, all inline |
+| `images/` | Section photos (WebP), ticker thumbnails, and `CREDITS.md` with every source and licence |
+| `BUSINESS_INFO.md` | Source of truth for business facts: licence, contacts, fees, open questions |
+| `design-system/arya-global-work/` | `MASTER.md` base rules + `pages/home.md` overrides (palette, motion, photography) |
+| `logo-horizontal.png`, `logo.png`, `logo-mark.png` | Logo variants derived from the client's `newlogo.jpeg` |
+| `favicon*.png`, `favicon.ico`, `apple-touch-icon.png`, `site.webmanifest` | Icons & PWA manifest |
+| `colorpallaet.png` | Client palette reference |
+| `docs/` | Client certificates. **Git-ignored**: they contain personal and financial data |
 
 ## Tech stack
 
-- **HTML5** single page with anchor-nav sections: Destinations, Opportunities, How it works, Why us, FAQ, Apply
-- **Tailwind CSS** via CDN, configured inline (`primary` navy, `accent` blue, brand orange)
-- **Phosphor Icons** (web font)
-- **Plus Jakarta Sans** via Google Fonts
-- Vanilla JS for the mobile menu, footer year, scroll reveals, counters, sticky mobile actions, and the enquiry toast
+- **HTML5** single page with anchor-nav sections: Destinations, Opportunities, How it works, Why us, Fees & grievances, FAQ, Follow, Apply
+- **Tailwind CSS** via CDN, configured inline with the client palette: violet `#4B0AF3`, indigo `#6D62F4`, purple `#A468F2`, amber `#F6CE7D`
+- **GSAP 3.15** (ScrollTrigger + SplitText) for the hero intro, scroll reveals, image masks, parallax and the process rail. All motion is skipped under `prefers-reduced-motion`.
+- **Phosphor Icons** (web font) and **Fraunces + Plus Jakarta Sans** (Google Fonts)
 
 ## Deployment
 
-Any static host works (GitHub Pages, Netlify, Vercel, S3…). Publish the repository root as-is — no build command needed.
+Any static host works (GitHub Pages, Netlify, Vercel, S3…). Publish the repository root as-is; no build command is needed. `docs/` is never committed.
 
 ## Content & design governance
 
-- Changing business facts (phone, email, address, jobs, stats)? Update `BUSINESS_INFO.md` **and** the HTML together.
-- Changing look & feel? Follow `design-system/arya-global-work/MASTER.md`, including its accessibility checklist and anti-pattern list.
+- Changing business facts (phone, email, address, licence, fees)? Update `BUSINESS_INFO.md` **and** the HTML together. The MEA licence requires advertising to be genuine and factually correct, so don't add unverified claims.
+- Changing look & feel? Follow `design-system/arya-global-work/pages/home.md` and `MASTER.md`, including the accessibility checklist.
+- Adding photos? Record them in `images/CREDITS.md`.
 
 ## Known work in progress
 
 - The enquiry form shows a success toast but does not send data anywhere yet.
-- Destination and sector content is static; connect a verified ATS/job board before treating it as live vacancies.
-- Legal policy pages and social profiles still need real URLs before launch.
+- Current vacancies and past-recruitment details are still needed (a licence requirement for the agency's website).
+- Photos are illustrative stock/public-domain images until the client provides real ones.
+- Privacy policy and terms pages still need to be written.
 
 ## Contact
 
-- **Email:** info@inspirationmanpower.co.in
-- **Phone:** +91-80-40966772 · +91-9686454870
-- **Office:** No 5, Lakshmi Complex, 10th Main, 15th Cross, RMV Extension, Opp to CPRI, Bangalore, Karnataka 560080, INDIA
+- **Email:** aryaglobalworkforce@gmail.com
+- **Phone / WhatsApp:** +91 99560 52200
+- **Office:** Hall No. 1, Ground Floor, T.S. Tower, Plot No. 15, Ashok Marg, Hazratganj, Lucknow, Uttar Pradesh 226001
+- **Instagram:** [@drashish_official](https://www.instagram.com/drashish_official/) · **YouTube:** [@drashishmahendra](https://www.youtube.com/@drashishmahendra)

@@ -1,87 +1,77 @@
-# Arya Global Work — Business Information
+# Arya Global Workforce — Business Information
 
-> Compiled: August 31, 2026
+> Updated: 17 September 2026, from the client's registration certificates (kept locally in `docs/`, which is git-ignored).
+> This replaces the earlier "Inspiration Manpower Consultancy Pvt. Ltd, Bangalore" details, which do not match this business. See **Superseded** below.
 
 ## Brand / Legal
 
 | Field | Value |
 |-------|-------|
-| **Brand name** | **Arya Global Work** |
-| **Legal entity** | Inspiration Manpower Consultancy Pvt. Ltd |
-| **Founded** | December 15, 2008 |
-| **Industry** | Recruitment & workforce outsourcing / management consulting |
-| **Years in service** | 17+ years (since 2008) |
+| **Brand / trade name** | **Arya Global Workforce** |
+| **Tagline** | Dream · Work · Grow (from the logo) |
+| **Constitution** | Proprietorship |
+| **Proprietor** | Ashish Mahendra |
+| **Nature of business** | Placement service: recruitment of Indian workers for foreign employers (NIC 78100) |
+| **UP Shops & Establishments registration** | UPSA28769910, registered 16 Dec 2025 |
+| **GSTIN** | 09AKIPM5590M1ZE (liability from 22 Dec 2025) |
+| **Udyam registration** | UDYAM-UP-50-0246203 (Micro, Services, registered 23 Dec 2025) |
 
-## Contact Info
+Never publish the PAN, bank details, the proprietor's date of birth or family details, or the personal email address that appear in the certificates.
 
-- **Email:** info@inspirationmanpower.co.in
-- **Phone:** +91-80-40966772
-- **Mobile:** +91-9686454870
-- **Corporate Office:** No 5, Lakshmi Complex, 10th Main, 15th Cross, RMV Extension, Opp to CPRI, Bangalore, Karnataka 560080, INDIA
+## MEA recruiting agent licence
 
-## Navigation
+| Field | Value |
+|-------|-------|
+| **Certificate** | Registration Certificate (Form V) under Section 11 of the Emigration Act, 1983 |
+| **Certificate no.** | B-3525/UP/PER/1000+/5/11528/2026 |
+| **Issued by** | Protector General of Emigrants, Ministry of External Affairs, New Delhi |
+| **Issued** | 14 Sep 2026 |
+| **Valid until** | 26 Aug 2031 (5 years, or until 1000+ workers are recruited) |
+| **Licence category** | 1000+ workers |
+| **Licensed premises** | Hall No. 1, Ground Floor, T.S. Tower, Plot No. 15, Ashok Marg, Hazratganj, Lucknow, UP 226001 |
 
-`Home` · `About Us` · `Services` · `Find Jobs` · `Submit Resume` · `Contact Us`
+Licence conditions that affect the website:
 
----
+- **(xii)(g)** Advertisements must be genuine and factually correct. Do not publish any inducement or misrepresentation.
+- **(xiii)(c)** The agency's web portal must show: agent details, the licence's validity, services offered, the cost of services, how service charges are paid, grievance remedies, current vacancies with employer and contract details, and past recruitments.
+- **(vi)** No sub-agents. **(vii)** No fees above the prescribed limit. **(xi)** No repatriation charges from emigrants. **(xii)(f)** A receipt for every payment.
 
-## Hero Section
+## Fees (service charge undertaking)
 
-- **Headline:** *Simplifying Recruitment & Outsourcing for Business Success*
-- **Subtext:** Whether you're hiring or outsourcing, our end-to-end workforce solutions help organizations scale with efficiency and precision.
-- **CTAs:** `Our Services` / `Find Jobs`
+- The maximum service charge is **₹30,000**, as per the Emigration Act, 1983.
+- Payment is **online or by DD only**, never cash.
+- Complaints go to the **Protector General of Emigrants**, Ministry of External Affairs, Akbar Bhawan, Chanakyapuri, New Delhi. Tel 26874250, 24197964 (New Delhi STD 011). Fax 24197984. Email pge@mea.gov.in.
+  - The undertaking also names an officer and gives PIN 110025. The site leaves out the officer's name, because the Registration Certificate was signed by a different officer. It also leaves out the PIN, which looks like a typo for Chanakyapuri's 110021. Confirm both with the client.
 
-## Featured Jobs
+## Contact info
 
-> Sample listings — all posted **Jan 26, 2026**
+- **Email:** aryaglobalworkforce@gmail.com
+- **Phone / WhatsApp:** +91 99560 52200
+- **Office:** Hall No. 1, Ground Floor, T.S. Tower, Plot No. 15, Ashok Marg, Hazratganj, Lucknow, Uttar Pradesh 226001
+- **Landmark:** Behind SIDBI Building, near SBI Ashok Marg Branch
+- **Instagram:** https://www.instagram.com/drashish_official/
+- **YouTube:** https://www.youtube.com/@drashishmahendra
 
-| Role | Notice Period | Vacancies |
-|------|---------------|-----------|
-| Soldering Technician | Immediate | 2 |
-| Customer Care Associate | Immediate | 2 |
-| Mechanical Designer | Immediate | 2 |
-| Project Manager | Immediate | 2 |
+## Website content
 
-## Services (5 Total)
+- **Destinations** (industry-typical, pending client confirmation): UAE, Saudi Arabia, Qatar, Kuwait, Oman, Bahrain, Singapore, Malaysia.
+- **Sectors:** Construction & Engineering · Technical Trades & Manufacturing · Mechanical & Design · Hospitality & F&B · Healthcare & Caregiving · Logistics & Warehousing · Retail & Customer Support · Projects & Operations.
+- **Numbers on the site** all come from the licence: the ₹30,000 fee cap, the 1000+ licence category, and validity until 2031.
+- **No placement, client or years-in-business statistics exist yet.** Do not publish any until the client supplies verified figures.
 
-1. **Contract Staffing** — *Adapt Quickly to Changing Workforce Needs*
-2. **Finance and Accounts** — *Streamline Your Financial Processes*
-3. **Statutory Compliance**
-4. **Recruitment Solutions**
-5. **Outsourcing Services** — *Precision Operations. Unmatched Growth.*
+## Superseded — do not use
 
-## Stats Counters
+These came from the old aryaglobalwork.com scrape and do not match the certificates:
 
-- Jobs Offered
-- Years in Service
-- Clients
-- Growth YoY
+- Inspiration Manpower Consultancy Pvt. Ltd; Bangalore office (RMV Extension); founded 15 Dec 2008; "17+ years"
+- "12,000+ jobs offered"; "500+ clients"
+- info@inspirationmanpower.co.in; +91-80-40966772; +91-9686454870
+- Employer services list: contract staffing, finance & accounts, statutory compliance, outsourcing
 
-## About Section
+## Open questions for the client
 
-- **Our Story:** Founded on December 15, 2008, Inspiration Manpower Consultancy Pvt. Ltd specializes in management consulting, delivering precision, confidentiality, and exceptional service.
-- **Why Choose Us:**
-  - Moral & Intellectual Growth
-  - Unrivaled Satisfaction
-  - Precision Talent Matching
-- **Vision / Values / Mission:** *All currently use placeholder text — “To ignite success and set new standards of excellence.” — flag for replacement with real content.*
-
-## Contact CTA Section
-
-- **Headline:** *Elevate Your Business*
-- **Subtext:** Connect with us to unlock the right talent, processes, and solutions for your success.
-- **Form fields:** Full Name · Email ID · Mobile Number · Enquiry Details
-
-## Footer
-
-- Quick Links + Legal Links (same nav repeated)
-- Newsletter: *Get Exclusive Job Updates* + *Join WhatsApp Channel*
-
----
-
-### Notes / Flags
-
-- Vision/Values/Mission need distinct, final copy — currently duplicated placeholder.
-- Stats counters need real numbers to populate frontend animations.
-- Job listings currently static sample; connect to ATS/Job board for dynamic updates.
-
+- Should the site call the proprietor "Dr. Ashish Mahendra"? The social handles use "drashish". The site currently uses no title.
+- Is +91 99560 52200 active on WhatsApp? The site uses it for WhatsApp.
+- Confirm the Protector General of Emigrants' PIN (110021 vs 110025).
+- The logo and certificates say "Arya Global Workforce", but the repo and domain say "aryaglobalwork".
+- Current vacancies (with employer and contract details) and past recruitments need to be added to meet licence condition (xiii)(c).

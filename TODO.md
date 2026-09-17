@@ -1,21 +1,23 @@
-# Arya Global Work — TODO
+# Arya Global Workforce — TODO
 
 ## Before launch
 
 - [ ] Connect the enquiry form to an approved endpoint or CRM; add privacy/consent copy and error handling.
 - [ ] Add a secure resume upload flow, or link to the chosen ATS.
-- [ ] Replace static destination and sector content with verified, current opportunities.
-- [ ] Confirm all claims and statistics against current company records in `BUSINESS_INFO.md`.
-- [ ] Add real Privacy Policy, Terms of Service, Statutory Compliance, and LinkedIn URLs.
-- [ ] Confirm the production domain, then add `og:image` and `og:url` metadata.
+- [ ] Publish current vacancies (employer + contract conditions) and past-recruitment details, as MEA licence condition (xiii)(c) requires.
+- [ ] Confirm the destination and sector lists with the client.
+- [ ] Resolve the open questions in `BUSINESS_INFO.md`: "Dr." title, WhatsApp on +91 99560 52200, PGE PIN, brand name vs domain.
+- [ ] Add Privacy Policy and Terms of Service pages.
+- [ ] Confirm the production domain, then add `og:image`, `og:url` and the logo URL to the JSON-LD.
 
 ## Content
 
-- [ ] Replace the placeholder service descriptions in `BUSINESS_INFO.md` with final employer-facing copy, or explicitly maintain the current candidate-first positioning there.
-- [ ] Add final employer-service details and a clear employer enquiry path.
+- [ ] Replace illustrative stock photos with the client's own (office, team, deployed candidates, with consent) and update `images/CREDITS.md`.
+- [ ] Add verified statistics (placements, employers) only once the client supplies them.
+- [ ] Consider a photo of the licence signboard / office front for the trust section.
 
 ## Quality
 
-- [ ] Test keyboard focus and screen-reader announcements for the mobile menu, FAQ details, sticky CTA, and form toast.
-- [ ] Run a final manual pass at 375, 768, 1024, and 1440px after any content changes.
-- [ ] Recheck performance once the production domain and any ATS integration are known.
+- [ ] Test keyboard focus and screen-reader announcements for the mobile menu, ticker pause button, FAQ details, sticky CTA and form toast.
+- [ ] Run a final manual pass at 375, 768, 1024 and 1440px, with and without reduced motion, after any content changes.
+- [ ] Recheck performance once the production domain is known. Consider self-hosting fonts and GSAP, and replacing the Tailwind Play CDN with a compiled stylesheet (needs approval for a build step).

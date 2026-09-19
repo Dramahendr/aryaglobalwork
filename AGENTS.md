@@ -10,7 +10,7 @@ A single-page static website for **Arya Global Workforce**, a proprietorship of 
 
 ```
 index.html                 ← The entire website (markup, Tailwind config, styles, scripts inline)
-chatbot.js                 ← "Arya Assistant" chat widget (self-contained; loaded with defer from index.html)
+chatbot.js                 ← Chat widget shown as "Dr. Ashish Mahendra" (labelled AI assistant) (self-contained; loaded with defer from index.html)
 netlify/functions/chat.mjs ← Chat backend (Netlify Functions v2, route /api/chat) calling the OpenAI Responses API
 certificates/              ← The client's original government certificates (PDF), published as-is and linked from #certifications
 images/                    ← Site photos (WebP) + thumbs/ + certs/ (PDF page renders) + CREDITS.md (sources and licences)
@@ -40,7 +40,7 @@ docs/                      ← Client document drop folder (original filenames).
 
 ## Chatbot (branch `chatbot`)
 
-- **Widget** (`chatbot.js`): floating avatar launcher; a panel (full-screen on phones); suggested questions; replies rendered as escaped plain text; a "Continue on WhatsApp" button under every answer, pre-filled with the visitor's question; history in `sessionStorage`. Respects reduced motion; Esc closes and focus returns to the launcher.
+- **Widget** (`chatbot.js`): presented as Dr. Ashish Mahendra (client request) but always labelled "AI assistant"; the bot must never claim to be him or a human. Floating avatar launcher; a panel (full-screen on phones); suggested questions; replies rendered as escaped plain text; a "Continue on WhatsApp" button under every answer, pre-filled with the visitor's question; history in `sessionStorage`. Respects reduced motion; Esc closes and focus returns to the launcher.
 - **Backend** (`netlify/functions/chat.mjs`): needs `OPENAI_API_KEY` in Netlify's environment variables (and in `.env` for `netlify dev`). `OPENAI_MODEL` is optional (default `gpt-5-mini`, with minimal reasoning and low verbosity).
 - **Guardrails:** the system instructions allow only facts from `BUSINESS_INFO.md`, keep answers to Arya Global Workforce topics, never quote the fee figure, and never invent openings or salaries. The server also:
   - accepts only `user`/`assistant` roles, and the last message must be from the user;

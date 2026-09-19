@@ -19,7 +19,7 @@ python3 -m http.server 8000
 |---|---|
 | `index.html` | The entire site: markup, Tailwind config, custom CSS and JS, all inline |
 | `certificates/` | The original government certificates (PDF), opened from the Certifications section |
-| `chatbot.js`, `netlify/functions/chat.mjs` | "Arya Assistant" chat widget and its Netlify Function backend (OpenAI) — on the `chatbot` branch |
+| `chatbot.js`, `netlify/functions/chat.mjs` | Chat widget (shown as Dr. Ashish Mahendra, labelled AI assistant) and its Netlify Function backend (OpenAI) — on the `chatbot` branch |
 | `images/` | Section photos (WebP), ticker thumbnails, certificate previews, and `CREDITS.md` with every source and licence |
 | `BUSINESS_INFO.md` | Source of truth for business facts: licence, contacts, fees, open questions |
 | `design-system/arya-global-work/` | `MASTER.md` base rules + `pages/home.md` overrides (palette, motion, photography) |

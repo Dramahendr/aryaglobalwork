@@ -1,4 +1,4 @@
-/* Arya Assistant: website chat widget.
+/* Website chat widget, shown as Dr. Ashish Mahendra (clearly labelled as his AI assistant).
    Talks to /api/chat (netlify/functions/chat.mjs). Self-contained: injects its own styles and markup.
    Every answer is followed by a WhatsApp button so the team can take the conversation further. */
 (function () {
@@ -13,7 +13,7 @@
   var MAX_LEN = 600;
   var HISTORY_SENT = 10;
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var WELCOME = "Namaste! I'm Arya Assistant. Ask me about jobs abroad: destinations, documents, the process, fees or our licence. You can write in English or Hindi.";
+  var WELCOME = "Namaste! This is Dr. Ashish Mahendra's AI assistant. Ask me about jobs abroad: destinations, documents, the process, fees or our licence. You can write in English or Hindi.";
   var SUGGESTIONS = [
     'Which countries do you recruit for?',
     'What documents do I need?',
@@ -120,12 +120,12 @@
   }
 
   /* ---------- Markup ---------- */
-  var launcher = el('button', { type: 'button', class: 'agc-launcher' + (reduceMotion ? '' : ' agc-enter'), 'aria-label': 'Chat with Arya Assistant', 'aria-expanded': 'false', 'aria-controls': 'agcPanel' },
+  var launcher = el('button', { type: 'button', class: 'agc-launcher' + (reduceMotion ? '' : ' agc-enter'), 'aria-label': 'Chat with Dr. Ashish Mahendra (AI assistant)', 'aria-expanded': 'false', 'aria-controls': 'agcPanel' },
     '<img src="' + AVATAR + '" alt="" width="96" height="96"><span class="agc-badge" aria-hidden="true"><i class="ph-fill ph-chat-circle-dots"></i></span>');
 
   var panel = el('section', { id: 'agcPanel', class: 'agc-panel', role: 'dialog', 'aria-modal': 'false', 'aria-labelledby': 'agcTitle', 'aria-hidden': 'true' },
     '<div class="agc-head"><img src="' + AVATAR + '" alt="" width="96" height="96">' +
-    '<div><p class="agc-title" id="agcTitle">Arya Assistant</p><p class="agc-sub">AI assistant · Arya Global Workforce</p></div>' +
+    '<div><p class="agc-title" id="agcTitle">Dr. Ashish Mahendra</p><p class="agc-sub">AI assistant · Arya Global Workforce</p></div>' +
     '<button type="button" class="agc-close" aria-label="Close chat"><i class="ph ph-x" aria-hidden="true"></i></button></div>' +
     '<div class="agc-stripes" aria-hidden="true"><span></span><span></span><span></span><span></span></div>' +
     '<div class="agc-log" role="log" aria-live="polite" aria-relevant="additions"></div>' +
@@ -188,7 +188,7 @@
     send.disabled = on;
     var typing = log.querySelector('.agc-typing');
     if (on && !typing) {
-      log.appendChild(el('div', { class: 'agc-msg agc-bot agc-typing', 'aria-label': 'Arya Assistant is typing' }, '<img src="' + AVATAR + '" alt="" width="96" height="96"><div class="agc-bubble"><i></i><i></i><i></i></div>'));
+      log.appendChild(el('div', { class: 'agc-msg agc-bot agc-typing', 'aria-label': 'Dr. Ashish Mahendra is typing' }, '<img src="' + AVATAR + '" alt="" width="96" height="96"><div class="agc-bubble"><i></i><i></i><i></i></div>'));
       scrollDown();
     } else if (!on && typing) typing.remove();
   }
@@ -248,7 +248,7 @@
     panel.classList.remove('agc-open');
     panel.setAttribute('aria-hidden', 'true');
     launcher.setAttribute('aria-expanded', 'false');
-    launcher.setAttribute('aria-label', 'Chat with Arya Assistant');
+    launcher.setAttribute('aria-label', 'Chat with Dr. Ashish Mahendra (AI assistant)');
     document.body.style.overflow = '';
     launcher.style.visibility = '';
     launcher.focus({ preventScroll: true });

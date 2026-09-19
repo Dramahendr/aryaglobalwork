@@ -10,6 +10,8 @@ A single-page static website for **Arya Global Workforce**, a proprietorship of 
 
 ```
 index.html                 ← The entire website (markup, Tailwind config, styles, scripts inline)
+chatbot.js                 ← "Arya Assistant" chat widget (self-contained; loaded with defer from index.html)
+netlify/functions/chat.mjs ← Chat backend (Netlify Functions v2, route /api/chat) calling the OpenAI Responses API
 certificates/              ← The client's original government certificates (PDF), published as-is and linked from #certifications
 images/                    ← Site photos (WebP) + thumbs/ + certs/ (PDF page renders) + CREDITS.md (sources and licences)
 logo-horizontal.png        ← Header/footer lockup (transparent), derived from newlogo.jpeg
@@ -35,6 +37,18 @@ docs/                      ← Client document drop folder (original filenames).
 - **Google Fonts**: Plus Jakarta Sans for body copy and Fraunces for display headings.
 - **Theme tokens** live in the inline Tailwind config: `ink`, `paper` (`tint`, `sun`), `brand` (`dark`, `light`), `iris`, `orchid`, `sun` (`dark`). Use them instead of new hardcoded colours.
 - `.opencode/` and `.claude/` are local tooling config. Never commit them.
+
+## Chatbot (branch `chatbot`)
+
+- **Widget** (`chatbot.js`): floating avatar launcher; a panel (full-screen on phones); suggested questions; replies rendered as escaped plain text; a "Continue on WhatsApp" button under every answer, pre-filled with the visitor's question; history in `sessionStorage`. Respects reduced motion; Esc closes and focus returns to the launcher.
+- **Backend** (`netlify/functions/chat.mjs`): needs `OPENAI_API_KEY` in Netlify's environment variables (and in `.env` for `netlify dev`). `OPENAI_MODEL` is optional (default `gpt-5-mini`, with minimal reasoning and low verbosity).
+- **Guardrails:** the system instructions allow only facts from `BUSINESS_INFO.md`, keep answers to Arya Global Workforce topics, never quote the fee figure, and never invent openings or salaries. The server also:
+  - accepts only `user`/`assistant` roles, and the last message must be from the user;
+  - caps message length (600 chars), history (10 turns) and body size;
+  - rejects other websites' `Origin`;
+  - rate-limits to 20 requests/min per IP (`config.rateLimit`);
+  - times out OpenAI calls at 9 s and returns a WhatsApp fallback reply on any error.
+- **When business facts change, update the `INSTRUCTIONS` facts in `chat.mjs` too.**
 
 ## Motion system (in `index.html`)
 

@@ -71,6 +71,10 @@ Source: https://aryadhitaeducon.com/about/ (his education consultancy), checked 
 - Takes a personal interest in the well-being and safety of everyone going abroad through his companies.
 - Photo: `images/dr-ashish.webp`, from the Aryadhita site, downloaded with the user's approval.
 
+## Chatbot facts
+
+The website chatbot (`netlify/functions/chat.mjs`, `INSTRUCTIONS`) repeats the public facts above. Update it whenever this file changes.
+
 ## Superseded — do not use
 
 These came from the old aryaglobalwork.com scrape and do not match the certificates:

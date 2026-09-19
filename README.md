@@ -19,6 +19,7 @@ python3 -m http.server 8000
 |---|---|
 | `index.html` | The entire site: markup, Tailwind config, custom CSS and JS, all inline |
 | `certificates/` | The original government certificates (PDF), opened from the Certifications section |
+| `chatbot.js`, `netlify/functions/chat.mjs` | "Arya Assistant" chat widget and its Netlify Function backend (OpenAI) — on the `chatbot` branch |
 | `images/` | Section photos (WebP), ticker thumbnails, certificate previews, and `CREDITS.md` with every source and licence |
 | `BUSINESS_INFO.md` | Source of truth for business facts: licence, contacts, fees, open questions |
 | `design-system/arya-global-work/` | `MASTER.md` base rules + `pages/home.md` overrides (palette, motion, photography) |
@@ -33,6 +34,14 @@ python3 -m http.server 8000
 - **Tailwind CSS** via CDN, configured inline with the client palette: violet `#4B0AF3`, indigo `#6D62F4`, purple `#A468F2`, amber `#F6CE7D`
 - **GSAP 3.15** (ScrollTrigger + SplitText) for the hero intro, scroll reveals, image masks, parallax and the process rail. All motion is skipped under `prefers-reduced-motion`.
 - **Phosphor Icons** (web font) and **Fraunces + Plus Jakarta Sans** (Google Fonts)
+
+## Chatbot (branch `chatbot`)
+
+The widget calls `/api/chat`, a Netlify Function that uses the OpenAI Responses API.
+
+1. In Netlify → Site configuration → Environment variables, add `OPENAI_API_KEY`. `OPENAI_MODEL` is optional; it defaults to `gpt-5-mini`, and `gpt-4o-mini` is a cheaper alternative.
+2. Locally, keep the key in `.env` (git-ignored) and run `npx netlify dev`.
+3. Business facts the bot may use are in the `INSTRUCTIONS` string in `netlify/functions/chat.mjs`. Keep them in sync with `BUSINESS_INFO.md`.
 
 ## Deployment
 

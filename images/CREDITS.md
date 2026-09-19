@@ -42,6 +42,7 @@ Source URLs take the form `https://images.unsplash.com/<photo ID>`.
 |------|--------|
 | dr-ashish.webp | Portrait of Dr. Ashish Mahendra from aryadhitaeducon.com/about (the client's education consultancy), used with the client's approval |
 | certs/*.webp | First-page renders of the PDFs in `certificates/` |
+| chatbot-avatar.webp | Cropped from the client-supplied `docs/chatbot-logo.jpg` (Dr. Ashish Mahendra) |
 
 ## Brand files
 

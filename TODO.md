@@ -10,6 +10,13 @@
 - [ ] Add Privacy Policy and Terms of Service pages.
 - [ ] Confirm the production domain, then add `og:image`, `og:url` and the logo URL to the JSON-LD.
 
+## Chatbot (branch `chatbot`)
+
+- [ ] Add `OPENAI_API_KEY` to Netlify's environment variables before deploying the branch.
+- [ ] Review sample answers with the client (English and Hindi) before merging.
+- [ ] Mention in the privacy policy that chat messages are processed by OpenAI.
+- [ ] Set a monthly spend limit on the OpenAI project.
+
 ## Content
 
 - [ ] Replace illustrative stock photos with the client's own (office, team, deployed candidates, with consent) and update `images/CREDITS.md`.

@@ -1,6 +1,6 @@
 # Arya Global Workforce
 
-Marketing website for **Arya Global Workforce** (*Dream · Work · Grow*). It is a Ministry of External Affairs–registered recruiting agent in Hazratganj, Lucknow (proprietor: Ashish Mahendra), placing skilled Indians with employers across the Gulf and Asia-Pacific.
+Marketing website for **Arya Global Workforce** (*Dream · Work · Grow*). It is a Ministry of External Affairs–registered recruiting agent in Hazratganj, Lucknow (proprietor: Dr. Ashish Mahendra), placing skilled Indians with employers across the Gulf and Asia-Pacific.
 
 The site is a single static page: no build step, no framework, no backend.
 
@@ -18,24 +18,25 @@ python3 -m http.server 8000
 | File / Folder | Purpose |
 |---|---|
 | `index.html` | The entire site: markup, Tailwind config, custom CSS and JS, all inline |
-| `images/` | Section photos (WebP), ticker thumbnails, and `CREDITS.md` with every source and licence |
+| `certificates/` | The original government certificates (PDF), opened from the Certifications section |
+| `images/` | Section photos (WebP), ticker thumbnails, certificate previews, and `CREDITS.md` with every source and licence |
 | `BUSINESS_INFO.md` | Source of truth for business facts: licence, contacts, fees, open questions |
 | `design-system/arya-global-work/` | `MASTER.md` base rules + `pages/home.md` overrides (palette, motion, photography) |
 | `logo-horizontal.png`, `logo.png`, `logo-mark.png` | Logo variants derived from the client's `newlogo.jpeg` |
 | `favicon*.png`, `favicon.ico`, `apple-touch-icon.png`, `site.webmanifest` | Icons & PWA manifest |
 | `colorpallaet.png` | Client palette reference |
-| `docs/` | Client certificates. **Git-ignored**: they contain personal and financial data |
+| `docs/` | Client document drop folder (git-ignored); publish copies via `certificates/` |
 
 ## Tech stack
 
-- **HTML5** single page with anchor-nav sections: Destinations, Opportunities, How it works, Why us, Fees & grievances, FAQ, Follow, Apply
+- **HTML5** single page with anchor-nav sections: Certifications, Why work abroad, Destinations, Opportunities, How it works, About (Dr. Ashish Mahendra), Why us, Fees & grievances, FAQ, Apply
 - **Tailwind CSS** via CDN, configured inline with the client palette: violet `#4B0AF3`, indigo `#6D62F4`, purple `#A468F2`, amber `#F6CE7D`
 - **GSAP 3.15** (ScrollTrigger + SplitText) for the hero intro, scroll reveals, image masks, parallax and the process rail. All motion is skipped under `prefers-reduced-motion`.
 - **Phosphor Icons** (web font) and **Fraunces + Plus Jakarta Sans** (Google Fonts)
 
 ## Deployment
 
-Any static host works (GitHub Pages, Netlify, Vercel, S3…). Publish the repository root as-is; no build command is needed. `docs/` is never committed.
+Any static host works (GitHub Pages, Netlify, Vercel, S3…). Publish the repository root as-is; no build command is needed. `docs/` is never committed. The PDFs in `certificates/` are public.
 
 ## Content & design governance
 

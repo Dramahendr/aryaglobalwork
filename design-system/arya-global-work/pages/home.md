@@ -3,7 +3,7 @@
 > Per MASTER.md logic, rules here **override** the Master file for the home page.
 > Everything not mentioned here still follows MASTER.md (anti-patterns, a11y checklist, etc.)
 
-**Redesigned:** 2026-09-04 · **Rebranded:** 2026-09-17 (client logo + palette, photography, GSAP motion)
+**Redesigned:** 2026-09-04 · **Rebranded:** 2026-09-17 (client logo + palette, photography, GSAP motion) · **Updated:** 2026-09-19 (Certifications + About sections)
 **Audience:** Primary = Indian candidates seeking jobs **abroad** (B2C). Secondary = foreign employers (one "Hiring Indian talent" block).
 
 ---
@@ -33,11 +33,13 @@
 - **Palette stripes** (`.stripes`): four bands in the palette card's proportions (41 / 27 / 18 / 14), violet → indigo → purple → amber. Used for the hero backdrop, the menu and footer top edges, the certificate card and the Instagram card. Never place a violet band on a `brand` background (it disappears); use `brand-dark` or `ink-soft` behind it.
 - **Tick** (`.tick`): four small bars before every section eyebrow.
 - **Boarding pass** (LKO → DXB) and the **Registration Certificate card**: the two signature "document" visuals.
+- **Certificate tiles**: each real PDF's first page sits on a violet "desk" stage, sliding out of a stack of blank sheets (one sheet per extra page, up to two). The MEA licence is the featured tile (row-span 2).
 - **Tagline** "Dream · Work · Grow" (from the logo) appears in the footer and on the why-section photo.
 
 ## Typography
 
 - **Display/headings:** `Fraunces` (Google Fonts, optical-size axis, weights 500–600; italic 500 for the emphasis line). Overrides Master's "Plus Jakarta Sans for headings".
+- **Hero headline:** `Lexend` 600, upright (client asked for a more readable, formal hero, 2026-09-19). "beyond borders." is set in `brand`, not italic.
 - **Body/UI:** Plus Jakarta Sans (unchanged).
 - Large numerals (stats, fee cap, country names on photo cards) use Fraunces. The certificate number uses the monospace font.
 
@@ -60,6 +62,8 @@
 | Photo layers | Parallax, *Subtle* | yPercent −6 → 6, scrub, ≥768px, images only (never text) |
 | Process | Scrub timeline | Rail fill + plane follow scroll; steps get `.is-active` |
 | Primary hero CTA | Magnetic hover, *Complex* | One element only; fine pointers only |
+| Certificate tiles | Stagger List + 3D, *Complex* | Deal in (y 80, rotationX −32, slight rotationZ) with `expo.out`; documents slide up out of their stacks; seals pop (`back.out`) |
+| Certificate hover | Magnetic/tilt, *Complex* | ±5° pointer tilt + cursor glare (fine pointers only); CSS fan-out of sheets + light sweep |
 | Ticker | CSS marquee | Pauses on hover/focus; visible pause button; static + wrapped under reduced motion |
 
 All motion is skipped under `prefers-reduced-motion`, and content is visible without JS.
@@ -67,8 +71,10 @@ All motion is skipped under `prefers-reduced-motion`, and content is visible wit
 ## Patterns specific to this page
 
 - **Mobile-first extras:** full-screen overlay menu; a sticky bottom CTA bar (`lg:hidden`) that appears after the hero and hides while `#apply` is visible. Sector cards are 2-up on phones.
-- **Regulatory content is a feature, not fine print.** The licence band, the certificate card, and the Fees & grievance section (₹30,000 cap, online/DD only, PGE contact) are required by the agency's MEA registration. Keep them prominent.
-- **Section rhythm:** paper (hero) → brand (ticker) → ink (licence) → paper → ink-deep (destinations) → paper → paper-tint (process) → ink (trust) → paper (fees) → paper-tint (FAQ) → paper (follow) → ink-deep (apply) → ink-deep footer.
+- **Regulatory content is a feature, not fine print.** The Certifications section (right after the hero), the certificate card, and the Fees & grievance section (online/DD only, PGE contact) support the agency's MEA registration. Keep them prominent. The ₹30,000 figure is kept out of page copy by client decision.
+- **Certificate tiles** open the PDF with `target="_blank"` (the browser's viewer, or a download where there is no viewer); a separate `download` button sits above the stretched link.
+- **About** features only Dr. Ashish Mahendra, rewritten for workers. It also carries the YouTube/Instagram links that used to live in a separate Follow section.
+- **Section rhythm:** paper (hero) → brand (ticker) → ink (certifications) → paper (why) → ink-deep (destinations) → paper (opportunities) → paper-tint (process) → paper (about) → ink (trust) → paper (fees) → paper-tint (FAQ) → ink-deep (apply) → ink-deep footer.
 
 ## Content rules (hard constraints)
 

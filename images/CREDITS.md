@@ -36,6 +36,13 @@ Source URLs take the form `https://images.unsplash.com/<photo ID>`.
 | dest-oman.webp, thumbs/oman.webp | "The Mosque of Sultan Qaboos in Muscat Oman" — Lokesh Prem Budhrani | CC0 1.0 | https://wordpress.org/photos/photo/5066305981/ |
 | dest-bahrain.webp, thumbs/bahrain.webp | "Manama Skyline" — Bahraini Carguy | Public Domain Mark 1.0 | https://www.flickr.com/photos/198128242@N04/54320887928 |
 
+## Client-supplied
+
+| File | Source |
+|------|--------|
+| dr-ashish.webp | Portrait of Dr. Ashish Mahendra from aryadhitaeducon.com/about (the client's education consultancy), used with the client's approval |
+| certs/*.webp | First-page renders of the PDFs in `certificates/` |
+
 ## Brand files
 
 - `newlogo.jpeg` — client-supplied logo (source file).

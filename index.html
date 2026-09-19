@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Arya Global Workforce — MEA-Licensed Overseas Recruitment, Lucknow</title>
-<meta name="description" content="Arya Global Workforce is an MEA-registered recruiting agent in Hazratganj, Lucknow, helping skilled Indians find verified jobs across the Gulf and Asia-Pacific. Service charge capped at ₹30,000.">
+<meta name="description" content="Arya Global Workforce is an MEA-registered recruiting agent in Hazratganj, Lucknow, helping skilled Indians find verified jobs across the Gulf and Asia-Pacific. Licensed by the Ministry of External Affairs, Government of India.">
 <meta id="themeColorMeta" name="theme-color" content="#F8F7FF">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -22,7 +22,7 @@
 <link rel="preload" as="image" href="images/hero-traveller.webp" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Lexend:wght@500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
 <script>
   /* Motion gate: hero starts hidden only when motion is allowed; un-hides itself if GSAP never arrives. */
   (function () {
@@ -40,6 +40,7 @@ tailwind.config = {
       fontFamily: {
         sans: ['Plus Jakarta Sans','sans-serif'],
         display: ['Fraunces','serif'],
+        hero: ['Lexend','sans-serif'],
       },
       colors: {
         ink: { DEFAULT: '#140C33', deep: '#0C0722', soft: '#231A4D' },
@@ -106,6 +107,25 @@ tailwind.config = {
   .step-dot { transition: background-color .3s ease, color .3s ease, border-color .3s ease, box-shadow .3s ease; }
   .step.is-active .step-dot { background: #4B0AF3; color: #fff; border-color: #4B0AF3; box-shadow: 0 0 0 6px rgba(75,10,243,.14); }
 
+  /* Certifications */
+  .cert-grid-bg { background-image: linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px); background-size: 56px 56px; -webkit-mask-image: radial-gradient(ellipse at 50% 35%, #000 25%, transparent 75%); mask-image: radial-gradient(ellipse at 50% 35%, #000 25%, transparent 75%); }
+  .cert-card { transform-style: preserve-3d; }
+  .cert-stage { background: radial-gradient(120% 90% at 50% 0%, #3B2B8E 0%, #1C1249 55%, #120A33 100%); }
+  .cert-stage::after { content: ''; position: absolute; inset: -30%; z-index: 3; pointer-events: none; background: linear-gradient(105deg, transparent 42%, rgba(255,255,255,.2) 50%, transparent 58%); transform: translateX(-75%); transition: transform 1s cubic-bezier(.22,.61,.36,1); }
+  .cert:hover .cert-stage::after, .cert:focus-within .cert-stage::after { transform: translateX(75%); }
+  .cert-doc, .cert-sheet { position: absolute; left: 17%; width: 66%; top: 13%; aspect-ratio: 1 / 1.414; border-radius: 4px; transition: translate .7s cubic-bezier(.22,.61,.36,1), rotate .7s cubic-bezier(.22,.61,.36,1); }
+  .cert-featured .cert-doc, .cert-featured .cert-sheet { left: 19%; width: 62%; top: 9%; }
+  .cert-doc { z-index: 2; height: auto; background: #fff; rotate: -2deg; box-shadow: 0 30px 60px -12px rgba(0,0,0,.6), 0 0 0 1px rgba(255,255,255,.35); }
+  .cert-sheet { z-index: 1; background: #fff; }
+  .cert-sheet.s1 { opacity: .55; rotate: 4deg; translate: 3% 2%; }
+  .cert-sheet.s2 { opacity: .28; rotate: -6deg; translate: -4% 4%; }
+  .cert:hover .cert-doc, .cert:focus-within .cert-doc { rotate: 0deg; translate: 0 -5%; }
+  .cert:hover .cert-sheet.s1, .cert:focus-within .cert-sheet.s1 { rotate: 9deg; translate: 10% -1%; }
+  .cert:hover .cert-sheet.s2, .cert:focus-within .cert-sheet.s2 { rotate: -11deg; translate: -11% 1%; }
+  .cert-glare { position: absolute; inset: 0; z-index: 5; pointer-events: none; border-radius: inherit; opacity: 0; transition: opacity .35s ease; background: radial-gradient(480px circle at var(--gx, 50%) var(--gy, 0%), rgba(255,255,255,.13), transparent 45%); }
+  .cert:hover .cert-glare { opacity: 1; }
+  .cert:hover .cert-card { border-color: rgba(246,206,125,.45); }
+
   /* Mobile menu */
   #menuOverlay { transition: opacity .3s ease; }
   #menuOverlay .m-link { opacity: 0; transform: translateY(14px); transition: opacity .45s ease var(--d,0s), transform .45s ease var(--d,0s); }
@@ -134,6 +154,7 @@ tailwind.config = {
     .ticker-track { animation: none !important; width: auto; justify-content: center; }
     .ticker-track ul { flex-wrap: wrap; justify-content: center; white-space: normal; row-gap: 12px; padding: 0 56px 0 16px; }
     .ticker-track [aria-hidden="true"], #tickerToggle { display: none !important; }
+    .cert-doc, .cert-sheet, .cert-stage::after, .cert-glare { transition: none !important; }
     .zoom > img, .lift, #menuOverlay, #menuOverlay .m-link, #stickyBar, details .faq-plus, .step-dot { transition: none !important; }
     .group:hover .zoom > img, .lift:hover { transform: none !important; }
   }
@@ -144,7 +165,7 @@ tailwind.config = {
   "@type": "EmploymentAgency",
   "name": "Arya Global Workforce",
   "slogan": "Dream · Work · Grow",
-  "founder": { "@type": "Person", "name": "Ashish Mahendra" },
+  "founder": { "@type": "Person", "honorificPrefix": "Dr.", "name": "Ashish Mahendra" },
   "foundingDate": "2025-12-16",
   "taxID": "09AKIPM5590M1ZE",
   "email": "aryaglobalworkforce@gmail.com",
@@ -176,12 +197,12 @@ tailwind.config = {
       <img src="logo-horizontal.png" alt="Arya Global Workforce" width="576" height="132" class="h-10 sm:h-11 w-auto">
     </a>
     <nav class="hidden lg:flex items-center gap-0.5 text-[14px] font-semibold text-ink/70" aria-label="Primary">
-      <a href="#destinations" class="px-3.5 py-2 rounded-full hover:bg-brand/[0.07] hover:text-brand transition cursor-pointer focus-ring">Destinations</a>
-      <a href="#opportunities" class="px-3.5 py-2 rounded-full hover:bg-brand/[0.07] hover:text-brand transition cursor-pointer focus-ring">Opportunities</a>
-      <a href="#process" class="px-3.5 py-2 rounded-full hover:bg-brand/[0.07] hover:text-brand transition cursor-pointer focus-ring">How it works</a>
-      <a href="#trust" class="px-3.5 py-2 rounded-full hover:bg-brand/[0.07] hover:text-brand transition cursor-pointer focus-ring">Why us</a>
-      <a href="#fees" class="px-3.5 py-2 rounded-full hover:bg-brand/[0.07] hover:text-brand transition cursor-pointer focus-ring">Fees</a>
-      <a href="#faq" class="px-3.5 py-2 rounded-full hover:bg-brand/[0.07] hover:text-brand transition cursor-pointer focus-ring">FAQ</a>
+      <a href="#certifications" class="px-3 xl:px-3.5 py-2 rounded-full hover:bg-brand/[0.07] hover:text-brand transition cursor-pointer focus-ring">Certifications</a>
+      <a href="#destinations" class="px-3 xl:px-3.5 py-2 rounded-full hover:bg-brand/[0.07] hover:text-brand transition cursor-pointer focus-ring">Destinations</a>
+      <a href="#opportunities" class="px-3 xl:px-3.5 py-2 rounded-full hover:bg-brand/[0.07] hover:text-brand transition cursor-pointer focus-ring">Opportunities</a>
+      <a href="#process" class="px-3 xl:px-3.5 py-2 rounded-full hover:bg-brand/[0.07] hover:text-brand transition cursor-pointer focus-ring">How it works</a>
+      <a href="#about" class="px-3 xl:px-3.5 py-2 rounded-full hover:bg-brand/[0.07] hover:text-brand transition cursor-pointer focus-ring">About</a>
+      <a href="#faq" class="px-3 xl:px-3.5 py-2 rounded-full hover:bg-brand/[0.07] hover:text-brand transition cursor-pointer focus-ring">FAQ</a>
     </nav>
     <div class="flex items-center gap-2">
       <a href="https://www.instagram.com/drashish_official/" target="_blank" rel="noopener noreferrer" aria-label="Instagram (opens in a new tab)" class="hidden md:grid lg:hidden xl:grid w-10 h-10 place-items-center rounded-xl bg-brand/[0.07] text-brand text-lg hover:bg-brand hover:text-white transition cursor-pointer focus-ring"><i class="ph ph-instagram-logo" aria-hidden="true"></i></a>
@@ -204,13 +225,15 @@ tailwind.config = {
   </div>
   <div class="stripes h-1.5 w-full" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
   <nav class="flex-none flex flex-col justify-start px-8 pt-8 pb-6 gap-1" aria-label="Mobile">
-    <a href="#destinations" class="m-link font-display text-[30px] leading-tight font-medium py-2 hover:text-sun transition" style="--d:.05s">Destinations</a>
-    <a href="#opportunities" class="m-link font-display text-[30px] leading-tight font-medium py-2 hover:text-sun transition" style="--d:.1s">Opportunities</a>
-    <a href="#process" class="m-link font-display text-[30px] leading-tight font-medium py-2 hover:text-sun transition" style="--d:.15s">How it works</a>
-    <a href="#trust" class="m-link font-display text-[30px] leading-tight font-medium py-2 hover:text-sun transition" style="--d:.2s">Why us</a>
-    <a href="#fees" class="m-link font-display text-[30px] leading-tight font-medium py-2 hover:text-sun transition" style="--d:.25s">Fees &amp; grievances</a>
-    <a href="#faq" class="m-link font-display text-[30px] leading-tight font-medium py-2 hover:text-sun transition" style="--d:.3s">FAQ</a>
-    <a href="#apply" class="m-link mt-4 inline-flex w-fit items-center gap-2 bg-sun text-ink font-bold px-7 py-3.5 rounded-full text-[15px]" style="--d:.35s">Apply now <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+    <a href="#certifications" class="m-link font-display text-[28px] leading-tight font-medium py-1.5 hover:text-sun transition" style="--d:.04s">Certifications</a>
+    <a href="#destinations" class="m-link font-display text-[28px] leading-tight font-medium py-1.5 hover:text-sun transition" style="--d:.08s">Destinations</a>
+    <a href="#opportunities" class="m-link font-display text-[28px] leading-tight font-medium py-1.5 hover:text-sun transition" style="--d:.12s">Opportunities</a>
+    <a href="#process" class="m-link font-display text-[28px] leading-tight font-medium py-1.5 hover:text-sun transition" style="--d:.16s">How it works</a>
+    <a href="#about" class="m-link font-display text-[28px] leading-tight font-medium py-1.5 hover:text-sun transition" style="--d:.2s">About us</a>
+    <a href="#trust" class="m-link font-display text-[28px] leading-tight font-medium py-1.5 hover:text-sun transition" style="--d:.24s">Why us</a>
+    <a href="#fees" class="m-link font-display text-[28px] leading-tight font-medium py-1.5 hover:text-sun transition" style="--d:.28s">Fees &amp; grievances</a>
+    <a href="#faq" class="m-link font-display text-[28px] leading-tight font-medium py-1.5 hover:text-sun transition" style="--d:.32s">FAQ</a>
+    <a href="#apply" class="m-link mt-4 inline-flex w-fit items-center gap-2 bg-sun text-ink font-bold px-7 py-3.5 rounded-full text-[15px]" style="--d:.36s">Apply now <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
   </nav>
   <div class="px-8 pb-[calc(1.25rem+env(safe-area-inset-bottom))] grid grid-cols-2 gap-3 text-[13px] font-semibold">
     <a href="tel:+919956052200" class="m-link inline-flex items-center justify-center gap-2 min-h-11 border border-white/20 rounded-full px-4 py-3" style="--d:.4s"><i class="ph ph-phone" aria-hidden="true"></i> Call us</a>
@@ -235,8 +258,8 @@ tailwind.config = {
         <span class="inline-flex items-center gap-1.5 bg-brand text-white rounded-full px-2.5 py-1 tracking-normal"><i class="ph-fill ph-seal-check text-sun" aria-hidden="true"></i> MEA licensed</span>
         Overseas jobs<span class="hidden sm:inline"> · Lucknow</span>
       </p>
-      <h1 id="heroTitle" data-hero class="mt-6 font-display font-semibold text-[44px] leading-[1.02] sm:text-[58px] lg:text-[66px] tracking-[-0.02em]">
-        Your career, <em class="block font-display italic font-medium text-brand">beyond borders.</em>
+      <h1 id="heroTitle" data-hero class="mt-6 font-hero font-semibold text-[40px] leading-[1.08] sm:text-[54px] lg:text-[60px] tracking-[-0.025em]">
+        Your career, <em class="block not-italic font-hero font-semibold text-brand">beyond borders.</em>
       </h1>
       <p data-hero class="mt-6 max-w-[530px] text-[16.5px] leading-7 text-ink/70">
         Arya Global Workforce helps skilled and ambitious Indians find verified jobs across the <strong class="font-bold text-ink">Gulf and Asia-Pacific</strong> — with honest guidance, a fee capped by law, and a Government of India recruitment licence behind every placement.
@@ -247,9 +270,10 @@ tailwind.config = {
       </div>
       <dl class="mt-10 flex flex-wrap gap-x-7 gap-y-5">
         <div data-hero class="flex flex-col border-l-2 border-brand pl-3"><dt class="order-2 mt-1.5 text-[10.5px] font-bold tracking-[0.12em] uppercase text-ink/60">Registered agent</dt><dd class="order-1 font-display text-[22px] font-semibold leading-none">MEA</dd></div>
-        <div data-hero class="flex flex-col border-l-2 border-orchid pl-3"><dt class="order-2 mt-1.5 text-[10.5px] font-bold tracking-[0.12em] uppercase text-ink/60">Max service fee</dt><dd class="order-1 font-display text-[22px] font-semibold leading-none">₹30,000</dd></div>
+        <div data-hero class="flex flex-col border-l-2 border-orchid pl-3"><dt class="order-2 mt-1.5 text-[10.5px] font-bold tracking-[0.12em] uppercase text-ink/60">Govt. registrations</dt><dd class="order-1 font-display text-[22px] font-semibold leading-none">4</dd></div>
         <div data-hero class="flex flex-col border-l-2 border-sun pl-3"><dt class="order-2 mt-1.5 text-[10.5px] font-bold tracking-[0.12em] uppercase text-ink/60">Licence valid till</dt><dd class="order-1 font-display text-[22px] font-semibold leading-none">2031</dd></div>
       </dl>
+      <p data-hero class="mt-6"><a href="#certifications" class="inline-flex items-center gap-2 text-[14px] font-bold text-brand hover:gap-3 transition-all cursor-pointer focus-ring rounded-full"><i class="ph ph-certificate text-lg" aria-hidden="true"></i> View our government certificates <i class="ph ph-arrow-down" aria-hidden="true"></i></a></p>
     </div>
 
     <!-- Hero collage -->
@@ -271,10 +295,10 @@ tailwind.config = {
       </div>
 
       <div data-hero class="absolute right-[10%] sm:right-[36%] top-[44%] sm:top-[40%]">
-        <span class="chip-float inline-flex items-center gap-2 bg-white text-ink rounded-2xl pl-2 pr-4 py-2 shadow-float text-[12px] font-bold leading-tight" style="--d:1.1s">
+        <a href="#certifications" class="chip-float inline-flex items-center gap-2 bg-white text-ink rounded-2xl pl-2 pr-4 py-2 shadow-float text-[12px] font-bold leading-tight cursor-pointer focus-ring" style="--d:1.1s">
           <span class="w-8 h-8 rounded-xl bg-brand text-sun grid place-items-center text-lg"><i class="ph-fill ph-seal-check" aria-hidden="true"></i></span>
           <span>Licensed by<br><span class="text-brand">Ministry of External Affairs</span></span>
-        </span>
+        </a>
       </div>
 
       <!-- Boarding pass -->
@@ -335,30 +359,137 @@ tailwind.config = {
   </button>
 </section>
 
-<!-- ===================== Licence band ===================== -->
-<section id="licence" class="bg-ink text-white relative overflow-hidden" aria-label="Licence and fees at a glance">
-  <div class="absolute -right-24 -top-24 w-[420px] h-[420px] bg-brand/40 rounded-full blur-[110px] pointer-events-none" aria-hidden="true"></div>
-  <div class="relative max-w-[1200px] mx-auto px-5 sm:px-6 py-12 lg:py-16">
-    <div class="grid grid-cols-1 sm:grid-cols-3 gap-10 sm:gap-6">
-      <div data-reveal>
-        <p class="font-display text-[52px] lg:text-[64px] font-semibold leading-none tracking-tight"><span class="text-sun">₹</span><span data-count="30000">30,000</span></p>
-        <p class="mt-3 text-[12px] font-bold tracking-[0.18em] uppercase text-white/60">Maximum service charge</p>
-        <p class="mt-2 text-[13.5px] text-white/70 leading-6 max-w-[290px]">The legal cap for registered recruiting agents under the Emigration Act, 1983. Online or DD only — never cash.</p>
+<!-- ===================== Certifications ===================== -->
+<section id="certifications" class="scroll-mt-24 bg-ink text-white relative overflow-hidden" aria-labelledby="certTitle">
+  <div class="absolute inset-0 cert-grid-bg pointer-events-none" aria-hidden="true"></div>
+  <div class="absolute -right-24 -top-24 w-[460px] h-[460px] bg-brand/40 rounded-full blur-[120px] pointer-events-none" aria-hidden="true"></div>
+  <div class="absolute -left-32 bottom-0 w-[420px] h-[420px] bg-orchid/20 rounded-full blur-[120px] pointer-events-none" aria-hidden="true"></div>
+  <div class="relative max-w-[1200px] mx-auto px-5 sm:px-6 py-16 lg:py-24">
+    <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
+      <div>
+        <p class="flex items-center gap-3 text-[11.5px] font-extrabold tracking-[0.2em] uppercase text-sun" data-reveal><span class="tick" aria-hidden="true"><span class="bg-brand"></span><span class="bg-iris"></span><span class="bg-orchid"></span><span class="bg-sun"></span></span>Certifications</p>
+        <h2 id="certTitle" class="mt-4 font-display font-semibold text-[34px] lg:text-[48px] leading-[1.03] tracking-[-0.01em]" data-reveal>Every licence,<br><span class="text-white/50">open for you to check.</span></h2>
       </div>
-      <div data-reveal>
-        <p class="font-display text-[52px] lg:text-[64px] font-semibold leading-none tracking-tight"><span data-count="1000">1,000</span><span class="text-orchid">+</span></p>
-        <p class="mt-3 text-[12px] font-bold tracking-[0.18em] uppercase text-white/60">Licence category</p>
-        <p class="mt-2 text-[13.5px] text-white/70 leading-6 max-w-[290px]">Our Ministry of External Affairs registration covers recruitment of 1000+ workers.</p>
-      </div>
-      <div data-reveal>
-        <p class="font-display text-[52px] lg:text-[64px] font-semibold leading-none tracking-tight"><span data-count="2031" data-plain>2031</span></p>
-        <p class="mt-3 text-[12px] font-bold tracking-[0.18em] uppercase text-white/60">Licence valid until</p>
-        <p class="mt-2 text-[13.5px] text-white/70 leading-6 max-w-[290px]">Registration valid from 14 September 2026 to 26 August 2031.</p>
-      </div>
+      <p class="max-w-[430px] text-[14.5px] leading-7 text-white/70" data-reveal>The original documents issued to Arya Global Workforce by the Government of India and the Government of Uttar Pradesh. Tap a document to open the PDF — it opens in your browser's viewer, or downloads if your browser can't show it.</p>
     </div>
-    <p class="mt-12 pt-6 border-t border-white/10 text-[12.5px] text-white/65 flex items-start gap-2 leading-6" data-reveal>
-      <i class="ph-fill ph-seal-check text-sun text-base mt-1" aria-hidden="true"></i>
-      <span>Arya Global Workforce — Registration Certificate No. <strong class="text-white font-semibold whitespace-nowrap">B-3525/UP/PER/1000+/5/11528/2026</strong>, issued by the Protector General of Emigrants, Ministry of External Affairs, Government of India.</span>
+
+    <dl class="mt-10 grid grid-cols-3 gap-3 sm:gap-6 max-w-[760px]">
+      <div class="flex flex-col border-l-2 border-brand pl-3 sm:pl-4" data-reveal><dt class="order-2 mt-2 text-[10px] sm:text-[11.5px] font-bold tracking-[0.14em] uppercase text-white/60">Govt. registrations</dt><dd class="order-1 font-display text-[26px] sm:text-[40px] lg:text-[48px] font-semibold leading-none"><span data-count="4">4</span></dd></div>
+      <div class="flex flex-col border-l-2 border-orchid pl-3 sm:pl-4" data-reveal><dt class="order-2 mt-2 text-[10px] sm:text-[11.5px] font-bold tracking-[0.14em] uppercase text-white/60">Licence category</dt><dd class="order-1 font-display text-[26px] sm:text-[40px] lg:text-[48px] font-semibold leading-none"><span data-count="1000">1,000</span><span class="text-orchid">+</span></dd></div>
+      <div class="flex flex-col border-l-2 border-sun pl-3 sm:pl-4" data-reveal><dt class="order-2 mt-2 text-[10px] sm:text-[11.5px] font-bold tracking-[0.14em] uppercase text-white/60">Licence valid until</dt><dd class="order-1 font-display text-[26px] sm:text-[40px] lg:text-[48px] font-semibold leading-none"><span data-count="2031" data-plain>2031</span></dd></div>
+    </dl>
+
+    <div id="certGrid" class="mt-10 lg:mt-12 grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-5">
+      <article class="cert group relative col-span-2 lg:col-span-1 lg:row-span-2 cert-featured" data-cert>
+        <div class="cert-card relative h-full flex flex-col rounded-[24px] sm:rounded-[28px] border border-white/10 bg-white/[0.04] p-2.5 sm:p-3.5 transition-colors">
+          <div class="cert-stage relative overflow-hidden rounded-[18px] sm:rounded-[20px] aspect-[4/5] sm:aspect-[5/4] lg:aspect-auto lg:flex-1 lg:min-h-[360px]">
+            <span class="cert-sheet s2" aria-hidden="true"></span><span class="cert-sheet s1" aria-hidden="true"></span>
+            <img class="cert-doc" src="images/certs/mea-registration-certificate.webp" alt="" width="1000" height="1416" loading="lazy" decoding="async">
+            <span class="cert-seal absolute left-2.5 top-2.5 sm:left-3.5 sm:top-3.5 z-[4] inline-flex items-center gap-1 rounded-full bg-sun text-ink px-2 sm:px-2.5 py-1 text-[9.5px] sm:text-[10.5px] font-extrabold tracking-wide"><i class="ph-fill ph-seal-check" aria-hidden="true"></i> Govt. issued</span>
+            <span class="absolute right-2.5 top-2.5 sm:right-3.5 sm:top-3.5 z-[4] rounded-full bg-ink/60 backdrop-blur px-2 sm:px-2.5 py-1 text-[9.5px] sm:text-[10.5px] font-bold text-white/85">5 pages</span>
+          </div>
+          <div class="flex-1 lg:flex-none flex flex-col px-1.5 sm:px-2 pt-3.5 sm:pt-4 pb-1">
+            <p class="text-[9.5px] sm:text-[10.5px] font-extrabold tracking-[0.14em] uppercase text-sun">Ministry of External Affairs · Govt. of India</p>
+            <h3 class="mt-1.5 font-display text-[22px] sm:text-[26px] font-semibold leading-tight">Recruiting Agent Licence</h3>
+            <p class="mt-2 text-[11.5px] sm:text-[12.5px] leading-5 text-white/70 break-words">Registration Certificate under Section 11 of the Emigration Act, 1983</p><p class="mt-1 text-[11.5px] sm:text-[12.5px] leading-5 text-white/70 break-words">RC No. <span class="font-semibold text-white">B-3525/UP/PER/1000+/5/11528/2026</span></p><p class="mt-1 text-[11.5px] sm:text-[12.5px] leading-5 text-white/70 break-words">Valid 14 Sep 2026 – 26 Aug 2031</p>
+            <div class="mt-auto pt-3.5 flex items-center justify-between gap-2">
+              <span class="inline-flex items-center gap-1.5 text-[12px] sm:text-[13px] font-bold text-sun">View PDF <i class="ph ph-arrow-up-right transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true"></i></span>
+              <a href="certificates/mea-registration-certificate.pdf" download="Arya-Global-Workforce-MEA-Registration-Certificate.pdf" class="relative z-20 inline-flex items-center justify-center gap-1.5 min-w-11 h-11 rounded-full border border-white/20 px-3 text-[12px] font-bold text-white hover:bg-white hover:text-ink transition cursor-pointer focus-ring-dark" aria-label="Download Recruiting Agent Licence (PDF, 3.4 MB)"><i class="ph ph-download-simple text-base" aria-hidden="true"></i><span class="hidden sm:inline">3.4 MB</span></a>
+            </div>
+          </div>
+          <a href="certificates/mea-registration-certificate.pdf" target="_blank" rel="noopener" type="application/pdf" class="absolute inset-0 z-10 rounded-[24px] sm:rounded-[28px] cursor-pointer focus-ring-dark" aria-label="View Recruiting Agent Licence — PDF, 5 pages, opens in a new tab"></a>
+          <span class="cert-glare" aria-hidden="true"></span>
+        </div>
+      </article>
+      <article class="cert group relative " data-cert>
+        <div class="cert-card relative h-full flex flex-col rounded-[24px] sm:rounded-[28px] border border-white/10 bg-white/[0.04] p-2.5 sm:p-3.5 transition-colors">
+          <div class="cert-stage relative overflow-hidden rounded-[18px] sm:rounded-[20px] aspect-[4/3]">
+            <span class="cert-sheet s2" aria-hidden="true"></span><span class="cert-sheet s1" aria-hidden="true"></span>
+            <img class="cert-doc" src="images/certs/gst-registration-certificate.webp" alt="" width="760" height="1076" loading="lazy" decoding="async">
+            <span class="cert-seal absolute left-2.5 top-2.5 sm:left-3.5 sm:top-3.5 z-[4] inline-flex items-center gap-1 rounded-full bg-sun text-ink px-2 sm:px-2.5 py-1 text-[9.5px] sm:text-[10.5px] font-extrabold tracking-wide"><i class="ph-fill ph-seal-check" aria-hidden="true"></i><span class="sr-only sm:not-sr-only">Govt. issued</span></span>
+            <span class="absolute right-2.5 top-2.5 sm:right-3.5 sm:top-3.5 z-[4] rounded-full bg-ink/60 backdrop-blur px-2 sm:px-2.5 py-1 text-[9.5px] sm:text-[10.5px] font-bold text-white/85">3 pages</span>
+          </div>
+          <div class="flex-1 flex flex-col px-1.5 sm:px-2 pt-3.5 sm:pt-4 pb-1">
+            <p class="text-[9.5px] sm:text-[10.5px] font-extrabold tracking-[0.14em] uppercase text-sun">Form GST REG-06 · Govt. of India</p>
+            <h3 class="mt-1.5 font-display text-[16px] sm:text-[19px] font-semibold leading-tight">GST Registration</h3>
+            <p class="mt-2 text-[11.5px] sm:text-[12.5px] leading-5 text-white/70 break-words">GSTIN <span class="font-semibold text-white">09AKIPM5590M1ZE</span></p><p class="mt-1 text-[11.5px] sm:text-[12.5px] leading-5 text-white/70 break-words">Effective 22 Dec 2025</p>
+            <div class="mt-auto pt-3.5 flex items-center justify-between gap-2">
+              <span class="inline-flex items-center gap-1.5 text-[12px] sm:text-[13px] font-bold text-sun">View PDF <i class="ph ph-arrow-up-right transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true"></i></span>
+              <a href="certificates/gst-registration-certificate.pdf" download="Arya-Global-Workforce-GST-Registration-Certificate.pdf" class="relative z-20 inline-flex items-center justify-center gap-1.5 min-w-11 h-11 rounded-full border border-white/20 px-3 text-[12px] font-bold text-white hover:bg-white hover:text-ink transition cursor-pointer focus-ring-dark" aria-label="Download GST Registration (PDF, 117 KB)"><i class="ph ph-download-simple text-base" aria-hidden="true"></i><span class="hidden sm:inline">117 KB</span></a>
+            </div>
+          </div>
+          <a href="certificates/gst-registration-certificate.pdf" target="_blank" rel="noopener" type="application/pdf" class="absolute inset-0 z-10 rounded-[24px] sm:rounded-[28px] cursor-pointer focus-ring-dark" aria-label="View GST Registration — PDF, 3 pages, opens in a new tab"></a>
+          <span class="cert-glare" aria-hidden="true"></span>
+        </div>
+      </article>
+      <article class="cert group relative " data-cert>
+        <div class="cert-card relative h-full flex flex-col rounded-[24px] sm:rounded-[28px] border border-white/10 bg-white/[0.04] p-2.5 sm:p-3.5 transition-colors">
+          <div class="cert-stage relative overflow-hidden rounded-[18px] sm:rounded-[20px] aspect-[4/3]">
+            <span class="cert-sheet s2" aria-hidden="true"></span><span class="cert-sheet s1" aria-hidden="true"></span>
+            <img class="cert-doc" src="images/certs/udyam-registration-certificate.webp" alt="" width="760" height="1076" loading="lazy" decoding="async">
+            <span class="cert-seal absolute left-2.5 top-2.5 sm:left-3.5 sm:top-3.5 z-[4] inline-flex items-center gap-1 rounded-full bg-sun text-ink px-2 sm:px-2.5 py-1 text-[9.5px] sm:text-[10.5px] font-extrabold tracking-wide"><i class="ph-fill ph-seal-check" aria-hidden="true"></i><span class="sr-only sm:not-sr-only">Govt. issued</span></span>
+            <span class="absolute right-2.5 top-2.5 sm:right-3.5 sm:top-3.5 z-[4] rounded-full bg-ink/60 backdrop-blur px-2 sm:px-2.5 py-1 text-[9.5px] sm:text-[10.5px] font-bold text-white/85">3 pages</span>
+          </div>
+          <div class="flex-1 flex flex-col px-1.5 sm:px-2 pt-3.5 sm:pt-4 pb-1">
+            <p class="text-[9.5px] sm:text-[10.5px] font-extrabold tracking-[0.14em] uppercase text-sun">Ministry of MSME · Govt. of India</p>
+            <h3 class="mt-1.5 font-display text-[16px] sm:text-[19px] font-semibold leading-tight">Udyam (MSME) Registration</h3>
+            <p class="mt-2 text-[11.5px] sm:text-[12.5px] leading-5 text-white/70 break-words"><span class="font-semibold text-white">UDYAM-UP-50-0246203</span></p><p class="mt-1 text-[11.5px] sm:text-[12.5px] leading-5 text-white/70 break-words">Registered 23 Dec 2025</p>
+            <div class="mt-auto pt-3.5 flex items-center justify-between gap-2">
+              <span class="inline-flex items-center gap-1.5 text-[12px] sm:text-[13px] font-bold text-sun">View PDF <i class="ph ph-arrow-up-right transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true"></i></span>
+              <a href="certificates/udyam-registration-certificate.pdf" download="Arya-Global-Workforce-Udyam-Registration-Certificate.pdf" class="relative z-20 inline-flex items-center justify-center gap-1.5 min-w-11 h-11 rounded-full border border-white/20 px-3 text-[12px] font-bold text-white hover:bg-white hover:text-ink transition cursor-pointer focus-ring-dark" aria-label="Download Udyam (MSME) Registration (PDF, 479 KB)"><i class="ph ph-download-simple text-base" aria-hidden="true"></i><span class="hidden sm:inline">479 KB</span></a>
+            </div>
+          </div>
+          <a href="certificates/udyam-registration-certificate.pdf" target="_blank" rel="noopener" type="application/pdf" class="absolute inset-0 z-10 rounded-[24px] sm:rounded-[28px] cursor-pointer focus-ring-dark" aria-label="View Udyam (MSME) Registration — PDF, 3 pages, opens in a new tab"></a>
+          <span class="cert-glare" aria-hidden="true"></span>
+        </div>
+      </article>
+      <article class="cert group relative " data-cert>
+        <div class="cert-card relative h-full flex flex-col rounded-[24px] sm:rounded-[28px] border border-white/10 bg-white/[0.04] p-2.5 sm:p-3.5 transition-colors">
+          <div class="cert-stage relative overflow-hidden rounded-[18px] sm:rounded-[20px] aspect-[4/3]">
+            
+            <img class="cert-doc" src="images/certs/up-shops-establishments-certificate.webp" alt="" width="760" height="1076" loading="lazy" decoding="async">
+            <span class="cert-seal absolute left-2.5 top-2.5 sm:left-3.5 sm:top-3.5 z-[4] inline-flex items-center gap-1 rounded-full bg-sun text-ink px-2 sm:px-2.5 py-1 text-[9.5px] sm:text-[10.5px] font-extrabold tracking-wide"><i class="ph-fill ph-seal-check" aria-hidden="true"></i><span class="sr-only sm:not-sr-only">Govt. issued</span></span>
+            <span class="absolute right-2.5 top-2.5 sm:right-3.5 sm:top-3.5 z-[4] rounded-full bg-ink/60 backdrop-blur px-2 sm:px-2.5 py-1 text-[9.5px] sm:text-[10.5px] font-bold text-white/85">1 page</span>
+          </div>
+          <div class="flex-1 flex flex-col px-1.5 sm:px-2 pt-3.5 sm:pt-4 pb-1">
+            <p class="text-[9.5px] sm:text-[10.5px] font-extrabold tracking-[0.14em] uppercase text-sun">Labour Department · Uttar Pradesh</p>
+            <h3 class="mt-1.5 font-display text-[16px] sm:text-[19px] font-semibold leading-tight">Shops &amp; Establishments</h3>
+            <p class="mt-2 text-[11.5px] sm:text-[12.5px] leading-5 text-white/70 break-words">Reg. No. <span class="font-semibold text-white">UPSA28769910</span></p><p class="mt-1 text-[11.5px] sm:text-[12.5px] leading-5 text-white/70 break-words">Registered 16 Dec 2025</p>
+            <div class="mt-auto pt-3.5 flex items-center justify-between gap-2">
+              <span class="inline-flex items-center gap-1.5 text-[12px] sm:text-[13px] font-bold text-sun">View PDF <i class="ph ph-arrow-up-right transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true"></i></span>
+              <a href="certificates/up-shops-establishments-certificate.pdf" download="Arya-Global-Workforce-UP-Shops-Establishments-Certificate.pdf" class="relative z-20 inline-flex items-center justify-center gap-1.5 min-w-11 h-11 rounded-full border border-white/20 px-3 text-[12px] font-bold text-white hover:bg-white hover:text-ink transition cursor-pointer focus-ring-dark" aria-label="Download Shops &amp; Establishments (PDF, 1 MB)"><i class="ph ph-download-simple text-base" aria-hidden="true"></i><span class="hidden sm:inline">1 MB</span></a>
+            </div>
+          </div>
+          <a href="certificates/up-shops-establishments-certificate.pdf" target="_blank" rel="noopener" type="application/pdf" class="absolute inset-0 z-10 rounded-[24px] sm:rounded-[28px] cursor-pointer focus-ring-dark" aria-label="View Shops &amp; Establishments — PDF, 1 page, opens in a new tab"></a>
+          <span class="cert-glare" aria-hidden="true"></span>
+        </div>
+      </article>
+      <article class="cert group relative " data-cert>
+        <div class="cert-card relative h-full flex flex-col rounded-[24px] sm:rounded-[28px] border border-white/10 bg-white/[0.04] p-2.5 sm:p-3.5 transition-colors">
+          <div class="cert-stage relative overflow-hidden rounded-[18px] sm:rounded-[20px] aspect-[4/3]">
+            
+            <img class="cert-doc" src="images/certs/service-charge-undertaking.webp" alt="" width="760" height="1076" loading="lazy" decoding="async">
+            <span class="cert-seal absolute left-2.5 top-2.5 sm:left-3.5 sm:top-3.5 z-[4] inline-flex items-center gap-1 rounded-full bg-sun text-ink px-2 sm:px-2.5 py-1 text-[9.5px] sm:text-[10.5px] font-extrabold tracking-wide"><i class="ph-fill ph-seal-check" aria-hidden="true"></i><span class="sr-only sm:not-sr-only">Govt. issued</span></span>
+            <span class="absolute right-2.5 top-2.5 sm:right-3.5 sm:top-3.5 z-[4] rounded-full bg-ink/60 backdrop-blur px-2 sm:px-2.5 py-1 text-[9.5px] sm:text-[10.5px] font-bold text-white/85">1 page</span>
+          </div>
+          <div class="flex-1 flex flex-col px-1.5 sm:px-2 pt-3.5 sm:pt-4 pb-1">
+            <p class="text-[9.5px] sm:text-[10.5px] font-extrabold tracking-[0.14em] uppercase text-sun">Emigration Act, 1983</p>
+            <h3 class="mt-1.5 font-display text-[16px] sm:text-[19px] font-semibold leading-tight">Service Charge Undertaking</h3>
+            <p class="mt-2 text-[11.5px] sm:text-[12.5px] leading-5 text-white/70 break-words">Payment online or by DD only</p><p class="mt-1 text-[11.5px] sm:text-[12.5px] leading-5 text-white/70 break-words">Complaint contact: Protector General of Emigrants</p>
+            <div class="mt-auto pt-3.5 flex items-center justify-between gap-2">
+              <span class="inline-flex items-center gap-1.5 text-[12px] sm:text-[13px] font-bold text-sun">View PDF <i class="ph ph-arrow-up-right transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true"></i></span>
+              <a href="certificates/service-charge-undertaking.pdf" download="Arya-Global-Workforce-Service-Charge-Undertaking.pdf" class="relative z-20 inline-flex items-center justify-center gap-1.5 min-w-11 h-11 rounded-full border border-white/20 px-3 text-[12px] font-bold text-white hover:bg-white hover:text-ink transition cursor-pointer focus-ring-dark" aria-label="Download Service Charge Undertaking (PDF, 225 KB)"><i class="ph ph-download-simple text-base" aria-hidden="true"></i><span class="hidden sm:inline">225 KB</span></a>
+            </div>
+          </div>
+          <a href="certificates/service-charge-undertaking.pdf" target="_blank" rel="noopener" type="application/pdf" class="absolute inset-0 z-10 rounded-[24px] sm:rounded-[28px] cursor-pointer focus-ring-dark" aria-label="View Service Charge Undertaking — PDF, 1 page, opens in a new tab"></a>
+          <span class="cert-glare" aria-hidden="true"></span>
+        </div>
+      </article>
+    </div>
+
+    <p class="mt-10 pt-6 border-t border-white/10 text-[12.5px] text-white/65 flex flex-col sm:flex-row sm:items-center gap-3 leading-6" data-reveal>
+      <span class="flex items-start gap-2"><i class="ph-fill ph-seal-check text-sun text-base mt-1" aria-hidden="true"></i><span>Documents are published exactly as issued. Registered recruiting agents can also be checked on the Government of India's eMigrate portal.</span></span>
+      <a href="https://emigrate.gov.in/" target="_blank" rel="noopener noreferrer" class="sm:ml-auto shrink-0 inline-flex w-fit items-center gap-2 rounded-full border border-white/20 px-4 py-2.5 text-[13px] font-bold text-white hover:bg-white hover:text-ink transition cursor-pointer focus-ring-dark">eMigrate portal <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
     </p>
   </div>
 </section>
@@ -677,7 +808,81 @@ tailwind.config = {
   </div>
 </section>
 
-<!-- ===================== Trust / About ===================== -->
+<!-- ===================== About ===================== -->
+<section id="about" class="scroll-mt-24 relative overflow-hidden" aria-labelledby="aboutTitle">
+  <div class="absolute -left-40 top-24 w-[480px] h-[480px] bg-orchid/15 rounded-full blur-[120px] pointer-events-none" aria-hidden="true"></div>
+  <div class="relative max-w-[1200px] mx-auto px-5 sm:px-6 py-16 lg:py-24 grid lg:grid-cols-12 gap-12 lg:gap-14 items-start">
+    <div class="lg:col-span-5">
+      <div class="relative mx-auto max-w-[420px] lg:sticky lg:top-28 pb-14">
+        <div data-stripes-scroll class="stripes absolute right-0 top-10 w-[70%] h-[78%] rounded-[32px] overflow-hidden" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+        <div class="photo relative w-[80%] aspect-[400/542] rounded-[28px] shadow-float" data-img-reveal>
+          <img src="images/dr-ashish.webp" alt="Dr. Ashish Mahendra, founder of Arya Global Workforce" width="400" height="542" loading="lazy" decoding="async">
+        </div>
+        <div class="absolute right-0 top-[16%]" data-reveal>
+          <span class="chip-float inline-flex items-center gap-2 bg-white rounded-2xl pl-2 pr-4 py-2 shadow-float text-[12px] font-bold leading-tight" style="--d:.4s">
+            <span class="w-8 h-8 rounded-xl bg-sun text-ink grid place-items-center text-lg"><i class="ph-fill ph-graduation-cap" aria-hidden="true"></i></span>
+            <span>BDS · MDS<br><span class="text-brand">Oral Pathology</span></span>
+          </span>
+        </div>
+        <div class="absolute left-0 sm:-left-3 bottom-0 w-[min(300px,88%)] -rotate-2" data-reveal>
+          <div class="chip-float bg-ink text-white rounded-2xl p-5 shadow-float" style="--d:.9s">
+            <p class="text-[10px] font-extrabold tracking-[0.18em] uppercase text-sun">Founder &amp; Proprietor</p>
+            <p class="mt-1 font-display text-[23px] font-semibold leading-tight">Dr. Ashish Mahendra</p>
+            <p class="mt-1 text-[12px] text-white/70">Arya Global Workforce · Lucknow</p>
+            <div class="mt-3 flex gap-2">
+              <a href="https://www.youtube.com/@drashishmahendra" target="_blank" rel="noopener noreferrer" aria-label="Dr. Ashish Mahendra on YouTube" class="w-10 h-10 rounded-xl bg-white/10 grid place-items-center hover:bg-sun hover:text-ink transition cursor-pointer focus-ring-dark"><i class="ph ph-youtube-logo" aria-hidden="true"></i></a>
+              <a href="https://www.instagram.com/drashish_official/" target="_blank" rel="noopener noreferrer" aria-label="Dr. Ashish Mahendra on Instagram" class="w-10 h-10 rounded-xl bg-white/10 grid place-items-center hover:bg-sun hover:text-ink transition cursor-pointer focus-ring-dark"><i class="ph ph-instagram-logo" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="lg:col-span-7">
+      <p class="flex items-center gap-3 text-[11.5px] font-extrabold tracking-[0.2em] uppercase text-brand" data-reveal><span class="tick" aria-hidden="true"><span class="bg-brand"></span><span class="bg-iris"></span><span class="bg-orchid"></span><span class="bg-sun"></span></span>About us</p>
+      <h2 id="aboutTitle" class="mt-4 font-display font-semibold text-[34px] lg:text-[44px] leading-[1.05] tracking-[-0.01em]" data-reveal>Led by Dr. Ashish Mahendra.<br><span class="text-ink/45">Built around the worker.</span></h2>
+      <p class="mt-6 text-[15.5px] leading-7 text-ink/75" data-reveal>Dr. Ashish Mahendra founded Arya Global Workforce in Lucknow to give skilled Indian workers a safe, honest and fully licensed route to jobs abroad. He takes a personal interest in the well-being and safety of every worker who goes overseas through us — from the first conversation to settling in with the employer.</p>
+      <p class="mt-4 text-[15.5px] leading-7 text-ink/75" data-reveal>Helping Indians go abroad is not new to him. He is also the Founder and Managing Director of Aryadhita Educon Pvt. Ltd., which has helped 3,000+ Indian students study MBBS abroad since 2014. Arya Global Workforce brings that same care to workers and their families.</p>
+
+      <ul class="mt-8 grid sm:grid-cols-2 gap-3" data-reveal-group>
+        <li class="flex items-start gap-3 rounded-2xl bg-white border border-ink/10 p-4"><span class="w-10 h-10 rounded-xl bg-brand text-white grid place-items-center shrink-0 text-lg"><i class="ph ph-graduation-cap" aria-hidden="true"></i></span><span class="text-[13.5px] leading-6 font-semibold">BDS and MDS in Oral Pathology, Lucknow</span></li>
+        <li class="flex items-start gap-3 rounded-2xl bg-white border border-ink/10 p-4"><span class="w-10 h-10 rounded-xl bg-iris text-white grid place-items-center shrink-0 text-lg"><i class="ph ph-chalkboard-teacher" aria-hidden="true"></i></span><span class="text-[13.5px] leading-6 font-semibold">Professor at a reputed medical college in Lucknow, with national and international publications</span></li>
+        <li class="flex items-start gap-3 rounded-2xl bg-white border border-ink/10 p-4"><span class="w-10 h-10 rounded-xl bg-orchid text-white grid place-items-center shrink-0 text-lg"><i class="ph ph-flask" aria-hidden="true"></i></span><span class="text-[13.5px] leading-6 font-semibold">Former Clinical Research Coordinator, SGPGI Lucknow</span></li>
+        <li class="flex items-start gap-3 rounded-2xl bg-white border border-ink/10 p-4"><span class="w-10 h-10 rounded-xl bg-sun text-ink grid place-items-center shrink-0 text-lg"><i class="ph ph-first-aid-kit" aria-hidden="true"></i></span><span class="text-[13.5px] leading-6 font-semibold">Runs Arya Dental &amp; Orthodontic Clinic, Gomtinagar, Lucknow</span></li>
+      </ul>
+
+      <div class="mt-5 grid sm:grid-cols-2 gap-3" data-reveal-group>
+        <div class="rounded-3xl bg-brand text-white p-6 relative overflow-hidden">
+          <div class="absolute -right-10 -bottom-10 w-40 h-40 rounded-full bg-orchid/50 blur-2xl" aria-hidden="true"></div>
+          <p class="relative text-[11px] font-extrabold tracking-[0.18em] uppercase text-sun">Our mission</p>
+          <p class="relative mt-2 text-[14.5px] leading-7 text-white/90">To make working abroad simple, safe and transparent for Indian workers — and to stand by them at every step of the journey.</p>
+        </div>
+        <div class="rounded-3xl bg-ink text-white p-6 relative overflow-hidden">
+          <div class="stripes absolute right-0 top-0 w-1.5 h-full" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+          <p class="text-[11px] font-extrabold tracking-[0.18em] uppercase text-sun">Our vision</p>
+          <p class="mt-2 text-[14.5px] leading-7 text-white/85 pr-3">To turn a worker's dream of a job abroad into a secure career and a better life for the family back home. <span class="font-semibold text-white">Dream · Work · Grow.</span></p>
+        </div>
+      </div>
+
+      <div class="mt-6" data-reveal>
+        <p class="text-[11px] font-extrabold tracking-[0.18em] uppercase text-ink/60">How we work</p>
+        <ul class="mt-3 flex flex-wrap gap-2 text-[13px] font-semibold">
+          <li class="inline-flex items-center gap-2 rounded-full bg-paper-tint px-4 py-2"><i class="ph-fill ph-check-circle text-brand" aria-hidden="true"></i> Transparent process at every stage</li>
+          <li class="inline-flex items-center gap-2 rounded-full bg-paper-tint px-4 py-2"><i class="ph-fill ph-check-circle text-brand" aria-hidden="true"></i> Fair, quick resolution of concerns</li>
+          <li class="inline-flex items-center gap-2 rounded-full bg-paper-tint px-4 py-2"><i class="ph-fill ph-check-circle text-brand" aria-hidden="true"></i> Worker welfare and safety first</li>
+          <li class="inline-flex items-center gap-2 rounded-full bg-paper-tint px-4 py-2"><i class="ph-fill ph-check-circle text-brand" aria-hidden="true"></i> Guidance matched to each worker's skills</li>
+        </ul>
+      </div>
+
+      <div class="mt-8 flex flex-wrap gap-3" data-reveal>
+        <a href="https://www.youtube.com/@drashishmahendra" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-3 rounded-full bg-ink text-white pl-2 pr-5 py-2 hover:bg-brand transition cursor-pointer focus-ring"><span class="w-9 h-9 rounded-full bg-sun text-ink grid place-items-center text-lg transition-transform group-hover:-rotate-12"><i class="ph-fill ph-youtube-logo" aria-hidden="true"></i></span><span class="text-[13.5px] font-bold">Watch on YouTube <span class="font-medium text-white/70">@drashishmahendra</span></span></a>
+        <a href="https://www.instagram.com/drashish_official/" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-3 rounded-full border border-ink/15 bg-white pl-2 pr-5 py-2 hover:border-brand transition cursor-pointer focus-ring"><span class="w-9 h-9 rounded-full bg-brand text-white grid place-items-center text-lg transition-transform group-hover:rotate-12"><i class="ph-fill ph-instagram-logo" aria-hidden="true"></i></span><span class="text-[13.5px] font-bold">Follow on Instagram <span class="font-medium text-ink/65">@drashish_official</span></span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== Trust ===================== -->
 <section id="trust" class="scroll-mt-24 bg-ink text-white relative overflow-hidden">
   <div class="absolute -top-32 -right-32 w-[520px] h-[520px] bg-orchid/20 rounded-full blur-[130px] pointer-events-none" aria-hidden="true"></div>
   <div class="relative max-w-[1200px] mx-auto px-5 sm:px-6 py-16 lg:py-24">
@@ -685,7 +890,7 @@ tailwind.config = {
       <div class="lg:col-span-5">
         <p class="flex items-center gap-3 text-[11.5px] font-extrabold tracking-[0.2em] uppercase text-sun" data-reveal><span class="tick" aria-hidden="true"><span class="bg-brand"></span><span class="bg-iris"></span><span class="bg-orchid"></span><span class="bg-sun"></span></span>Why candidates trust us</p>
         <h2 class="mt-4 font-display font-semibold text-[34px] lg:text-[44px] leading-[1.05] tracking-[-0.01em]" data-reveal>Licensed. Registered.<br><span class="text-white/50">Accountable.</span></h2>
-        <p class="mt-5 text-[15px] leading-7 text-white/75" data-reveal>Arya Global Workforce is a proprietorship led by <strong class="text-white font-bold">Ashish Mahendra</strong>, working from Hazratganj, Lucknow. We are registered with the Ministry of External Affairs as a recruiting agent — so every placement we make follows Government of India rules on fees, contracts and conduct.</p>
+        <p class="mt-5 text-[15px] leading-7 text-white/75" data-reveal>Arya Global Workforce is a proprietorship led by <strong class="text-white font-bold">Dr. Ashish Mahendra</strong>, working from Hazratganj, Lucknow. We are registered with the Ministry of External Affairs as a recruiting agent — so every placement we make follows Government of India rules on fees, contracts and conduct.</p>
         <p class="mt-4 text-[15px] leading-7 text-white/75" data-reveal>Overseas recruitment has a bad reputation because of agents who over-promise and vanish. We work the opposite way — a licence you can check, fees capped by law, terms in writing, and a door you can knock on.</p>
 
         <!-- Photo + certificate card -->
@@ -724,8 +929,8 @@ tailwind.config = {
         </div>
         <div class="lift rounded-3xl border border-white/10 bg-white/[0.05] p-6 hover:border-sun/40">
           <span class="w-11 h-11 rounded-2xl bg-orchid grid place-items-center"><i class="ph ph-currency-inr text-xl text-white" aria-hidden="true"></i></span>
-          <h3 class="mt-4 text-[15.5px] font-extrabold">Fees capped and receipted</h3>
-          <p class="mt-2 text-[13px] leading-6 text-white/70">Never more than ₹30,000, paid online or by DD — with a receipt for every payment.</p>
+          <h3 class="mt-4 text-[15.5px] font-extrabold">Fees within the law, receipted</h3>
+          <p class="mt-2 text-[13px] leading-6 text-white/70">Service charges stay within the Emigration Act limit, paid online or by DD — with a receipt for every payment.</p>
         </div>
         <div class="lift rounded-3xl border border-white/10 bg-white/[0.05] p-6 hover:border-sun/40">
           <span class="w-11 h-11 rounded-2xl bg-sun grid place-items-center"><i class="ph ph-file-text text-xl text-ink" aria-hidden="true"></i></span>
@@ -774,10 +979,10 @@ tailwind.config = {
         <div class="absolute -right-16 -bottom-16 w-64 h-64 rounded-full bg-orchid/50 blur-3xl" aria-hidden="true"></div>
         <div class="relative">
           <p class="text-[11.5px] font-extrabold tracking-[0.18em] uppercase text-sun">What you pay</p>
-          <p class="mt-3 font-display text-[58px] lg:text-[72px] font-semibold leading-none">₹30,000</p>
-          <p class="mt-2 text-[14px] font-semibold text-white/85">Maximum service charge, as per the Emigration Act, 1983</p>
+          <p class="mt-3 font-display text-[44px] lg:text-[56px] font-semibold leading-[1.02]">Online or DD.<br><span class="italic font-medium text-sun">Never cash.</span></p>
+          <p class="mt-3 text-[14px] font-semibold text-white/85">Service charges are governed by the Emigration Act, 1983</p>
           <ul class="mt-7 space-y-3 text-[14px] leading-6">
-            <li class="flex gap-3"><i class="ph-fill ph-check-circle text-sun text-xl shrink-0" aria-hidden="true"></i><span>Paid by <strong>online transfer or demand draft only</strong> — never in cash.</span></li>
+            <li class="flex gap-3"><i class="ph-fill ph-check-circle text-sun text-xl shrink-0" aria-hidden="true"></i><span>Service charges stay <strong>within the limit set by the Emigration Act, 1983</strong>.</span></li>
             <li class="flex gap-3"><i class="ph-fill ph-check-circle text-sun text-xl shrink-0" aria-hidden="true"></i><span>A <strong>receipt for every payment</strong> you make.</span></li>
             <li class="flex gap-3"><i class="ph-fill ph-check-circle text-sun text-xl shrink-0" aria-hidden="true"></i><span>What applies to your case is <strong>explained in writing</strong> before you commit.</span></li>
             <li class="flex gap-3"><i class="ph-fill ph-check-circle text-sun text-xl shrink-0" aria-hidden="true"></i><span><strong>No repatriation charges</strong> are taken from candidates.</span></li>
@@ -849,7 +1054,7 @@ tailwind.config = {
             <span class="text-[16px] lg:text-[17px] font-bold tracking-tight">Do you charge candidates?</span>
             <span class="faq-plus w-9 h-9 shrink-0 rounded-full border border-ink/15 bg-white grid place-items-center"><i class="ph ph-plus" aria-hidden="true"></i></span>
           </summary>
-          <p class="pb-7 pr-12 text-[14.5px] leading-7 text-ink/70">Our service charge can never exceed ₹30,000, the maximum allowed under the Emigration Act, 1983, and what applies to your case is explained in writing before you commit. We accept payment only by online transfer or DD — never cash — and give you a receipt for every payment.</p>
+          <p class="pb-7 pr-12 text-[14.5px] leading-7 text-ink/70">Our service charge always stays within the limit set by the Emigration Act, 1983, and what applies to your case is explained in writing before you commit. We accept payment only by online transfer or DD — never cash — and give you a receipt for every payment.</p>
         </details>
         <details class="group border-b border-ink/10">
           <summary class="flex items-center justify-between gap-4 py-6 cursor-pointer list-none focus-ring rounded-lg">
@@ -873,44 +1078,6 @@ tailwind.config = {
           <p class="pb-7 pr-12 text-[14.5px] leading-7 text-ink/70">Yes. Many employers hire for skill and attitude, and some train on the job. Share your profile and we will give you an honest assessment of where you stand.</p>
         </details>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== Follow ===================== -->
-<section id="follow" class="scroll-mt-24" aria-labelledby="followTitle">
-  <div class="max-w-[1200px] mx-auto px-5 sm:px-6 py-16 lg:py-20">
-    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
-      <div>
-        <p class="flex items-center gap-3 text-[11.5px] font-extrabold tracking-[0.2em] uppercase text-brand" data-reveal><span class="tick" aria-hidden="true"><span class="bg-brand"></span><span class="bg-iris"></span><span class="bg-orchid"></span><span class="bg-sun"></span></span>Stay connected</p>
-        <h2 id="followTitle" class="mt-4 font-display font-semibold text-[32px] lg:text-[40px] leading-[1.05] tracking-[-0.01em]" data-reveal>Follow Ashish Mahendra.</h2>
-      </div>
-      <p class="max-w-[380px] text-[14.5px] leading-7 text-ink/70" data-reveal>Videos and updates from the proprietor of Arya Global Workforce.</p>
-    </div>
-    <div class="mt-10 grid md:grid-cols-2 gap-5" data-reveal-group>
-      <a href="https://www.youtube.com/@drashishmahendra" target="_blank" rel="noopener noreferrer" class="group lift relative overflow-hidden rounded-[28px] bg-ink text-white min-h-[240px] flex cursor-pointer focus-ring hover:shadow-float">
-        <div class="photo zoom absolute inset-0 opacity-40"><img src="images/apply-travel.webp" alt="" width="1200" height="948" loading="lazy" decoding="async"></div>
-        <div class="absolute inset-0 bg-gradient-to-r from-ink via-ink/85 to-ink/30" aria-hidden="true"></div>
-        <div class="relative p-7 lg:p-9 flex flex-col justify-between w-full">
-          <span class="w-14 h-14 rounded-2xl bg-sun text-ink grid place-items-center text-3xl transition-transform group-hover:-rotate-6"><i class="ph-fill ph-youtube-logo" aria-hidden="true"></i></span>
-          <div class="mt-10 flex items-end justify-between gap-4">
-            <span><span class="block font-display text-[28px] font-semibold leading-tight">Watch on YouTube</span><span class="block mt-1 text-[14px] font-semibold text-white/75">@drashishmahendra</span></span>
-            <span class="w-11 h-11 rounded-full bg-white/15 grid place-items-center shrink-0 group-hover:bg-sun group-hover:text-ink transition"><i class="ph ph-arrow-up-right text-lg" aria-hidden="true"></i></span>
-          </div>
-        </div>
-        <span class="sr-only">(opens in a new tab)</span>
-      </a>
-      <a href="https://www.instagram.com/drashish_official/" target="_blank" rel="noopener noreferrer" class="group lift relative overflow-hidden rounded-[28px] bg-brand-dark text-white min-h-[240px] flex cursor-pointer focus-ring hover:shadow-float">
-        <div class="stripes absolute right-0 top-0 h-full w-[34%] transition-transform duration-500 group-hover:translate-x-3" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
-        <div class="relative p-7 lg:p-9 flex flex-col justify-between w-full">
-          <span class="w-14 h-14 rounded-2xl bg-white text-brand grid place-items-center text-3xl transition-transform group-hover:rotate-6"><i class="ph-fill ph-instagram-logo" aria-hidden="true"></i></span>
-          <div class="mt-10 flex items-end justify-between gap-4">
-            <span><span class="block font-display text-[28px] font-semibold leading-tight">Follow on Instagram</span><span class="block mt-1 text-[14px] font-semibold text-white/85">@drashish_official</span></span>
-            <span class="w-11 h-11 rounded-full bg-white/20 grid place-items-center shrink-0 group-hover:bg-white group-hover:text-brand transition"><i class="ph ph-arrow-up-right text-lg" aria-hidden="true"></i></span>
-          </div>
-        </div>
-        <span class="sr-only">(opens in a new tab)</span>
-      </a>
     </div>
   </div>
 </section>
@@ -1015,9 +1182,11 @@ tailwind.config = {
       <div class="lg:col-span-2">
         <p class="text-[11px] font-extrabold tracking-[0.18em] uppercase text-white/55">Explore</p>
         <nav class="mt-4 flex flex-col gap-2.5 text-[14px] font-semibold text-white/80" aria-label="Footer">
+          <a href="#certifications" class="hover:text-sun transition w-fit">Certifications</a>
           <a href="#destinations" class="hover:text-sun transition w-fit">Destinations</a>
           <a href="#opportunities" class="hover:text-sun transition w-fit">Opportunities</a>
           <a href="#process" class="hover:text-sun transition w-fit">How it works</a>
+          <a href="#about" class="hover:text-sun transition w-fit">About us</a>
           <a href="#trust" class="hover:text-sun transition w-fit">Why us</a>
           <a href="#fees" class="hover:text-sun transition w-fit">Fees &amp; grievances</a>
           <a href="#faq" class="hover:text-sun transition w-fit">FAQ</a>
@@ -1042,7 +1211,7 @@ tailwind.config = {
       </div>
     </div>
     <div class="mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-[12px] text-white/55">
-      <p>© <span id="year">2026</span> Arya Global Workforce (Proprietor: Ashish Mahendra). All rights reserved.</p>
+      <p>© <span id="year">2026</span> Arya Global Workforce (Proprietor: Dr. Ashish Mahendra). All rights reserved.</p>
       <p class="font-semibold">Hazratganj, Lucknow · India</p>
     </div>
   </div>
@@ -1189,6 +1358,28 @@ tailwind.config = {
     });
   });
 
+  /* Certifications: tiles deal in, documents slide out of their stacks, seals pop */
+  var certs = gsap.utils.toArray('[data-cert]');
+  if (certs.length) {
+    gsap.set(certs, { autoAlpha: 0 });
+    ScrollTrigger.create({
+      trigger: '#certGrid', start: 'top 82%', once: true,
+      onEnter: function () {
+        gsap.timeline()
+          .fromTo(certs, { autoAlpha: 0, y: 80, rotationX: -32, rotationZ: function (i) { return [-3, 2.5, -2, 3, -2.5][i % 5]; }, transformPerspective: 900, transformOrigin: '50% 100%' },
+                         { autoAlpha: 1, y: 0, rotationX: 0, rotationZ: 0, duration: 1.1, ease: 'expo.out', stagger: 0.1, clearProps: 'transform' }, 0)
+          .from('#certGrid .cert-doc', { yPercent: 38, duration: 1.3, ease: 'expo.out', stagger: 0.1, clearProps: 'transform' }, 0.15)
+          .from('#certGrid .cert-sheet', { yPercent: 45, duration: 1.3, ease: 'expo.out', stagger: 0.05, clearProps: 'transform' }, 0.2)
+          .from('#certGrid .cert-seal', { scale: 0, autoAlpha: 0, duration: 0.6, ease: 'back.out(2.2)', stagger: 0.1, clearProps: 'transform' }, 0.6);
+      }
+    });
+  }
+
+  /* Palette stripes that draw in on scroll */
+  gsap.utils.toArray('[data-stripes-scroll]').forEach(function (el) {
+    gsap.from(el.children, { scaleX: 0, duration: 1.1, stagger: 0.09, ease: 'power4.out', scrollTrigger: { trigger: el, start: 'top 85%', once: true } });
+  });
+
   /* Photo mask reveals */
   gsap.utils.toArray('[data-img-reveal]').forEach(function (el) {
     gsap.fromTo(el, { clipPath: 'inset(14% 14% 14% 14% round 28px)' }, {
@@ -1236,6 +1427,22 @@ tailwind.config = {
       el.addEventListener('pointermove', onMove);
       el.addEventListener('pointerleave', onLeave);
       cleanups.push(function () { el.removeEventListener('pointermove', onMove); el.removeEventListener('pointerleave', onLeave); });
+    });
+    /* Certificate tiles tilt toward the pointer; the glare follows it */
+    gsap.utils.toArray('.cert-card').forEach(function (card) {
+      gsap.set(card, { transformPerspective: 900 });
+      var rx = gsap.quickTo(card, 'rotationX', { duration: 0.6, ease: 'power3.out' });
+      var ry = gsap.quickTo(card, 'rotationY', { duration: 0.6, ease: 'power3.out' });
+      var onMove = function (e) {
+        var r = card.getBoundingClientRect(), px = (e.clientX - r.left) / r.width, py = (e.clientY - r.top) / r.height;
+        ry((px - 0.5) * 10); rx(-(py - 0.5) * 8);
+        card.style.setProperty('--gx', (px * 100).toFixed(1) + '%');
+        card.style.setProperty('--gy', (py * 100).toFixed(1) + '%');
+      };
+      var onLeave = function () { rx(0); ry(0); };
+      card.addEventListener('pointermove', onMove);
+      card.addEventListener('pointerleave', onLeave);
+      cleanups.push(function () { card.removeEventListener('pointermove', onMove); card.removeEventListener('pointerleave', onLeave); gsap.set(card, { clearProps: 'transform' }); });
     });
     return function () { cleanups.forEach(function (fn) { fn(); }); };
   });

@@ -1,6 +1,6 @@
 # Arya Global Workforce — Business Information
 
-> Updated: 17 September 2026, from the client's registration certificates (kept locally in `docs/`, which is git-ignored).
+> Updated: 19 September 2026, from the client's registration certificates. The originals are published in `certificates/`; `docs/` is the git-ignored drop folder.
 > This replaces the earlier "Inspiration Manpower Consultancy Pvt. Ltd, Bangalore" details, which do not match this business. See **Superseded** below.
 
 ## Brand / Legal
@@ -10,13 +10,13 @@
 | **Brand / trade name** | **Arya Global Workforce** |
 | **Tagline** | Dream · Work · Grow (from the logo) |
 | **Constitution** | Proprietorship |
-| **Proprietor** | Ashish Mahendra |
+| **Proprietor** | Dr. Ashish Mahendra |
 | **Nature of business** | Placement service: recruitment of Indian workers for foreign employers (NIC 78100) |
 | **UP Shops & Establishments registration** | UPSA28769910, registered 16 Dec 2025 |
 | **GSTIN** | 09AKIPM5590M1ZE (liability from 22 Dec 2025) |
 | **Udyam registration** | UDYAM-UP-50-0246203 (Micro, Services, registered 23 Dec 2025) |
 
-Never publish the PAN, bank details, the proprietor's date of birth or family details, or the personal email address that appear in the certificates.
+**Client decision (18 Sep 2026):** publish all five certificates unedited in `certificates/`, linked from the Certifications section. The client was told this makes the PAN, bank name, IFSC and account number, turnover, the proprietor's date of birth, the personal email and a handwritten signature publicly downloadable. Do not repeat any of those details in page copy.
 
 ## MEA recruiting agent licence
 
@@ -38,7 +38,7 @@ Licence conditions that affect the website:
 
 ## Fees (service charge undertaking)
 
-- The maximum service charge is **₹30,000**, as per the Emigration Act, 1983.
+- The maximum service charge is **₹30,000**, as per the Emigration Act, 1983. **Client decision (19 Sep 2026): do not show this figure in the landing-page copy.** It still appears inside the published undertaking PDF.
 - Payment is **online or by DD only**, never cash.
 - Complaints go to the **Protector General of Emigrants**, Ministry of External Affairs, Akbar Bhawan, Chanakyapuri, New Delhi. Tel 26874250, 24197964 (New Delhi STD 011). Fax 24197984. Email pge@mea.gov.in.
   - The undertaking also names an officer and gives PIN 110025. The site leaves out the officer's name, because the Registration Certificate was signed by a different officer. It also leaves out the PIN, which looks like a typo for Chanakyapuri's 110021. Confirm both with the client.
@@ -56,8 +56,20 @@ Licence conditions that affect the website:
 
 - **Destinations** (industry-typical, pending client confirmation): UAE, Saudi Arabia, Qatar, Kuwait, Oman, Bahrain, Singapore, Malaysia.
 - **Sectors:** Construction & Engineering · Technical Trades & Manufacturing · Mechanical & Design · Hospitality & F&B · Healthcare & Caregiving · Logistics & Warehousing · Retail & Customer Support · Projects & Operations.
-- **Numbers on the site** all come from the licence: the ₹30,000 fee cap, the 1000+ licence category, and validity until 2031.
+- **Numbers on the site:** 4 government registrations (MEA RC, GST, Udyam, UP Shops & Establishments), the 1000+ licence category, and licence validity until 2031.
 - **No placement, client or years-in-business statistics exist yet.** Do not publish any until the client supplies verified figures.
+
+## About — Dr. Ashish Mahendra
+
+Source: https://aryadhitaeducon.com/about/ (his education consultancy), checked 19 Sep 2026. The client asked for an About section featuring only Dr. Ashish, rewritten for workers and workforce. Do not add Aryadhita's other directors.
+
+- BDS and MDS in Oral Pathology, Lucknow
+- Professor at a reputed medical college in Lucknow; national and international publications
+- Former Clinical Research Coordinator (CRC), SGPGI Lucknow
+- Runs Arya Dental & Orthodontic Clinic, Gomtinagar, Lucknow
+- Founder & Managing Director, Aryadhita Educon Pvt. Ltd. (per its site: 3,000+ students helped to study MBBS abroad, since 2014). Always attribute these figures to Aryadhita, never to Arya Global Workforce.
+- Takes a personal interest in the well-being and safety of everyone going abroad through his companies.
+- Photo: `images/dr-ashish.webp`, from the Aryadhita site, downloaded with the user's approval.
 
 ## Superseded — do not use
 
@@ -70,7 +82,6 @@ These came from the old aryaglobalwork.com scrape and do not match the certifica
 
 ## Open questions for the client
 
-- Should the site call the proprietor "Dr. Ashish Mahendra"? The social handles use "drashish". The site currently uses no title.
 - Is +91 99560 52200 active on WhatsApp? The site uses it for WhatsApp.
 - Confirm the Protector General of Emigrants' PIN (110021 vs 110025).
 - The logo and certificates say "Arya Global Workforce", but the repo and domain say "aryaglobalwork".

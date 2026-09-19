@@ -1,3 +1,6 @@
 /.opencode
-# Client certificates contain PAN, bank and personal details; keep them local only.
+# Client document drop folder (original filenames). Public copies live in certificates/.
 /docs/
+# Local secrets (e.g. API keys) must never be committed.
+.env
+.env.*

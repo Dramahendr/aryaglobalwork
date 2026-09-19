@@ -10,7 +10,8 @@ A single-page static website for **Arya Global Workforce**, a proprietorship of 
 
 ```
 index.html                 ← The entire website (markup, Tailwind config, styles, scripts inline)
-images/                    ← Site photos (WebP) + thumbs/ + CREDITS.md (sources and licences)
+certificates/              ← The client's original government certificates (PDF), published as-is and linked from #certifications
+images/                    ← Site photos (WebP) + thumbs/ + certs/ (PDF page renders) + CREDITS.md (sources and licences)
 logo-horizontal.png        ← Header/footer lockup (transparent), derived from newlogo.jpeg
 logo.png, logo-mark.png    ← Stacked lockup and "A" mark (transparent)
 newlogo.jpeg               ← Client-supplied logo (source)
@@ -23,7 +24,7 @@ design-system/
   arya-global-work/
     MASTER.md              ← Base design rules (a11y checklist, anti-patterns)
     pages/home.md          ← Overrides for index.html (palette, motion, photography) — checked first
-docs/                      ← Client certificates. GIT-IGNORED: they contain PAN, bank and personal data
+docs/                      ← Client document drop folder (original filenames). Git-ignored; copies go to certificates/
 ```
 
 ## Tech stack & constraints
@@ -40,6 +41,7 @@ docs/                      ← Client certificates. GIT-IGNORED: they contain PA
 - `html.motion` is set in `<head>` unless the user prefers reduced motion. It hides `[data-hero]` until GSAP runs, and a 2.5 s timeout un-hides it if GSAP never loads.
 - **Hero**: SplitText word reveal on `#heroTitle`, a staggered intro for `[data-hero]`, palette stripes drawing in, and a clip-path reveal on `[data-hero-photo]`.
 - **Scroll**: `[data-reveal]` elements animate in batches. `[data-reveal-group]` staggers its direct children. `[data-img-reveal]` gets a clip-path mask reveal. `[data-parallax] > img` gets subtle parallax (≥768px only). `[data-count]` counters (`data-plain` means no thousands separator).
+- **Certifications**: `[data-cert]` tiles "deal" in with a 3D stagger, `.cert-doc` pages slide out of their `.cert-sheet` stacks, and seals pop. On fine pointers the `.cert-card` tilts toward the cursor and `.cert-glare` follows it. Hover fans the sheets using the CSS `rotate`/`translate` properties, which GSAP's `transform` does not overwrite.
 - **Process**: a scroll-scrubbed rail (`#railFill`, `#railPlane`); `.step.is-active` lights up each step.
 - **Other**: a magnetic hover on `[data-magnetic]` (fine pointers only), a CSS destinations ticker with a pause button, and CSS `chip-float`. The boarding-pass plane uses SVG `animateMotion`.
 - Never put `chip-float` on an element that GSAP also moves or that has a Tailwind rotate: the CSS animation overrides its transform. Wrap it in another element instead.
@@ -49,9 +51,9 @@ docs/                      ← Client certificates. GIT-IGNORED: they contain PA
 
 1. **The design system is law.** Follow `design-system/arya-global-work/pages/home.md` first, then `MASTER.md`: accessibility checklist, `cursor-pointer` on clickables, 150–300ms transitions, 4.5:1 contrast, visible focus states, and `prefers-reduced-motion`.
 2. **Business facts come only from `BUSINESS_INFO.md`.** This agency's licence requires advertisements to be *genuine and factually correct*. Never invent statistics, testimonials, employer names, response-time promises or years in business. If asked to change a fact, update both the HTML and `BUSINESS_INFO.md`.
-3. **Never publish** PAN, bank details, date of birth or other personal data from `docs/`.
+3. The certificate PDFs are published unedited, by client decision. **Never repeat** their PAN, bank details, date of birth, personal email or signature in page copy. The ₹30,000 service-charge figure stays out of the page copy too (client decision); it lives only in the undertaking PDF.
 4. **Accessibility is a stated requirement**: semantic landmarks, aria attributes on the mobile menu and ticker toggle, focus rings (`focus-ring` / `focus-ring-dark`), 44px touch targets, meaningful `alt` text (decorative images use `alt=""`).
-5. Keep the single-file architecture; sections are marked with HTML comments. Preserve the anchor ids that nav links depend on: `#top`, `#why`, `#destinations`, `#opportunities`, `#process`, `#trust`, `#fees`, `#faq`, `#follow`, `#apply` (and `#licence`).
+5. Keep the single-file architecture; sections are marked with HTML comments. Preserve the anchor ids that nav links depend on: `#top`, `#certifications`, `#why`, `#destinations`, `#opportunities`, `#process`, `#about`, `#trust`, `#fees`, `#faq`, `#apply`.
 6. External links that open a new tab must keep `target="_blank" rel="noopener noreferrer"`.
 7. Photos: always set `width`/`height`, use `loading="lazy"` below the fold, and record each new image's source and licence in `images/CREDITS.md`. Stock photos are illustrative only — never caption them as real candidates or staff.
 8. After any UI change, run the pre-delivery checklist: 375 / 768 / 1024 / 1440px, no horizontal scroll, nothing hidden behind the sticky nav, and reduced-motion rendering.
@@ -63,6 +65,7 @@ There are no tests or build commands. Serve the folder (`python3 -m http.server 
 - mobile menu open/close
 - ticker pause
 - anchor navigation
+- certificate tiles: they should open the PDF in a new tab, and Download should save it
 - the process rail while scrolling
 - the form toast
 - rendering with reduced motion enabled
@@ -74,4 +77,4 @@ There are no tests or build commands. Serve the folder (`python3 -m http.server 
 - **Destination and sector content is industry-typical**, pending client confirmation.
 - **Photos are stock/public-domain placeholders** until the client supplies real ones.
 - **Legal policy pages** (privacy, terms) are not written yet. Do not invent URLs.
-- See "Open questions" in `BUSINESS_INFO.md` (title "Dr.", WhatsApp number, PGE PIN, brand name vs domain).
+- See "Open questions" in `BUSINESS_INFO.md` (WhatsApp number, PGE PIN, brand name vs domain).

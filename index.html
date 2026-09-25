@@ -1150,6 +1150,10 @@ tailwind.config = {
             <span class="text-[11px] font-extrabold tracking-[0.14em] uppercase text-ink/65">Anything we should know?</span>
             <textarea rows="4" name="message" placeholder="Experience, preferred destination, questions..." class="mt-2 w-full rounded-2xl border border-ink/15 bg-paper px-4 py-3.5 text-[16px] sm:text-[14.5px] placeholder:text-ink/40 focus:outline-none focus:ring-4 focus:ring-brand/15 focus:border-brand transition resize-none"></textarea>
           </label>
+          <!-- Anti-spam honeypot: hidden from people, ignored by the server if filled. -->
+          <div class="hidden" aria-hidden="true">
+            <label>Company<input type="text" name="company" tabindex="-1" autocomplete="off"></label>
+          </div>
           <div class="mt-6 flex flex-wrap items-center gap-4">
             <button type="submit" class="inline-flex items-center gap-2 bg-brand text-white px-8 py-4 rounded-full font-extrabold text-[14.5px] shadow-glow hover:bg-brand-dark transition cursor-pointer focus-ring">Submit my details <i class="ph ph-paper-plane-tilt" aria-hidden="true"></i></button>
             <span class="text-[12px] text-ink/65 flex items-center gap-2"><i class="ph ph-shield-check text-brand text-base" aria-hidden="true"></i> Confidential. Used only to contact you about opportunities.</span>
@@ -1227,8 +1231,8 @@ tailwind.config = {
 
 <!-- Toast -->
 <div id="toast" role="status" aria-live="polite" class="hidden fixed bottom-6 left-1/2 -translate-x-1/2 max-w-[calc(100vw-2rem)] bg-ink text-white px-5 sm:px-6 py-4 rounded-2xl shadow-float text-[13.5px] font-bold text-center items-center gap-3 z-[80]">
-  <span class="w-7 h-7 rounded-full bg-sun text-ink grid place-items-center shrink-0"><i class="ph ph-check" aria-hidden="true"></i></span>
-  Thank you — a consultant will reach out to you soon.
+  <span id="toastIcon" class="w-7 h-7 rounded-full bg-sun text-ink grid place-items-center shrink-0"><i class="ph ph-check" aria-hidden="true"></i></span>
+  <span id="toastMsg">Thank you — a consultant will reach out to you soon.</span>
 </div>
 
 <!-- Chat widget shown as Dr. Ashish Mahendra (AI assistant; needs the /api/chat Netlify function) -->
@@ -1297,16 +1301,62 @@ tailwind.config = {
     new IntersectionObserver(function (en) { applyVisible = en[0].isIntersecting; updateBar(); }, { threshold: 0.05 }).observe(apply);
   }
 
-  /* Enquiry form (front-end only — no backend connected yet) */
+  /* Enquiry form — posts to the /api/enquiry Netlify function (emails the team via Resend). */
   var form = document.getElementById('enquiryForm');
   var toast = document.getElementById('toast');
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
+  var toastMsg = document.getElementById('toastMsg');
+  var toastIcon = document.getElementById('toastIcon');
+  var toastTimer;
+
+  function showToast(message, ok) {
+    toastMsg.textContent = message;
+    toastIcon.className = 'w-7 h-7 rounded-full grid place-items-center shrink-0 ' + (ok ? 'bg-sun text-ink' : 'bg-white text-ink');
+    toastIcon.innerHTML = '<i class="ph ' + (ok ? 'ph-check' : 'ph-warning') + '" aria-hidden="true"></i>';
     toast.classList.remove('hidden');
     toast.classList.add('flex');
-    form.reset();
-    setTimeout(function () { toast.classList.add('hidden'); toast.classList.remove('flex'); }, 4500);
-  });
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { toast.classList.add('hidden'); toast.classList.remove('flex'); }, 5500);
+  }
+
+  if (form) {
+    var submitBtn = form.querySelector('button[type="submit"]');
+    var submitLabel = submitBtn ? submitBtn.innerHTML : '';
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (submitBtn && submitBtn.disabled) return;
+
+      var data = Object.fromEntries(new FormData(form).entries());
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.classList.add('opacity-70', 'cursor-wait');
+        submitBtn.innerHTML = 'Sending… <i class="ph ph-circle-notch" aria-hidden="true"></i>';
+      }
+
+      fetch('/api/enquiry', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      })
+        .then(function (res) { return res.ok; })
+        .catch(function () { return false; })
+        .then(function (ok) {
+          if (ok) {
+            form.reset();
+            showToast('Thank you — a consultant will reach out to you soon.', true);
+          } else {
+            showToast('Could not send just now. Please message us on WhatsApp at +91 99560 52200.', false);
+          }
+        })
+        .finally(function () {
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.classList.remove('opacity-70', 'cursor-wait');
+            submitBtn.innerHTML = submitLabel;
+          }
+        });
+    });
+  }
 
   /* ---------- Motion ---------- */
   if (!canAnimate) {

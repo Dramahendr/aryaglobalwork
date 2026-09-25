@@ -86,7 +86,7 @@ There are no tests or build commands. Serve the folder (`python3 -m http.server 
 
 ## Known gaps (do not "fix" silently — confirm with the user first)
 
-- **The enquiry form is front-end only.** Submission is prevented and a confirmation toast appears; no endpoint or resume upload is connected.
+- **The enquiry form posts to the `/api/enquiry` Netlify Function** (`netlify/functions/enquiry.mjs`), which emails the team via the Resend API (`RESEND_API_KEY`; `ENQUIRY_TO` / `ENQUIRY_FROM` optional). On success a toast appears; on failure it points the visitor to WhatsApp. **Resume/file upload is still not connected.** The default sender `onboarding@resend.dev` only delivers to the Resend account owner — verify a domain in Resend to reach any recipient.
 - **No vacancy listings or past-recruitment details yet.** Licence condition (xiii)(c) expects them on the website. They need real data from the client.
 - **Destination and sector content is industry-typical**, pending client confirmation.
 - **Photos are stock/public-domain placeholders** until the client supplies real ones.

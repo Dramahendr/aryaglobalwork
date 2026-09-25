@@ -43,6 +43,14 @@ The widget calls `/api/chat`, a Netlify Function that uses the OpenAI Responses 
 2. Locally, keep the key in `.env` (git-ignored) and run `npx netlify dev`.
 3. Business facts the bot may use are in the `INSTRUCTIONS` string in `netlify/functions/chat.mjs`. Keep them in sync with `BUSINESS_INFO.md`.
 
+## Enquiry form
+
+The form posts to `/api/enquiry`, a Netlify Function (`netlify/functions/enquiry.mjs`) that emails each enquiry to the team via the [Resend](https://resend.com) API.
+
+1. In Netlify → Site configuration → Environment variables, add `RESEND_API_KEY`. Optional: `ENQUIRY_TO` (recipient, default `dramahendra71@gmail.com`) and `ENQUIRY_FROM` (sender).
+2. Locally, keep the key in `.env` (git-ignored) and run `npx netlify dev`.
+3. The default sender `onboarding@resend.dev` can **only** deliver to the Resend account owner's own address. To email any recipient, verify a domain in Resend and set `ENQUIRY_FROM` to an address on it (e.g. `Arya Global Workforce <apply@aryaglobalwork.com>`).
+
 ## Deployment
 
 Any static host works (GitHub Pages, Netlify, Vercel, S3…). Publish the repository root as-is; no build command is needed. `docs/` is never committed. The PDFs in `certificates/` are public.
@@ -55,7 +63,7 @@ Any static host works (GitHub Pages, Netlify, Vercel, S3…). Publish the reposi
 
 ## Known work in progress
 
-- The enquiry form shows a success toast but does not send data anywhere yet.
+- The enquiry form emails the team via the `/api/enquiry` Netlify Function (Resend); resume/file upload is not connected yet.
 - Current vacancies and past-recruitment details are still needed (a licence requirement for the agency's website).
 - Photos are illustrative stock/public-domain images until the client provides real ones.
 - Privacy policy and terms pages still need to be written.
